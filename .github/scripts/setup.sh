@@ -74,3 +74,16 @@ else
   echo "ERROR: i18n directory not found"
   exit 1
 fi
+
+# ── Build ──────────────────────────────────────────────────────────────────────
+echo "Running build..."
+npm run build
+
+echo "SUCCESS: build completed"
+if [ -d "build" ]; then
+  COUNT=$(find build -type f | wc -l)
+  echo "Build directory contains $COUNT files"
+else
+  echo "ERROR: build directory not found"
+  exit 1
+fi
