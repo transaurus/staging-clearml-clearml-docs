@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-clearml_agent/clearml_agent_ref" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">ClearML Agent CLI | ClearML</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://clear.ml/img/clearml_docs_meta.png"><meta data-rh="true" name="twitter:image" content="https://clear.ml/img/clearml_docs_meta.png"><meta data-rh="true" property="og:url" content="https://clear.ml/docs/clearml_agent/clearml_agent_ref"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="ClearML Agent CLI | ClearML"><meta data-rh="true" name="description" content="The following page provides a reference to clearml-agent&#x27;s CLI commands:"><meta data-rh="true" property="og:description" content="The following page provides a reference to clearml-agent&#x27;s CLI commands:"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://clear.ml/docs/clearml_agent/clearml_agent_ref"><link data-rh="true" rel="alternate" href="https://clear.ml/docs/clearml_agent/clearml_agent_ref" hreflang="en"><link data-rh="true" rel="alternate" href="https://clear.ml/docs/clearml_agent/clearml_agent_ref" hreflang="x-default"><link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=none"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","none",{anonymize_ip:!0})</script><link rel="stylesheet" href="/assets/css/styles.6ce7eab9.css">
+<script src="/assets/js/runtime~main.96f68a00.js" defer="defer"></script>
+<script src="/assets/js/main.deaeaca1.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><div class="theme-announcement-bar announcementBar_mb4j" role="banner"><div class="announcementBarPlaceholder_vyr4"></div><div class="content_knG7 announcementBarContent_xLdY">If you ❤️ ️<b>ClearML</b>, ⭐️ us on <a target="_blank" rel="noopener noreferrer" href="https://github.com/clearml/clearml">GitHub</a>!</div><button type="button" aria-label="Close" class="clean-btn close closeButton_CVFx announcementBarClose_gvF7"><svg viewBox="0 0 15 15" width="14" height="14"><g stroke="currentColor" stroke-width="3.1"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg></button></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ navbar--dark"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a href="https://clear.ml/" target="_blank" rel="noopener noreferrer" class="navbar__brand"><div class="navbar__logo"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"> </b></a><a class="navbar__item navbar__link" href="/docs/">Overview</a><a class="navbar__item navbar__link" href="/docs/clearml_sdk/clearml_sdk_setup">Setup</a><a class="navbar__item navbar__link" href="/docs/getting_started/auto_log_exp">Using ClearML</a><div class="navbar__item dropdown dropdown--hoverable"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/fundamentals/projects">Developer Center</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/fundamentals/projects">ClearML Basics</a></li><li><a class="dropdown__link" href="/docs/references/sdk/task">References</a></li><li><a class="dropdown__link" href="/docs/best_practices/data_scientist_best_practices">Best Practices</a></li><li><a class="dropdown__link" href="/docs/guides">Tutorials</a></li><li><a class="dropdown__link" href="/docs/integrations">Code Integrations</a></li><li><a class="dropdown__link" href="/docs/faq">FAQ</a></li><li><a class="dropdown__link" href="/docs/release_notes/clearml_server/open_source/ver_2_4">Release Notes</a></li></ul></div><a class="navbar__item navbar__link" href="/docs/community">Community</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://joinslack.clear.ml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--slack" aria-label="Slack Channel"></a><a href="https://youtube.com/clearml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--youtube" aria-label="YouTube"></a><a href="https://twitter.com/clearmlapp" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--twitter" aria-label="Twitter"></a><a href="https://www.linkedin.com/company/clearml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--linkedin" aria-label="LinkedIn"></a><a href="https://github.com/clearml/clearml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--github" aria-label="GitHub repository"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd sidebarWithHideableNavbar_wUlq"><a href="https://clear.ml/" target="_blank" rel="noopener noreferrer" tabindex="-1" class="sidebarLogo_isFc"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--dark_xIcU"><b> </b></a><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG menuWithAnnouncementBar_GW3s"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/references/sdk/task"><span title="SDK" class="categoryLinkLabel_W154">SDK</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/apps/clearml_task"><span title="CLI Tools" class="categoryLinkLabel_W154">CLI Tools</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/clearml_agent/clearml_agent_ref"><span title="ClearML Agent" class="categoryLinkLabel_W154">ClearML Agent</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/clearml_agent/clearml_agent_ref"><span title="ClearML Agent CLI" class="linkLabel_WmDU">ClearML Agent CLI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/clearml_agent/clearml_agent_env_var"><span title="ClearML Agent Environment Variables" class="linkLabel_WmDU">ClearML Agent Environment Variables</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/configs/configuring_clearml"><span title="Client Configuration" class="categoryLinkLabel_W154">Client Configuration</span></a><button aria-label="Expand sidebar category &#x27;Client Configuration&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/references/api/"><span title="Server API" class="categoryLinkLabel_W154">Server API</span></a><button aria-label="Expand sidebar category &#x27;Server API&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/webapp/webapp_overview"><span title="WebApp" class="categoryLinkLabel_W154">WebApp</span></a><button aria-label="Expand sidebar category &#x27;WebApp&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>ClearML Agent CLI</h1></header><p>The following page provides a reference to <code>clearml-agent</code>&#x27;s CLI commands:</p>
+<ul>
+<li class=""><a href="#build" class="">build</a> - Create a worker environment without executing a task.</li>
+<li class=""><a href="#config" class="">config</a> - List your ClearML Agent configuration data.</li>
+<li class=""><a href="#daemon" class="">daemon</a> - Run a worker daemon listening to a queue for tasks to execute.</li>
+<li class=""><a href="#execute" class="">execute</a> - Execute a task, locally without a queue.</li>
+<li class=""><a href="#list" class="">list</a> - List the current workers.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="build">build<a href="#build" class="hash-link" aria-label="Direct link to build" title="Direct link to build" translate="no">​</a></h2>
+<p>Use the <code>build</code> command to create worker environments without executing tasks.</p>
+<p>You can build Docker containers according to the execution environments of specific tasks, which an agent can later
+use to execute other tasks. See <a class="" href="/docs/guides/clearml_agent/exp_environment_containers">tutorial</a>.</p>
+<p>You can also create a Docker container that executes a specific task when launched. See <a class="" href="/docs/guides/clearml_agent/executable_exp_containers">tutorial</a>.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-agent build [-h] --id TASK_ID [--target TARGET]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                    [--install-globally]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                    [--docker [DOCKER [DOCKER ...]]] [--force-docker] </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                    [--python-version PYTHON_VERSION]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                    [--entry-point {reuse_task,clone_task}] [-O]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                    [--git-user GIT_USER] [--git-pass GIT_PASS]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                    [--log-level {DEBUG,INFO,WARN,WARNING,ERROR,CRITICAL}]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                    [--gpus GPUS] [--cpu-only]</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="parameters">Parameters<a href="#parameters" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters" translate="no">​</a></h3>
+<div class="tbl-cmd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Description</th><th>Mandatory</th></tr></thead><tbody><tr><td><code>--id</code></td><td>Build a worker environment for this Task ID.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--cpu-only</code></td><td>Disable GPU access for the Docker container.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--docker</code></td><td>Run agent in Docker mode. Specify a Docker container that a worker will execute at launch. To specify the image name and optional arguments, use one of the following: <ul><li class=""><code>--docker &lt;image_name&gt; &lt;args&gt;</code> on the command line</li><li class=""><code>--docker</code> on the command line, and specify the default image name and arguments in the configuration file.</li></ul> Environment variable settings for Docker containers: <ul><li class=""><code>CLEARML_DOCKER_SKIP_GPUS_FLAG</code> - Ignore the <code>--gpus</code> flag inside the Docker container. This also lets you execute ClearML Agent using Docker versions earlier than 19.03.</li><li class=""><code>NVIDIA_VISIBLE_DEVICES</code> - Limit GPU visibility for the Docker container.</li><li class=""> <code>CLEARML_AGENT_GIT_USER</code> and <code>CLEARML_AGENT_GIT_PASS</code> - Pass these credentials to the Docker container at execution.</li></ul></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--entry-point</code></td><td>Used in conjunction with <code>--docker</code>, indicates how to run the Task specified by <code>--task-id</code> on Docker startup. The <code>--entry-point</code> options are: <ul><li class=""><code>reuse</code> - Overwrite the existing Task data.</li><li class=""><code>clone_task</code> - Clone the Task, and execute the cloned Task.</li></ul></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--force-docker</code></td><td>Force using the agent-specified docker image (either explicitly in the <code>--docker</code> argument or using the agent&#x27;s default docker image). If provided, the agent will not use any docker container information stored in the task itself (default <code>False</code>)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--git-pass</code></td><td>Git password for repository access.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--git-user</code></td><td>Git username for repository access.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--gpus</code></td><td>Specify the active GPUs for the Docker containers to use. These are the same GPUs set in the <code>NVIDIA_VISIBLE_DEVICES</code> environment variable. For example: <ul><li class=""><code>--gpus 0</code></li><li class=""><code>--gpus 0,1,2</code></li><li class=""><code>--gpus all</code></li></ul></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>-h</code>, <code>--help</code></td><td>Get help for this command.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--install-globally</code></td><td>Install the required Python packages before creating the virtual environment. Use <code>agent.package_manager.system_site_packages</code> to control the installation of the system packages. When <code>--docker</code> is used, <code>--install-globally</code> is always true.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--log-level</code></td><td>SDK log level. The values are:<ul><li class=""><code>DEBUG</code></li><li class=""><code>INFO</code></li><li class=""><code>WARN</code></li><li class=""><code>WARNING</code></li><li class=""><code>ERROR</code></li><li class=""><code>CRITICAL</code></li></ul></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--python-version</code></td><td>Virtual environment Python version to use.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>-O</code></td><td>Compile optimized pyc code (see <a href="https://docs.python.org/3/using/cmdline.html#cmdoption-O" target="_blank" rel="noopener noreferrer" class="">python documentation</a>). Repeat for more optimization.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--target</code></td><td>The target folder for the virtual environment and source code that will be used at launch.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr></tbody></table>
+</div>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="config">config<a href="#config" class="hash-link" aria-label="Direct link to config" title="Direct link to config" translate="no">​</a></h2>
+<p>List your ClearML Agent configuration.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-agent config [-h]</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="daemon">daemon<a href="#daemon" class="hash-link" aria-label="Direct link to daemon" title="Direct link to daemon" translate="no">​</a></h2>
+<p>Use the <code>daemon</code> command to spin up an agent on any machine: on-prem and/or cloud instance. When spinning up an agent,
+assign it a queue(s) to service, and when tasks are added to its queues, the agent will pull and execute them.</p>
+<p>With the <code>daemon</code> command you can configure your agent&#x27;s behavior: allocate resources, prioritize queues, set it to run
+in a Docker, and more.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-agent daemon [-h] [--foreground] [--queue QUEUES [QUEUES ...]] [--order-fairness] </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     [--standalone-mode] [--services-mode [SERVICES_MODE]] </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     [--child-report-tags CHILD_REPORT_TAGS [CHILD_REPORT_TAGS ...]]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     [--create-queue] [--detached] [--stop] [--dynamic-gpus] </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     [--uptime [UPTIME [UPTIME ...]]] [--downtime [DOWNTIME [DOWNTIME ...]]] </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     [--status] [--use-owner-token] [-O] </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     [--git-user GIT_USER] [--git-pass GIT_PASS] </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     [--log-level {DEBUG,INFO,WARN,WARNING,ERROR,CRITICAL}] </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     [--gpus GPUS] [--cpu-only] </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                     [--docker [DOCKER [DOCKER ...]]] [--force-current-version]</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="parameters-1">Parameters<a href="#parameters-1" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters" translate="no">​</a></h3>
+<div class="tbl-cmd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Description</th><th>Mandatory</th></tr></thead><tbody><tr><td><code>--child-report-tags</code></td><td>List of tags to send with the status reports from the worker that executes a task.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--cpu-only</code></td><td>If running in Docker mode (see the <code>--docker</code> option), disable GPU access for the Docker container or virtual environment.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--create-queue</code></td><td>If the queue name provided with <code>--queue</code> does not exist in the server, create it on-the-fly and use it.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--detached</code></td><td>Run agent in the background. The <code>clearml-agent</code> command returns immediately.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--docker</code></td><td>Run in Docker mode. Execute the Task inside a Docker container. To specify the image name and optional arguments, either: <ul><li class=""> Use <code>--docker &lt;image_name&gt; &lt;args&gt;</code> on the command line, or </li><li class="">Use <code>--docker</code> on the command line, and specify the default image name and arguments in the configuration file.</li></ul> Environment variable settings for Docker containers: <ul><li class=""><code>CLEARML_DOCKER_SKIP_GPUS_FLAG</code> - Ignore the <code>--gpus</code> flag inside the Docker container. This also lets you execute ClearML Agent using Docker versions earlier than 19.03.</li><li class=""><code>NVIDIA_VISIBLE_DEVICES</code> - Limit GPU visibility for the Docker container.</li><li class=""> <code>CLEARML_AGENT_GIT_USER</code> and <code>CLEARML_AGENT_GIT_PASS</code> - Pass these credentials to the Docker container at execution.</li></ul></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--downtime</code></td><td>Specify downtime for clearml-agent in <code>&lt;hours&gt; &lt;days&gt;</code> format. For example, use <code>09-13 TUE</code> to set Tuesday&#x27;s downtime to 09-13. <br><br>NOTES: <ul><li class="">This feature requires the agent to use a ClearML Enterprise Server</li><li class="">Make sure to configure only <code>--uptime</code> or <code>--downtime</code>, but not both.</li></ul></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--dynamic-gpus</code></td><td>Allow to dynamically allocate GPUs based on queue properties, configure with <code>--queue &lt;queue_name&gt;=&lt;num_gpus&gt;</code>. For example: <code>--dynamic-gpus --queue dual_gpus=2 single_gpu=1</code> <br><br>NOTE: <strong>This feature requires the agent to use a ClearML Enterprise Server</strong></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--force-current-version</code></td><td>To use your current version of ClearML Agent when running in Docker mode (the <code>--docker</code> argument is specified), instead of the latest ClearML Agent version which is automatically installed, specify <code>force-current-version</code>. <br><br> For example, if your current ClearML Agent version is <code>0.13.1</code>, but the latest version of ClearML Agent is <code>0.13.3</code>, use <code>--force-current-version</code> and your Task will execute in the Docker container with ClearML Agent version <code>0.13.1</code>.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--foreground</code></td><td>Pipe full log to stdout/stderr. Do not use this option if running in background.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--git-pass</code></td><td>Git password for repository access.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--git-user</code></td><td>Git username for repository access</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--gpus</code></td><td>If running in Docker mode (see the <code>--docker</code> option), specify the active GPUs for the Docker containers to use. These are the same GPUs set in the <code>NVIDIA_VISIBLE_DEVICES</code> environment variable. For example: <ul><li class=""><code>--gpus 0</code></li><li class=""><code>--gpus 0,1,2</code></li><li class=""><code>--gpus all</code></li></ul></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>-h</code>, <code>--help</code></td><td>Get help for this command.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--log-level</code></td><td>SDK log level. The values are:<ul><li class=""><code>DEBUG</code></li><li class=""><code>INFO</code></li><li class=""><code>WARN</code></li><li class=""><code>WARNING</code></li><li class=""><code>ERROR</code></li><li class=""><code>CRITICAL</code></li></ul></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>-O</code></td><td>Compile optimized pyc code (see <a href="https://docs.python.org/3/using/cmdline.html#cmdoption-O" target="_blank" rel="noopener noreferrer" class="">python documentation</a>). Repeat for more optimization.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--order-fairness</code></td><td>Pull from each queue in a round-robin order, instead of priority order.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--queue</code></td><td>Specify the queues which the worker is listening to. The values can be any combination of:<ul><li class="">One or more queue IDs</li><li class="">One or more queue names</li><li class=""><code>default</code> indicating the default queue</li></ul></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--services-mode</code></td><td>Launch multiple long-term docker services. Spin multiple, simultaneous Tasks, each in its own Docker container, on the same machine. Each Task will be registered as a new node in the system, providing tracking and transparency capabilities. Start up and shutdown of each Docker is verified. Use in CPU mode (<code>--cpu-only</code>) only. <br> To limit the number of simultaneous tasks run in services mode, pass the maximum number immediately after the <code>--services-mode</code> option (e.g. <code>--services-mode 5</code>)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--standalone-mode</code></td><td>Do not use any network connects. This assumes all requirements are pre-installed.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--status</code></td><td>Print the worker&#x27;s schedule (uptime properties, server&#x27;s runtime properties and listening queues)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--stop</code></td><td>Terminate a running ClearML Agent, if other arguments are the same. If no additional arguments are provided, agents are terminated in lexicographical order.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--uptime</code></td><td>Specify uptime for clearml-agent in <code>&lt;hours&gt; &lt;days&gt;</code> format. For example, use <code>17-20 TUE</code> to set Tuesday&#x27;s uptime to 17-20. <br><br>NOTES:<ul><li class="">This feature requires the agent to use a ClearML Enterprise Server</li><li class="">Make sure to configure only <code>--uptime</code> or <code>--downtime</code>, but not both.</li></ul></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--use-owner-token</code></td><td>Run tasks under the identity of each task&#x27;s owner: all calls made by the task code during execution will use the owner&#x27;s credentials instead of the agent&#x27;s. See example use case under <a class="" href="/docs/webapp/settings/webapp_settings_users#service-accounts">Service Accounts</a>. <strong>This feature requires the agent to use a ClearML Enterprise Server</strong>.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr></tbody></table>
+</div>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="execute">execute<a href="#execute" class="hash-link" aria-label="Direct link to execute" title="Direct link to execute" translate="no">​</a></h2>
+<p>Use the <code>execute</code> command to set an agent to build and execute specific tasks directly without listening to a queue.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-agent execute [-h] --id TASK_ID [--log-file LOG_FILE] [--disable-monitoring] </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                      [--full-monitoring] [--require-queue]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                      [--standalone-mode] [--docker [DOCKER [DOCKER ...]]] [--clone] </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                      [-O] [--git-user GIT_USER] [--git-pass GIT_PASS] </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                      [--log-level {DEBUG,INFO,WARN,WARNING,ERROR,CRITICAL}] </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                      [--gpus GPUS] [--cpu-only]</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="parameters-2">Parameters<a href="#parameters-2" class="hash-link" aria-label="Direct link to Parameters" title="Direct link to Parameters" translate="no">​</a></h3>
+<div class="tbl-cmd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Description</th><th>Mandatory</th></tr></thead><tbody><tr><td><code>--id</code></td><td>The ID of the Task to build</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--clone</code></td><td>Clone the Task specified by <code>--id</code>, and then execute that cloned Task.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--cpu-only</code></td><td>Disable GPU access for the daemon, only use CPU in either docker or virtual environment.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--docker</code></td><td>Run in Docker mode. Execute the Task inside a Docker container. To specify the image name and optional arguments, use one of the following: <ul><li class=""><code>--docker &lt;image_name&gt; &lt;args&gt;</code> on the command line</li><li class=""><code>--docker</code> on the command line, and specify the default image name and arguments in the configuration file.</li></ul> Environment variable settings for Dockers containers: <ul><li class=""><code>CLEARML_DOCKER_SKIP_GPUS_FLAG</code> - Ignore the <code>--gpus</code> flag inside the Docker container. This also lets you execute ClearML Agent using Docker versions earlier than 19.03.</li><li class=""><code>NVIDIA_VISIBLE_DEVICES</code> - Limit GPU visibility for the Docker container.</li><li class=""> <code>CLEARML_AGENT_GIT_USER</code> and <code>CLEARML_AGENT_GIT_PASS</code> - Pass these credentials to the Docker container at execution.</li></ul></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--disable-monitoring</code></td><td>Disable logging and monitoring, except for stdout.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--full-monitoring</code></td><td>Create a full log, including the environment setup log, Task log, and monitoring, as well as stdout.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--git-pass</code></td><td>Git password for repository access.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--git-user</code></td><td>Git username for repository access.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--gpus</code></td><td>Specify active GPUs for the daemon to use (docker / virtual environment). Equivalent to setting <code>NVIDIA_VISIBLE_DEVICES</code>. For example: <ul><li class=""><code>--gpus 0</code></li><li class=""><code>--gpus 0,1,2</code></li><li class=""><code>--gpus all</code></li></ul></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>-h</code>, <code>--help</code></td><td>Get help for this command.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--log-file</code></td><td>The log file for Task execution output (stdout / stderr) to a text file.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--log-level</code></td><td>SDK log level. The values are:<ul><li class=""><code>DEBUG</code></li><li class=""><code>INFO</code></li><li class=""><code>WARN</code></li><li class=""><code>WARNING</code></li><li class=""><code>ERROR</code></li><li class=""><code>CRITICAL</code></li></ul></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>-O</code></td><td>Compile optimized pyc code (see <a href="https://docs.python.org/3/using/cmdline.html#cmdoption-O" target="_blank" rel="noopener noreferrer" class="">python documentation</a>). Repeat for more optimization.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--require-queue</code></td><td>If the specified task is not queued, the execution will fail (used for 3rd party scheduler integration, e.g. K8S, SLURM, etc.)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--standalone-mode</code></td><td>Do not use any network connects, assume everything is pre-installed</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr></tbody></table>
+</div>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="list">list<a href="#list" class="hash-link" aria-label="Direct link to list" title="Direct link to list" translate="no">​</a></h2>
+<p>List information about all active workers.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-agent list [-h]</span><br></span></code></pre></div></div></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/clearml/clearml-docs/edit/main/docs/clearml_agent/clearml_agent_ref.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/apps/clearml_param_search"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">ClearML Parameter Search CLI (HPO)</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/clearml_agent/clearml_agent_env_var"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">ClearML Agent Environment Variables</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#build" class="table-of-contents__link toc-highlight">build</a><ul><li><a href="#parameters" class="table-of-contents__link toc-highlight">Parameters</a></li></ul></li><li><a href="#config" class="table-of-contents__link toc-highlight">config</a></li><li><a href="#daemon" class="table-of-contents__link toc-highlight">daemon</a><ul><li><a href="#parameters-1" class="table-of-contents__link toc-highlight">Parameters</a></li></ul></li><li><a href="#execute" class="table-of-contents__link toc-highlight">execute</a><ul><li><a href="#parameters-2" class="table-of-contents__link toc-highlight">Parameters</a></li></ul></li><li><a href="#list" class="table-of-contents__link toc-highlight">list</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://joinslack.clear.ml" target="_blank" rel="noopener noreferrer" class="footer__link-item">Slack<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.youtube.com/c/ClearML" target="_blank" rel="noopener noreferrer" class="footer__link-item">YouTube<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://twitter.com/clearmlapp" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/clearml" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/company/clearml" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://clear.ml/blog/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Blog</a></li><li class="footer__item"><a href="https://github.com/clearml/clearml" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 ClearML. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,1381 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-configs/clearml_conf" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Configuration File | ClearML</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://clear.ml/img/clearml_docs_meta.png"><meta data-rh="true" name="twitter:image" content="https://clear.ml/img/clearml_docs_meta.png"><meta data-rh="true" property="og:url" content="https://clear.ml/docs/configs/clearml_conf"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Configuration File | ClearML"><meta data-rh="true" name="description" content="This reference page provides detailed information about the configurable options for ClearML and ClearML Agent."><meta data-rh="true" property="og:description" content="This reference page provides detailed information about the configurable options for ClearML and ClearML Agent."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://clear.ml/docs/configs/clearml_conf"><link data-rh="true" rel="alternate" href="https://clear.ml/docs/configs/clearml_conf" hreflang="en"><link data-rh="true" rel="alternate" href="https://clear.ml/docs/configs/clearml_conf" hreflang="x-default"><link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=none"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","none",{anonymize_ip:!0})</script><link rel="stylesheet" href="/assets/css/styles.6ce7eab9.css">
+<script src="/assets/js/runtime~main.96f68a00.js" defer="defer"></script>
+<script src="/assets/js/main.deaeaca1.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><div class="theme-announcement-bar announcementBar_mb4j" role="banner"><div class="announcementBarPlaceholder_vyr4"></div><div class="content_knG7 announcementBarContent_xLdY">If you ❤️ ️<b>ClearML</b>, ⭐️ us on <a target="_blank" rel="noopener noreferrer" href="https://github.com/clearml/clearml">GitHub</a>!</div><button type="button" aria-label="Close" class="clean-btn close closeButton_CVFx announcementBarClose_gvF7"><svg viewBox="0 0 15 15" width="14" height="14"><g stroke="currentColor" stroke-width="3.1"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg></button></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ navbar--dark"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a href="https://clear.ml/" target="_blank" rel="noopener noreferrer" class="navbar__brand"><div class="navbar__logo"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"> </b></a><a class="navbar__item navbar__link" href="/docs/">Overview</a><a class="navbar__item navbar__link" href="/docs/clearml_sdk/clearml_sdk_setup">Setup</a><a class="navbar__item navbar__link" href="/docs/getting_started/auto_log_exp">Using ClearML</a><div class="navbar__item dropdown dropdown--hoverable"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/fundamentals/projects">Developer Center</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/fundamentals/projects">ClearML Basics</a></li><li><a class="dropdown__link" href="/docs/references/sdk/task">References</a></li><li><a class="dropdown__link" href="/docs/best_practices/data_scientist_best_practices">Best Practices</a></li><li><a class="dropdown__link" href="/docs/guides">Tutorials</a></li><li><a class="dropdown__link" href="/docs/integrations">Code Integrations</a></li><li><a class="dropdown__link" href="/docs/faq">FAQ</a></li><li><a class="dropdown__link" href="/docs/release_notes/clearml_server/open_source/ver_2_4">Release Notes</a></li></ul></div><a class="navbar__item navbar__link" href="/docs/community">Community</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://joinslack.clear.ml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--slack" aria-label="Slack Channel"></a><a href="https://youtube.com/clearml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--youtube" aria-label="YouTube"></a><a href="https://twitter.com/clearmlapp" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--twitter" aria-label="Twitter"></a><a href="https://www.linkedin.com/company/clearml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--linkedin" aria-label="LinkedIn"></a><a href="https://github.com/clearml/clearml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--github" aria-label="GitHub repository"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd sidebarWithHideableNavbar_wUlq"><a href="https://clear.ml/" target="_blank" rel="noopener noreferrer" tabindex="-1" class="sidebarLogo_isFc"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--dark_xIcU"><b> </b></a><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG menuWithAnnouncementBar_GW3s"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/references/sdk/task"><span title="SDK" class="categoryLinkLabel_W154">SDK</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/apps/clearml_task"><span title="CLI Tools" class="categoryLinkLabel_W154">CLI Tools</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/clearml_agent/clearml_agent_ref"><span title="ClearML Agent" class="categoryLinkLabel_W154">ClearML Agent</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/docs/configs/configuring_clearml"><span title="Client Configuration" class="categoryLinkLabel_W154">Client Configuration</span></a><button aria-label="Collapse sidebar category &#x27;Client Configuration&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/configs/clearml_conf"><span title="Configuration File" class="linkLabel_WmDU">Configuration File</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/configs/env_vars"><span title="Environment Variables" class="linkLabel_WmDU">Environment Variables</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/references/api/"><span title="Server API" class="categoryLinkLabel_W154">Server API</span></a><button aria-label="Expand sidebar category &#x27;Server API&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/webapp/webapp_overview"><span title="WebApp" class="categoryLinkLabel_W154">WebApp</span></a><button aria-label="Expand sidebar category &#x27;WebApp&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Configuration File</h1></header><p>This reference page provides detailed information about the configurable options for ClearML and ClearML Agent.
+ClearML and ClearML Agent use the same configuration file <code>clearml.conf</code>.</p>
+<p>This reference page is organized by configuration file section:</p>
+<ul>
+<li class=""><a href="#agent-section" class="">agent</a> - Contains ClearML Agent configuration options. If ClearML Agent was not installed, the configuration
+file will not have an <code>agent</code> section.</li>
+<li class=""><a href="#api-section" class="">api</a> - Contains ClearML and ClearML Agent configuration options for ClearML Server.</li>
+<li class=""><a href="#sdk-section" class="">sdk</a> - Contains ClearML and ClearML Agent configuration options for ClearML Python Package and ClearML Server.</li>
+<li class=""><a href="#environment-section" class="">environment</a> - Define environment variables to apply to the OS environment</li>
+<li class=""><a href="#files-section" class="">files</a> - Define auto-generated files to apply into local file system</li>
+</ul>
+<p>See an <a href="https://github.com/clearml/clearml-agent/blob/master/docs/clearml.conf" target="_blank" rel="noopener noreferrer" class="">example configuration file</a>
+in the ClearML Agent GitHub repository.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>The values in the ClearML configuration file can be overridden by environment variables, the <a class="" href="/docs/webapp/settings/webapp_settings_profile#configuration-vault">configuration vault</a>,
+and command-line arguments.</p></div></div>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="editing-your-configuration-file">Editing Your Configuration File<a href="#editing-your-configuration-file" class="hash-link" aria-label="Direct link to Editing Your Configuration File" title="Direct link to Editing Your Configuration File" translate="no">​</a></h2>
+<p>To add, change, or delete options, edit your configuration file.</p>
+<p><strong>To edit your ClearML configuration file:</strong></p>
+<ol>
+<li class="">
+<p>Open the configuration file for editing, depending upon your operating system:</p>
+<ul>
+<li class="">Linux - <code>~/clearml.conf</code></li>
+<li class="">Mac - <code>$HOME/clearml.conf</code></li>
+<li class="">Windows - <code>\User\&lt;username&gt;\clearml.conf</code></li>
+</ul>
+</li>
+<li class="">
+<p>In the required section (sections listed on this page), add, modify, or remove required options.</p>
+</li>
+<li class="">
+<p>Save configuration file.</p>
+</li>
+</ol>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="environment-variables">Environment Variables<a href="#environment-variables" class="hash-link" aria-label="Direct link to Environment Variables" title="Direct link to Environment Variables" translate="no">​</a></h2>
+<p>ClearML&#x27;s configuration file uses <a href="https://github.com/lightbend/config/blob/main/HOCON.md" target="_blank" rel="noopener noreferrer" class="">HOCON</a> configuration format,
+which supports environment variable reference.</p>
+<p>For example:</p>
+<div class="language-editorconfig codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-editorconfig codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">sdk {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">   google.storage {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">          # # Default project and credentials file</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">          # # Will be used when no bucket configuration is found</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">          project: &quot;clearml&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">          credentials_json: ${GOOGLE_APPLICATION_CREDENTIALS}</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">}</span><br></span></code></pre></div></div>
+<p><code>${GOOGLE_APPLICATION_CREDENTIALS}</code> will automatically be substituted by the environment variable value.</p>
+<p>See <a href="https://github.com/lightbend/config/blob/main/HOCON.md#note-on-windows-and-case-sensitivity-of-environment-variables" target="_blank" rel="noopener noreferrer" class="">Note on Windows</a>
+for information about using environment variables with Windows in the configuration file.</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="configuration-file-sections">Configuration File Sections<a href="#configuration-file-sections" class="hash-link" aria-label="Direct link to Configuration File Sections" title="Direct link to Configuration File Sections" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="agent-section">agent section<a href="#agent-section" class="hash-link" aria-label="Direct link to agent section" title="Direct link to agent section" translate="no">​</a></h3>
+<p><strong><code>agent</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary of top-level ClearML Agent options to configure ClearML Agent for Git credentials, package managers, cache management, workers, and Docker for workers.</li>
+</ul>
+<hr>
+<p><strong><code>agent.crash_on_exception</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">By default, when encountering an exception while running a task, the agent will catch the exception, log it, and
+continue running. When set to <code>true</code>, the agent crashes when encountering an exception.</li>
+</ul>
+<hr>
+<p><strong><code>agent.cuda_version</code></strong> (<em>float</em>)</p>
+<ul>
+<li class="">
+<p>The CUDA version to use.</p>
+<ul>
+<li class="">If specified, this is the CUDA version used.</li>
+<li class="">If not specified, the CUDA version is automatically detected.</li>
+</ul>
+<p>Alternatively, override this option with the environment variable <code>CUDA_VERSION</code>.</p>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.cudnn_version</code></strong> (<em>float</em>)</p>
+<ul>
+<li class="">
+<p>The cuDNN version to use.</p>
+<ul>
+<li class="">If specified, this is the cuDNN version used.</li>
+<li class="">If not specified, the cuDNN version is automatically detected.</li>
+</ul>
+<p>Alternatively, override this option with the environment variable <code>CUDNN_VERSION</code>.</p>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.disable_ssh_mount</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">Set to <code>true</code> to disable the auto <code>.ssh</code> mount into the docker. The environment variable <code>CLEARML_AGENT_DISABLE_SSH_MOUNT</code>
+overrides this configuration option.</li>
+</ul>
+<hr>
+<p><strong><code>agent.disable_task_docker_override</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">If set to <code>true</code>, agent uses the default docker image and ignores any docker image and arguments specified in the
+task&#x27;s container section (if setup shell script is specified in task container section, it is used
+in either case).</li>
+</ul>
+<hr>
+<p><strong><code>agent.docker_allow_host_environ</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">Set to <code>true</code> to allow passing host environments into docker container with Task&#x27;s docker container arguments. For example: <code>&quot;-e HOST_NAME=$HOST_NAME&quot;</code>.</li>
+</ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>Use with care! This might introduce security risks by allowing access to keys/secret on the host machine.</p></div></div>
+<hr>
+<p><strong><code>agent.docker_apt_cache</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">The apt (Linux package tool) cache folder for mapping Ubuntu package caching into Docker.</li>
+</ul>
+<hr>
+<p><strong><code>agent.docker_args_extra_precedes_task</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">Allow the arguments specified in <code>agent.extra_docker_arguments</code> to override task level docker arguments, in the case that
+the same argument is passed in both. If set to <code>False</code>, a task&#x27;s docker arguments will override the <code>extra_docker_arguments</code>.</li>
+</ul>
+<hr>
+<p><strong><code>agent.docker_args_filters</code></strong> (<em>list</em>)</p>
+<ul>
+<li class="">Set a whitelist of allowed Docker arguments. Only arguments matching the specified patterns can be used when running
+a task. For example: <code>docker_args_filters: [&quot;^--env$&quot;, &quot;^-e$&quot;]</code>.</li>
+</ul>
+<hr>
+<p><strong><code>agent.docker_container_name_format</code></strong> (<em>string</em>)</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Compatibility Required</div><div class="admonitionContent_BuS1"><p>Compatible with Docker versions 0.6.5 and above</p></div></div>
+<ul>
+<li class="">
+<p>Set a name format for Docker containers created by an agent running in <a class="" href="/docs/clearml_agent/clearml_agent_execution_env#docker-mode">Docker mode</a></p>
+</li>
+<li class="">
+<p>The following variables can be used:</p>
+<ul>
+<li class=""><code>task_id</code></li>
+<li class=""><code>worker_id</code></li>
+<li class=""><code>rand_string</code> - random lower-case letters string (up to 32 characters)</li>
+</ul>
+</li>
+<li class="">
+<p>The resulting name must start with an alphanumeric character, while the rest of the name may contain alphanumeric characters,
+underscores (<code>_</code>), dots (<code>.</code>) and/or dashes (<code>-</code>)</p>
+</li>
+<li class="">
+<p>For example: <code>clearml-id-{task_id}-{rand_string:.8}</code></p>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.docker_force_pull</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>Always update the Docker image by forcing a Docker <code>pull</code> before running a task</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Always update the Docker image.</li>
+<li class=""><code>false</code> - Do not always update.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.docker_install_opencv_libs</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">Install the required packages for opencv libraries (<code>libsm6 libxext6 libxrender-dev libglib2.0-0</code>), for backwards
+compatibility reasons. Change to <code>false</code> to skip installation and decrease docker spin-up time.</li>
+</ul>
+<hr>
+<p><a id="docker_internal_mounts" class="anchorTargetHideOnScrollNavbar_vjPI"></a></p>
+<p><strong><code>agent.docker_internal_mounts</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Set internal mount points inside the Docker. This is especially useful for non-root Docker container images.</li>
+</ul>
+<p>For example:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">docker_internal_mounts {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">     sdk_cache: &quot;/clearml_agent_cache&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">     apt_cache: &quot;/var/cache/apt/archives&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">     ssh_folder: &quot;/root/.ssh&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">     pip_cache: &quot;/root/.cache/pip&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">     poetry_cache: &quot;/root/.cache/pypoetry&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">     vcs_cache: &quot;/root/.clearml/vcs-cache&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">     venvs_cache: &quot;/root/.clearml/venvs-cache&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">     venv_build: &quot;/root/.clearml/venvs-builds&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">     pip_download: &quot;/root/.clearml/pip-download-cache&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">}</span><br></span></code></pre></div></div>
+<hr>
+<p><strong><code>agent.docker_pip_cache</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">The pip (Python package tool) cache folder for mapping Python package caching into Docker.</li>
+</ul>
+<hr>
+<p><strong><code>agent.docker_use_activated_venv</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">In <a class="" href="/docs/clearml_agent/clearml_agent_execution_env#docker-mode">Docker mode</a>, if the container&#x27;s entrypoint automatically activates a virtual environment, the activated virtual
+environment is used and everything is installed in it. Set to <code>false</code> to disable, and always create a new venv inheriting
+from <code>system_site_packages</code></li>
+</ul>
+<hr>
+<p><strong><code>agent.enable_git_ask_pass</code></strong> (<em>bool</em>)</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p><code>enable_git_ask_pass</code> is supported only on Linux systems.</p></div></div>
+<ul>
+<li class="">If enabled, uses <code>GIT_ASKPASS</code> to pass Git user/pass when cloning/fetching repositories</li>
+<li class="">It solves passing user/token to git submodules.</li>
+<li class="">This is a safer way to ensure multiple users using the same repository will not accidentally leak credentials</li>
+</ul>
+<hr>
+<p><strong><code>agent.enable_task_env</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">Set the OS environments based on the Task&#x27;s Environment section before launching the Task process.</li>
+</ul>
+<hr>
+<p><strong><code>agent.extra_docker_arguments</code></strong> (<em>[string]</em>)</p>
+<ul>
+<li class="">Optional arguments to pass to the Docker image when ClearML Agent is running in <a class="" href="/docs/clearml_agent/clearml_agent_execution_env#docker-mode">Docker mode</a>. These are local for this agent, and will not be updated in the task&#x27;s <code>docker_cmd</code> section. For example, <code>[&quot;--ipc=host&quot;, ]</code>.</li>
+</ul>
+<hr>
+<p><strong><code>agent.extra_docker_shell_script</code></strong> (<em>[string]</em>)</p>
+<ul>
+<li class="">When ClearML Agent is running in <a class="" href="/docs/clearml_agent/clearml_agent_execution_env#docker-mode">Docker mode</a>, this
+optional shell script executes inside the Docker on startup, before the task starts. For example, <code>[&quot;apt-get install -y bindfs&quot;, ]</code>.</li>
+</ul>
+<hr>
+<p><strong><code>agent.force_git_root_python_path</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">Force the root folder of the git repository (instead of the working directory) into the <code>PYTHONPATH</code> environment variable.
+<code>false</code> by default, so only the working directory will be added to <code>PYTHONPATH</code></li>
+</ul>
+<hr>
+<p><strong><code>agent.force_git_ssh_protocol</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>Force Git protocol to use SSH regardless of the Git URL. This assumes the Git user/pass are blank.</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Force</li>
+<li class=""><code>false</code> - Do not force</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.force_git_ssh_port</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">Force a specific SSH port when converting HTTP to SSH links. The domain remains unchanged.</li>
+</ul>
+<hr>
+<p><strong><code>agent.force_git_ssh_user</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">Force a specific SSH username when converting HTTP to SSH links (the default username is &#x27;git&#x27;)</li>
+</ul>
+<hr>
+<p><strong><code>agent.git_host</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">Limit Git credentials usage to this host. The environment variable <code>CLEARML_AGENT_GIT_HOST</code> overrides this configuration option.</li>
+</ul>
+<hr>
+<p><strong><code>agent.git_pass</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">
+<p>Git repository password.</p>
+<ul>
+<li class="">If using Git SSH credentials, do not specify this option.</li>
+<li class="">If not using Git SSH credentials, use this option to specify a Git password for cloning your repositories.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.git_user</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">
+<p>Git repository username.</p>
+<ul>
+<li class="">If using Git SSH credentials, do not specify this option.</li>
+<li class="">If not using Git SSH credentials, use this option to specify a Git password for cloning your repositories.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.git_use_ms_entra_token</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">Enable authentication to Azure DevOps repositories using Microsoft Entra tokens.
+<ul>
+<li class="">Set to <code>true</code> to authenticate using a Microsoft Entra OAuth token.</li>
+<li class=""><code>agent.git_use_ms_entra_token</code> and <code>agent.git_use_azure_pat</code> are mutually exclusive. Only one can be set to <code>true</code> at a time.</li>
+<li class="">The token is retrieved from the configured Git password (set via <code>agent.git_pass</code> or the <code>CLEARML_AGENT_GIT_PASS</code> environment variable).</li>
+<li class="">For more information, see the <a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/auth-overview?view=azure-devops&amp;tabs=Linux#microsoft-entra-oauth-tokens-recommended" target="_blank" rel="noopener noreferrer" class="">Azure DevOps authentication guide</a>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.git_use_azure_pat</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">Enable authentication to Azure DevOps repositories using a Personal Access Token (PAT).
+<ul>
+<li class="">Set to <code>true</code> to authenticate using an Azure DevOps PAT.</li>
+<li class=""><code>agent.git_use_ms_entra_token</code> and <code>agent.git_use_azure_pat</code> are mutually exclusive. Only one can be set to <code>true</code> at a time.</li>
+<li class="">The PAT is retrieved from the configured Git password (set via <code>agent.git_pass</code> or the <code>CLEARML_AGENT_GIT_PASS</code> environment variable).</li>
+<li class="">For more information, see the <a href="https://learn.microsoft.com/en-us/azure/devops/repos/git/auth-overview?view=azure-devops&amp;tabs=Linux#personal-access-tokens-alternative-option" target="_blank" rel="noopener noreferrer" class="">Azure DevOps authentication guide</a>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><a id="hide_docker" class="anchorTargetHideOnScrollNavbar_vjPI"></a></p>
+<p><strong><code>agent.hide_docker_command_env_vars</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">
+<p>Hide Docker environment variables containing secrets when printing out the Docker command. When printed, the variable
+values will be replaced by <code>********</code></p>
+</li>
+<li class="">
+<p>Enable this feature by setting <code>enabled</code> to <code>true</code>. Doing this will hide the following environment variables values:</p>
+<ul>
+<li class=""><code>CLEARML_API_SECRET_KEY</code></li>
+<li class=""><code>CLEARML_AGENT_GIT_PASS</code></li>
+<li class=""><code>AWS_SECRET_ACCESS_KEY</code></li>
+<li class=""><code>AZURE_STORAGE_KEY</code></li>
+</ul>
+</li>
+<li class="">
+<p>To mask additional environment variables, add their keys to the <code>extra_keys</code> list.
+For example, to hide the value of a custom environment variable named <code>MY_SPECIAL_PASSWORD</code>, set <code>extra_keys: [&quot;MY_SPECIAL_PASSWORD&quot;]</code></p>
+</li>
+<li class="">
+<p>By default, <code>parse_embedded_urls</code> is set to <code>true</code>, so agent will also hide passwords in URLs and handle environment variables
+containing docker commands</p>
+</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">hide_docker_command_env_vars {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  enabled: true </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  extra_keys: [&quot;MY_SPECIAL_PASSWORD&quot;]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  parse_embedded_urls: true</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">}</span><br></span></code></pre></div></div>
+<hr>
+<p><strong><code>agent.ignore_requested_python_version</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>Indicates whether to ignore any requested Python version</p>
+</li>
+<li class="">
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - ignore any requested Python version</li>
+<li class=""><code>false</code> - if a task was using a specific Python version, and the system supports multiple versions, the agent will
+use the requested Python version (default)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.protected_docker_extra_args</code></strong> (<em>[string]</em>)</p>
+<ul>
+<li class="">Prevent listed task docker arguments from being used if they are already specified in <code>agent.extra_docker_arguments</code>.</li>
+</ul>
+<hr>
+<p><strong><code>agent.python_binary</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">Set the Python version to use when creating the virtual environment, and when launching the task. For example, <code>/usr/bin/python3</code> or <code>/usr/local/bin/python3.6</code>.</li>
+</ul>
+<hr>
+<p><strong><code>agent.reload_config</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">Indicates whether to reload the configuration each time the worker daemon is executed.</li>
+</ul>
+<hr>
+<p><strong><code>agent.translate_ssh</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">Translate HTTPS communication to SSH</li>
+</ul>
+<hr>
+<p><strong><code>agent.venvs_dir</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">The target folder for virtual environments builds that are created when executing a task.</li>
+</ul>
+<hr>
+<p><strong><code>agent.worker_id</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">
+<p>When creating a worker, assign the worker an ID.</p>
+<ul>
+<li class="">
+<p>If specified, a unique name for the worker. For example, <code>clearml-agent-machine1:gpu0</code>.</p>
+</li>
+<li class="">
+<p>If not specified, the following is used: <code>&lt;hostname&gt;:&lt;process_id&gt;</code>.</p>
+<p>For example, <code>MyHost:12345</code>.</p>
+<p>Alternatively, specify the environment variable <code>CLEARML_WORKER_ID</code> to override this worker name.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.worker_name</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">
+<p>Use to replace the hostname when creating a worker if <code>agent.worker_id</code> is not specified. For example, if <code>worker_name</code>
+is <code>MyMachine</code> and the <code>process_id</code> is <code>12345</code>, then the worker is named <code>MyMachine.12345</code>.</p>
+<p>Alternatively, specify the environment variable <code>CLEARML_WORKER_NAME</code> to override this worker name.</p>
+</li>
+</ul>
+<br>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="agentdefault_docker">agent.default_docker<a href="#agentdefault_docker" class="hash-link" aria-label="Direct link to agent.default_docker" title="Direct link to agent.default_docker" translate="no">​</a></h4>
+<p><strong><code>agent.default_docker</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary containing the default options for workers running in <a class="" href="/docs/clearml_agent/clearml_agent_execution_env#docker-mode">Docker mode</a>.
+These settings define which Docker image and arguments should be used unless <a class="" href="/docs/clearml_agent/clearml_agent_execution_env#docker-mode">explicitly overridden through the UI or an agent</a>.
+<ul>
+<li class="">
+<p><strong><code>agent.default_docker.image</code></strong> (<em>str</em>) - Specifies the default Docker image to use.</p>
+</li>
+<li class="">
+<p><strong><code>agent.default_docker.arguments</code></strong> ([<em>str</em>]) - Specifies the list of options to pass to the Docker container. For
+example: <code>arguments: [&quot;--ipc=host&quot;, ]</code>.</p>
+</li>
+<li class="">
+<p><strong><code>agent.default_docker.match_rules</code></strong> (<em>[dict]</em>)</p>
+<div class="theme-admonition theme-admonition-important admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Enterprise Feature</div><div class="admonitionContent_BuS1"><p>The <code>match_rules</code> configuration option is available under the ClearML Enterprise plan.</p></div></div>
+<ul>
+<li class="">Lookup table of rules that determine the default container and arguments when running a worker in Docker mode. The
+first matched rule will be picked, according to rule order.</li>
+<li class="">Each dictionary in the list lays out rules, and the container and container arguments to be used if the rules are
+matched.</li>
+</ul>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Match rule arguments</div><div class="admonitionContent_BuS1"><p><code>default_docker.match_rules.arguments</code> should be formatted as a single string (for example: <code>&quot;-e VALUE=1 --ipc=host&quot;</code>),
+unlike  <code>agent.default_docker.arguments</code></p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p><code>match_rules</code> are ignore if <code>--docker &lt;container&gt;</code> is passed in the command line.</p></div></div>
+<ul>
+<li class="">The rules can be:
+<ul>
+<li class=""><code>script.requirements</code> - Match all script requirements</li>
+<li class=""><code>script.repostiry</code>, <code>script.branch</code> - Match based on Git repository or branch where the script is stored</li>
+<li class=""><code>script.binary</code> - Match binary executable used to launch the entry point</li>
+<li class=""><code>project</code> - Match the Task project&#x27;s name</li>
+</ul>
+</li>
+<li class="">Matching is done via regular expression. For example <code>&quot;^searchme$&quot;</code> will match exactly the <code>&quot;searchme&quot;</code> string, and <code>^examples</code>
+will match that starts with <code>examples</code> (e.g., <code>examples</code>, <code>examples/sub_project</code>).</li>
+<li class="">Examples:
+<ul>
+<li class="">
+<p>In the example configuration below, the rules match tasks where the Python binary is <code>python3.6</code>, <code>tensorflow~=2.6</code>
+is required, the script&#x27;s Git repository is <code>/my_repository/</code>, the branch is <code>main</code>, and the task&#x27;s project is
+<code>project/sub_project</code>. If all conditions are met, the <code>nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04</code> image is used
+with the argument <code>-e define=value</code>.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">agent {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  default_docker {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    match_rules [</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        image: &quot;nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        arguments: &quot;-e define=value&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        match: {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">          script {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">            # Optional: must match all requirements (not partial)</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">            requirements: {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">              # version selection matching PEP-440</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">              pip: {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                tensorflow: &quot;~=2.6&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">              },</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">            }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">            # Optional: matching based on regular expression, example: &quot;^exact_match$&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">            repository: &quot;/my_repository/&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">            branch: &quot;main&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">            binary: &quot;python3.6&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">          }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">          # Optional: matching based on regular expression, example: &quot;^exact_match$&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">          project: &quot;project/sub_project&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    ]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">}</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>In the example configuration below, two <code>match_rules</code> are used to specify different Docker images based on
+the Python binary version. The first rule applies the <code>python:3.6-bullseye</code> image with the <code>--ipc=host</code> argument
+when the task requires <code>python3.6</code>. The second rule applies the <code>python:3.7-bullseye</code> image with the same argument
+when the script requires <code>python3.7</code>. If no match is found, the default <code>nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu20.04</code>
+image is used.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">```</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">agent {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  default_docker: {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    image: &quot;nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu20.04&quot;,</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    match_rules: [</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        image: &quot;python:3.6-bullseye&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        arguments&quot;: &quot;--ipc=host&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        match: {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">          script {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">            binary: &quot;python3.6$&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">          },</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      },</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        image: &quot;python:3.7-bullseye&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        arguments: &quot;--ipc=host&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        match: {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">          script {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">            binary: &quot;python3.7$&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">          },</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      },</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    ]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">}</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">```</span><br></span></code></pre></div></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="agentpackage_manager">agent.package_manager<a href="#agentpackage_manager" class="hash-link" aria-label="Direct link to agent.package_manager" title="Direct link to agent.package_manager" translate="no">​</a></h4>
+<p><strong><code>agent.package_manager</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary containing the options for the Python package manager.</li>
+<li class="">The currently supported package managers are
+<ul>
+<li class="">pip</li>
+<li class="">conda</li>
+<li class="">uv, if the root repository contains a <code>uv.lock</code> or <code>pyproject.toml</code> file</li>
+<li class="">poetry, if the repository contains a <code>poetry.lock</code> or <code>pyproject.toml</code> file</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.conda_channels</code></strong> (<em>[string]</em>)</p>
+<ul>
+<li class="">If conda is used, then this is the list of conda channels to use when installing Python packages.</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.conda_full_env_update</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">Enables update of conda environment (Conda environment does not update by default as it might break)</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.conda_env_as_base_docker</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">Uses conda environment for execution (like a docker)</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.use_conda_base_env</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">When set to <code>True</code>, installation will be performed into the base Conda environment. Use in <a class="" href="/docs/clearml_agent/clearml_agent_execution_env#docker-mode">Docker mode</a>.</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.extra_index_url</code></strong> (<em>[string]</em>)</p>
+<ul>
+<li class="">A list of URLs for additional artifact repositories when installing Python packages.</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.extra_pip_install_flags</code></strong> (<em>[string]</em>)</p>
+<ul>
+<li class="">A list of additional flags to use when the agent install packages. For example: <code>[&quot;--use-deprecated=legacy-resolver&quot;, ]</code></li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.force_upgrade</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>Indicates whether to force an upgrade of Python packages.</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Force</li>
+<li class=""><code>false</code> - Do not force</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.pip_version</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">The <code>pip</code> version to use. For example, <code>&quot;&lt;20&quot;</code>, <code>&quot;==19.3.1&quot;</code>, <code>&quot;&quot;</code> (empty string will install the latest version).</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.poetry_version</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">The <code>poetry</code> version to use. For example, <code>&quot;&lt;2&quot;</code>, <code>&quot;==1.1.1&quot;</code>, <code>&quot;&quot;</code> (empty string will install the latest version).</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.poetry_install_extra_args</code></strong> (<em>list</em>)</p>
+<ul>
+<li class="">List extra command-line arguments to pass when using <code>poetry</code></li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.post_optional_packages</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">A list of optional packages that will be installed after the required packages. If the installation of an optional post
+package fails, the package is ignored, and the virtual environment process continues.</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.post_packages</code></strong> (<em>[string]</em>)</p>
+<ul>
+<li class="">A list of packages that will be installed after the required packages.</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.priority_optional_packages</code></strong> (<em>[string]</em>)</p>
+<ul>
+<li class="">A list of optional priority packages to be installed before the rest of the required packages, but in case a
+package installation fails, the package will be ignored, and the virtual environment process will continue.</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.priority_packages</code></strong> (<em>[string]</em>)</p>
+<ul>
+<li class="">A list of packages with priority to be installed before the rest of the required packages. For example: <code>[&quot;cython&quot;, &quot;numpy&quot;, &quot;setuptools&quot;, ]</code></li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.pytorch_resolve</code></strong> (<em>str</em>)</p>
+<ul>
+<li class="">Set the PyTorch resolving mode. The options are:
+<ul>
+<li class=""><code>pip</code> (default) - Sets extra index based on cuda and lets pip resolve</li>
+<li class=""><code>none</code> - No resolving. Install PyTorch like any other package</li>
+<li class=""><code>direct</code> - Resolve a direct link to the PyTorch wheel by parsing the pytorch.org pip repository and matching the
+automatically detected cuda version with the required PyTorch wheel. If the exact cuda version is not found for the
+required PyTorch wheel, it will try a lower cuda version until a match is found</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><a id="system_site_packages" class="anchorTargetHideOnScrollNavbar_vjPI"></a></p>
+<p><strong><code>agent.package_manager.system_site_packages</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>Indicates whether Python packages for virtual environments are inherited from the system when building a virtual environment
+for a task.</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Inherit</li>
+<li class=""><code>false</code> - Do not inherit (load Python packages)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.torch_nightly</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>Indicates whether to support installing PyTorch Nightly builds.</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - If a stable <code>torch</code> wheel is not found, install the nightly build.</li>
+<li class=""><code>false</code> - Do not install.</li>
+</ul>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Torch Nightly builds are ephemeral and are deleted from time to time.</p></div></div>
+<hr>
+<p><strong><code>agent.package_manager.type</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">
+<p>Indicates the type of Python package manager to use.</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>pip</code></li>
+<li class=""><code>conda</code></li>
+<li class=""><code>poetry</code></li>
+<li class=""><code>uv</code></li>
+</ul>
+</li>
+<li class="">
+<p>If <code>pip</code> or <code>conda</code> are used, the agent installs the required packages based on the &quot;Python Packages&quot; section of the
+Task. If the &quot;Python Packages&quot; section is empty, it will revert to using <code>requirements.txt</code> from the repository&#x27;s root
+directory.</p>
+</li>
+<li class="">
+<p>If <code>poetry</code> is selected, and the root repository contains <code>poetry.lock</code> or <code>pyproject.toml</code>, the &quot;Python
+Packages&quot; section is ignored, and <code>poetry</code> is used. If <code>poetry</code> is selected and no lock file is found, it reverts to
+<code>pip</code> package manager behaviour.</p>
+</li>
+<li class="">
+<p>If <code>uv</code> is selected, and the root repository contains <code>uv.lock</code> or <code>pyproject.toml</code>, the &quot;Python
+Packages&quot; section is ignored, and <code>uv</code> is used. If <code>uv</code> is selected and no lock file is found, it reverts to
+<code>pip</code> package manager behaviour.</p>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.uv_files_from_repo_working_dir</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">If set to <code>true</code>, the agent will look for the <code>uv.lock</code> or <code>pyproject.toml</code> file in the provided directory path instead of
+the repository&#x27;s root directory.</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.uv_sync_extra_args</code></strong> (<em>list</em>)</p>
+<ul>
+<li class="">List extra command-line arguments to pass when using <code>uv</code>.</li>
+</ul>
+<hr>
+<p><strong><code>agent.package_manager.uv_version</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">The <code>uv</code> version requirements. For example, <code>&quot;&gt;0.4&quot;</code>, <code>&quot;==0.4&quot;</code>, <code>&quot;&quot;</code> (empty string will install the latest version).</li>
+</ul>
+<br>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="agentpip_download_cache">agent.pip_download_cache<a href="#agentpip_download_cache" class="hash-link" aria-label="Direct link to agent.pip_download_cache" title="Direct link to agent.pip_download_cache" translate="no">​</a></h4>
+<p><strong><code>agent.pip_download_cache</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary containing pip download cache options.</li>
+</ul>
+<hr>
+<p><strong><code>agent.pip_download_cache.enabled</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>Indicates whether to use a specific cache folder for Python package downloads.</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Use a specific folder which is specified in the option <code>agent.pip_download_cache.path</code></li>
+<li class=""><code>false</code> - Do not use a specific folder.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.pip_download_cache.path</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">If <code>agent.pip_download_cache.enabled</code> is <code>true</code>, then this specifies the cache folder.</li>
+</ul>
+<br>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="agentvcs_cache">agent.vcs_cache<a href="#agentvcs_cache" class="hash-link" aria-label="Direct link to agent.vcs_cache" title="Direct link to agent.vcs_cache" translate="no">​</a></h4>
+<p><strong><code>agent.vcs_cache</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary containing version control system clone cache folder.</li>
+</ul>
+<hr>
+<p><strong><code>agent.vcs_cache.enabled</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>Indicates whether the version control system cache is used.</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Use cache</li>
+<li class=""><code>false</code> - Do not use cache</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>agent.vcs_cache.path</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">The version control system cache clone folder when executing tasks.</li>
+</ul>
+<br>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="agentvenvs_cache">agent.venvs_cache<a href="#agentvenvs_cache" class="hash-link" aria-label="Direct link to agent.venvs_cache" title="Direct link to agent.venvs_cache" translate="no">​</a></h4>
+<p><strong><code>agent.venvs_cache</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary containing virtual environment cache options.</li>
+</ul>
+<hr>
+<p><strong><code>agent.venvs_cache.free_space_threshold_gb</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">Minimum required free space to allow for cache entry.</li>
+<li class="">Disable minimum by passing 0 or negative value.</li>
+</ul>
+<hr>
+<p><strong><code>agent.venvs_cache.max_entries</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">Maximum number of cached virtual environments.</li>
+</ul>
+<hr>
+<p><strong><code>agent.venvs_cache.path</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">Folder of the virtual environment cache.</li>
+<li class="">Uncomment to enable virtual environment caching.</li>
+</ul>
+<br>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="agentvenv_update">agent.venv_update<a href="#agentvenv_update" class="hash-link" aria-label="Direct link to agent.venv_update" title="Direct link to agent.venv_update" translate="no">​</a></h4>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>This option is deprecated. Use <code>venvs_cache</code> and set <code>venvs_cache.path</code> instead.</p></div></div>
+<p><strong><code>agent.venv_update</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary containing virtual environment update options.</li>
+</ul>
+<hr>
+<p><strong><code>agent.venv_update.enabled</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>Indicates whether to use accelerated Python virtual environment building (this is a beta feature).</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Accelerate</li>
+<li class=""><code>false</code> - Do not accelerate (default value)</li>
+</ul>
+</li>
+</ul>
+<p><a class="tr_top_negative" name="api"></a></p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="api-section">api section<a href="#api-section" class="hash-link" aria-label="Direct link to api section" title="Direct link to api section" translate="no">​</a></h3>
+<p><strong><code>api</code></strong> (<em>dict</em>)</p>
+<p>Dictionary of configuration options for the ClearML Server API, web, and file servers and credentials.</p>
+<hr>
+<p><strong><code>api.api_server</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">The URL of your ClearML API server. For example, <code>https://api.MyDomain.com</code>.</li>
+</ul>
+<hr>
+<p><strong><code>api.web_server</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">The URL of your ClearML web server. For example, <code>https://app.MyDomain.com</code>.</li>
+</ul>
+<hr>
+<p><strong><code>api.files_server</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">The URL of your ClearML file server. For example, <code>https://files.MyDomain.com</code>.</li>
+</ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>You must use a secure protocol with <code>api.web_server</code>, <code>api.files_server</code>, and <code>api.api_server</code>. Use <code>https</code>, not <code>http</code>.</p></div></div>
+<hr>
+<p><strong><code>api.http.default_method</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">Set the request method for all API requests and auth login. This can be useful when <code>GET</code> requests with payloads are
+blocked by a server, and <code>POST</code> requests can be used instead. The request options are: &quot;GET&quot;, &quot;POST&quot;, &quot;PUT&quot;.</li>
+</ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>This configuration option is experimental, and has not been vigorously tested, so it may have unintended consequences.</p></div></div>
+<br>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="apicredentials">api.credentials<a href="#apicredentials" class="hash-link" aria-label="Direct link to api.credentials" title="Direct link to api.credentials" translate="no">​</a></h4>
+<p><strong><code>api.credentials</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">
+<p>Dictionary of API credentials.
+Alternatively, specify the environment variable <code>CLEARML_API_ACCESS_KEY</code> / <code>CLEARML_API_SECRET_KEY</code> to override these keys.</p>
+</li>
+</ul>
+<hr>
+<p><strong><code>api.credentials.access_key</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">Your ClearML access key.</li>
+</ul>
+<hr>
+<p><strong><code>api.credentials.secret_key</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">Your ClearML credentials.</li>
+</ul>
+<hr>
+<p><strong><code>api.verify_certificate</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>Indicates whether to verify the host SSL certificate.</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Verify</li>
+<li class=""><code>false</code> - Do not verify.</li>
+<li class=""><code>path/to/certificate</code> - The certificate file to use for verification.</li>
+</ul>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>Set to False only if required.</p></div></div>
+<p><a class="tr_top_negative" name="sdk"></a></p>
+<br>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdk-section">sdk section<a href="#sdk-section" class="hash-link" aria-label="Direct link to sdk section" title="Direct link to sdk section" translate="no">​</a></h3>
+<p><strong><code>sdk</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary that contains configuration options for the ClearML Python Package and related options, including storage,
+metrics, network, AWS S3 buckets and credentials, Google Cloud Storage, Azure Storage, log, and development.</li>
+</ul>
+<br>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdkaws">sdk.aws<a href="#sdkaws" class="hash-link" aria-label="Direct link to sdk.aws" title="Direct link to sdk.aws" translate="no">​</a></h4>
+<p><strong><code>sdk.aws</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">
+<p>Dictionary with AWS storage options. Parameters include:</p>
+<ul>
+<li class="">
+<p><strong><code>sdk.aws.boto3</code></strong> (<em>dict</em>) - Boto3-specific AWS storage options:</p>
+<ul>
+<li class=""><code>max_multipart_concurrency</code> (<em>integer</em>) - Maximum number of threads making requests for a transfer.</li>
+<li class=""><code>multipart_threshold</code> (<em>integer</em>) - Transfer size threshold (in bytes). For transfers above this threshold,
+Boto3 will automatically use multipart uploads/downloads/copies.</li>
+<li class=""><code>multipart_chunksize</code> (<em>integer</em>) - Size of each part in a multipart transfer (in bytes).</li>
+<li class=""><code>pool_connections</code> (<em>integer</em>) - Maximum number of Boto3 pool connections.</li>
+<li class=""><code>connect_timeout</code> (<em>float</em> or <em>integer</em>) - Time till a timeout exception is thrown when attempting to make a
+connection (in seconds). Default is 60 seconds.</li>
+<li class=""><code>signature_version</code> (<em>string</em>) - AWS Signature version to use when signing requests.</li>
+<li class=""><code>read_timeout</code> (<em>float</em> / <em>integer</em>) - Time till a timeout exception is thrown when attempting to read from a
+connection (in seconds). The default is 60 seconds.</li>
+</ul>
+</li>
+<li class="">
+<p><strong><code>sdk.aws.s3</code></strong> (<em>dict</em>) - AWS S3 options:</p>
+<ul>
+<li class=""><code>credentials</code> (<em>[dict]</em>) - List of dictionaries specifying credentials for individual S3 buckets or hosts.See more information <a href="#sdkawss3credentials" class="">below</a>.</li>
+<li class=""><code>key</code> (<em>string</em>) - Default access key for buckets not specified in <code>sdk.aws.s3.credentials</code>.</li>
+<li class=""><code>secret</code> (<em>string</em>) - Default secret access key for buckets not specified in <code>sdk.aws.s3.credentials</code>.</li>
+<li class=""><code>profile</code> (<em>string</em>) -  Default AWS profile for buckets not specified in <code>sdk.aws.s3.credentials</code>.</li>
+<li class=""><code>region</code> (<em>string</em>) - Default region for buckets not specified in <code>sdk.aws.s3.credentials</code>.</li>
+<li class=""><code>extra_args</code> (<em>dict</em>) - Additional <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html#the-extraargs-parameter" target="_blank" rel="noopener noreferrer" class="">ExtraArgs</a>
+passed to Boto3 when uploading files. Can be set per bucket under <code>sdk.aws.s3.credentials</code>.</li>
+<li class=""><code>use_credentials_chain</code> (<em>bool</em>) - Set to <code>true</code> to let Boto3 automatically locate credentials via environment
+variables, credential files, or IAM role metadata instead of using explicit parameters (key and secret). See <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials" target="_blank" rel="noopener noreferrer" class="">Boto3 documentation</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdkawss3credentials">sdk.aws.s3.credentials<a href="#sdkawss3credentials" class="hash-link" aria-label="Direct link to sdk.aws.s3.credentials" title="Direct link to sdk.aws.s3.credentials" translate="no">​</a></h5>
+<p><strong><code>sdk.aws.s3.credentials</code></strong> (<em>[dict]</em>)</p>
+<ul>
+<li class="">
+<p>List of dictionaries containing credentials for individual S3 buckets or hosts for individual buckets. Each dictionary
+can override the default credentials for a specific bucket or host. Each dictionary can contain the following options:</p>
+<ul>
+<li class=""><code>bucket</code> (<em>string</em>) - Bucket name. See the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html" target="_blank" rel="noopener noreferrer" class="">AWS documentation</a> for bucket naming restrictions.</li>
+<li class=""><code>host</code> (<em>string</em>) - Optional host URL (and optionally port). When set, these credentials apply to any bucket on the host</li>
+<li class=""><code>key</code> (<em>string</em>):
+<ul>
+<li class="">If <code>bucket</code> is specified, the key applies only to that bucket.</li>
+<li class="">If <code>host</code> is specified, the key applies to all buckets on that host.</li>
+</ul>
+</li>
+<li class=""><code>secret</code> (<em>bool</em>):
+<ul>
+<li class="">If <code>bucket</code> is specified, the secret applies only to that bucket.</li>
+<li class="">If <code>host</code> is specified, the secret applies to all buckets on that host.</li>
+</ul>
+</li>
+<li class=""><code>multipart</code> (<em>bool</em>) - Whether to enable multipart uploads.
+<ul>
+<li class=""><code>true</code> - Enabled</li>
+<li class=""><code>false</code> - Disabled</li>
+</ul>
+</li>
+<li class=""><code>secure</code> (<em>string</em>) - Whether the host is secure.
+<ul>
+<li class=""><code>true</code> - Secure</li>
+<li class=""><code>false</code> - Not secure</li>
+</ul>
+</li>
+<li class=""><code>verify</code> (<em>string</em> / <em>bool</em>) - Whether to verify SSL certificates:
+<ul>
+<li class=""><code>true</code> (default) - Verify</li>
+<li class=""><code>false</code> - Skip SSL verification</li>
+<li class="">Provide a path/URL to a CA bundle.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<p>Other keys from <code>sdk.aws.s3</code> such as <code>region</code>, <code>profile</code>, and <code>extra_args</code> are also available per bucket/host and behave
+the same as the defaults under <code>sdk.aws.s3</code>.</p>
+</li>
+</ul>
+<br>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdkazurestorage">sdk.azure.storage<a href="#sdkazurestorage" class="hash-link" aria-label="Direct link to sdk.azure.storage" title="Direct link to sdk.azure.storage" translate="no">​</a></h4>
+<p><strong><code>sdk.azure.storage.containers</code></strong> (<em>[dict]</em>)</p>
+<ul>
+<li class="">List of dictionaries, each dictionary contains credentials for an Azure Storage container.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.azure.storage.containers.account_key</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">For Azure Storage, this is the credentials key.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.azure.storage.containers.account_name</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">For Azure Storage, this is the account name.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.azure.storage.containers.container_name</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">For Azure Storage, this is the container name.</li>
+</ul>
+<br>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdkdataset">sdk.dataset<a href="#sdkdataset" class="hash-link" aria-label="Direct link to sdk.dataset" title="Direct link to sdk.dataset" translate="no">​</a></h4>
+<p><strong><code>sdk.dataset.preview</code></strong> (<em>[dict]</em>)</p>
+<ul>
+<li class="">Set limits for the objects that are logged as dataset previews:
+<ul>
+<li class=""><strong><code>sdk.dataset.preview.media</code></strong> (<em>dict</em>) - Set limits for media files that are logged as dataset previews. Available
+options:
+<ul>
+<li class=""><strong><code>sdk.dataset.preview.media.max_file_size</code></strong> (<em>int</em>) - Maximum file size in bytes of a preview object (e.g. image,
+video, html, etc.). Files exceeding this size will not be reported as previews.</li>
+<li class=""><strong><code>sdk.dataset.preview.media.image_count</code></strong> (<em>int</em>) - The maximum number of image files reported as previews</li>
+<li class=""><strong><code>sdk.dataset.preview.media.video_count</code></strong> (<em>int</em>) - The maximum number of video files reported as previews</li>
+<li class=""><strong><code>sdk.dataset.preview.media.audio_count</code></strong> (<em>int</em>) - The maximum number of image files reported as previews</li>
+<li class=""><strong><code>sdk.dataset.preview.media.html_count</code></strong> (<em>int</em>) - The maximum number of html files reported as previews</li>
+<li class=""><strong><code>sdk.dataset.preview.media.json_count</code></strong> (<em>int</em>) - The maximum number of json files reported as previews</li>
+</ul>
+</li>
+<li class=""><strong><code>sdk.dataset.preview.tabular</code></strong> (<em>dict</em>) - Set limits for tabular files that are logged as dataset previews. Available
+options:
+<ul>
+<li class=""><strong><code>sdk.dataset.preview.tabular.row_count</code></strong> (<em>int</em>) - The maximum number of rows for each tabular file reported as a preview. By default, it will report only the first 10 rows from a file</li>
+<li class=""><strong><code>sdk.dataset.preview.tabular.table_count</code></strong> (<em>int</em>) - The maximum number of tables reported as preview in a dataset</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdkdevelopment">sdk.development<a href="#sdkdevelopment" class="hash-link" aria-label="Direct link to sdk.development" title="Direct link to sdk.development" translate="no">​</a></h4>
+<p><strong><code>sdk.development</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary of development mode options.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.artifacts</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Control default behavior when logging task artifacts:
+<ul>
+<li class=""><strong><code>sdk.development.artifacts.default_pandas_dataframe_extension_name</code></strong> (<em>str</em>)
+<ul>
+<li class="">Set the default <code>extension_name</code> for pandas <code>DataFrame</code> objects</li>
+<li class="">Valid values are: <code>.csv.gz</code>, <code>.parquet</code>, <code>.feather</code>, <code>.pickle</code></li>
+<li class="">This value can be overridden by the <code>extension_name</code> argument supplied to <code>Task.upload_artifact()</code></li>
+</ul>
+</li>
+<li class=""><strong><code>sdk.development.artifacts.auto_pickle</code></strong> (<em>bool</em>)
+<ul>
+<li class="">If <code>true</code> and the artifact is not of a specific type (<code>pathlib2.Path</code>, <code>dict</code>, <code>pandas.DataFrame</code>, <code>numpy.ndarray</code>,
+<code>PIL.Image</code>, url string, <code>local_file</code> string), the artifact will be
+pickled and uploaded as a pickle file artifact (with the <code>.pkl</code> file extension).</li>
+<li class="">If <code>false</code>, the auto-pickle behavior is disabled in the artifact upload</li>
+<li class="">This value can be overridden by the <code>auto_pickle</code> argument supplied to <code>Task.upload_artifact()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.default_output_uri</code></strong> (<em>string</em>) <a class="anchorTargetHideOnScrollNavbar_vjPI tr_top_negative" id="config_default_output_uri"></a></p>
+<ul>
+<li class="">The default output destination for model checkpoints (snapshots) and artifacts. If the <code>output_uri</code> parameter is not provided
+when calling <a class="" href="/docs/references/sdk/task#taskinit"><code>Task.init()</code></a>, then use the destination in <code>default_output_uri</code>.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.detailed_import_report</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">If <code>true</code> (default is <code>false</code>), provide a detailed report of all Python package imports as comments inside the &quot;Python Packages&quot; section.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.detect_with_conda_freeze</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">If <code>true</code> (default is <code>false</code>), instead of analyzing the code with Pigar, analyze with <code>conda freeze</code></li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.detect_with_pip_freeze</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">If <code>true</code> (default is <code>false</code>), instead of analyzing the code with Pigar, analyze with <code>pip freeze</code></li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.force_analyze_entire_repo</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">Default auto-generated requirements optimize for smaller requirements.</li>
+<li class="">The values are:
+<ul>
+<li class=""><code>true</code> - Analyze the entire repository regardless of the entry point.</li>
+<li class=""><code>false</code>- First analyze the entry point script, if it does not contain other local files, do not analyze the entire repository.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><a id="log_env_var" class="anchorTargetHideOnScrollNavbar_vjPI"></a></p>
+<p><strong><code>sdk.development.log_os_environments</code></strong> (<em>[string]</em>)</p>
+<ul>
+<li class="">
+<p>Log specific environment variables. OS environments are listed in the UI, under a task&#x27;s<br>
+<strong>CONFIGURATION &gt; HYPERPARAMETERS &gt; Environment</strong> section.
+Multiple selected variables are supported including the suffix <code>*</code>. For example: <code>&quot;AWS_*&quot;</code> will log any OS environment
+variable starting with <code>&quot;AWS_&quot;</code>. Example: <code>log_os_environments: [&quot;AWS_*&quot;, &quot;CUDA_VERSION&quot;]</code></p>
+</li>
+<li class="">
+<p>This value can be overwritten with OS environment variable <code>CLEARML_LOG_ENVIRONMENT=AWS_*,CUDA_VERSION</code>.</p>
+</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.store_uncommitted_code_diff</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>For development mode, indicates whether to store the uncommitted <code>git diff</code> or <code>hg diff</code> in the task manifest.</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Store the <code>diff</code> in the <code>script.requirements.diff</code> section</li>
+<li class=""><code>false</code> - Do not store the diff.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.suppress_update_message</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>If <code>true</code> (default <code>false</code>), <em>clearml</em> update messages will not be printed to the console.</p>
+</li>
+<li class="">
+<p>This value can be overwritten with OS environment variable <code>CLEARML_SUPPRESS_UPDATE_MESSAGE=1</code></p>
+</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.support_stopping</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>For development mode, indicates whether to allow stopping a task if the task was aborted externally, its status was changed, or it was reset.</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Allow</li>
+<li class=""><code>false</code> - Do not allow</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><a id="task_reuse" class="anchorTargetHideOnScrollNavbar_vjPI"></a></p>
+<p><strong><code>sdk.development.task_reuse_time_window_in_hours</code></strong> (<em>float</em>)</p>
+<ul>
+<li class="">For development mode, the number of hours after which a task with the same project name and task name is reused.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.vcs_repo_detect_async</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>For development mode, indicates whether to run version control repository detection asynchronously.</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Run asynchronously</li>
+<li class=""><code>false</code> - Do not run asynchronously</li>
+</ul>
+</li>
+</ul>
+<br>
+<h5 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdkdevelopmentworker">sdk.development.worker<a href="#sdkdevelopmentworker" class="hash-link" aria-label="Direct link to sdk.development.worker" title="Direct link to sdk.development.worker" translate="no">​</a></h5>
+<p><strong><code>sdk.development.worker</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary of development mode options for workers.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.worker.log_stdout</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>For development mode workers, indicates whether all stdout and stderr messages are logged.</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Log all</li>
+<li class=""><code>false</code> - Do not log all</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.worker.max_wait_for_first_iteration_to_start_sec</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">Maximum time (in seconds) for allowing the resource monitoring to switch back to reporting iterations as the x-axis
+after initially starting to report &quot;seconds from start.&quot; If the specified time limit is exceeded, the resource monitoring
+will continue reporting using &quot;seconds from start&quot; as the x-axis.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.worker.ping_period_sec</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">For development mode workers, the interval in seconds for a worker to ping the server testing connectivity.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.worker.report_event_flush_threshold</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">The number of events that trigger a report</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.worker.report_global_mem_used</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>Compatibility feature to report memory usage for the entire machine</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Report memory usage for the entire machine</li>
+<li class=""><code>false</code> (default) - Report memory usage only on the running process and its sub-processes</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.worker.report_period_sec</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">For development mode workers, the interval in seconds for a development mode ClearML worker to report.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.worker.report_start_sec</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">The number of seconds after which the development mode worker starts resource reporting.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.development.worker.wait_for_first_iteration_to_start_sec</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">Controls how long (in seconds) to wait for iteration reporting to be used as x-axis for resource monitoring. If iteration
+reporting is unavailable once time is exceeded, &quot;seconds from start&quot; will be used for the x-axis.</li>
+</ul>
+<br>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdkgooglestorage">sdk.google.storage<a href="#sdkgooglestorage" class="hash-link" aria-label="Direct link to sdk.google.storage" title="Direct link to sdk.google.storage" translate="no">​</a></h4>
+<p><strong><code>sdk.google.storage</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary of Google Cloud Storage credentials.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.google.storage.project</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">For Google Cloud Storage, the name of project.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.google.storage.credentials_json</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">For Google Cloud Storage, the file path for the default Google storage credentials JSON file.</li>
+</ul>
+<br>
+<h5 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdkgooglestoragecredentials">sdk.google.storage.credentials<a href="#sdkgooglestoragecredentials" class="hash-link" aria-label="Direct link to sdk.google.storage.credentials" title="Direct link to sdk.google.storage.credentials" translate="no">​</a></h5>
+<p><strong><code>sdk.google.storage.credentials</code></strong> (<em>[dict]</em>)</p>
+<ul>
+<li class="">A list of dictionaries, with specific credentials per bucket and subdirectory</li>
+</ul>
+<hr>
+<p><strong><code>sdk.google.storage.credentials.bucket</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">For Google Cloud Storage, if specifying credentials by the individual bucket, the name of the bucket.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.google.storage.credentials.credentials_json</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">For Google Cloud Storage, if specifying credentials by the individual bucket, the file path for the default Google storage credentials JSON file.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.google.storage.credentials.project</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">For Google Cloud Storage, if specifying credentials by the individual bucket, the name of the project.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.google.storage.credentials.subdir</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">For Google Cloud Storage, if specifying credentials by the individual bucket, a subdirectory within the bucket.</li>
+</ul>
+<br>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdklog">sdk.log<a href="#sdklog" class="hash-link" aria-label="Direct link to sdk.log" title="Direct link to sdk.log" translate="no">​</a></h4>
+<p><strong><code>sdk.log</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary of log options.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.log.disable_urllib3_info</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>Indicates whether to disable <code>urllib3</code> info messages.</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Disable</li>
+<li class=""><code>false</code> - Do not disable</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>sdk.log.null_log_propagate</code></strong> (<em>bool</em>)</p>
+<ul>
+<li class="">
+<p>As debugging feature, indicates whether to allow null log messages to propagate to the root logger (so they appear as stdout).</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Allow</li>
+<li class=""><code>false</code> - Do not allow</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong><code>sdk.log.task_log_buffer_capacity</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">The maximum capacity of the log buffer.</li>
+</ul>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdkmetrics">sdk.metrics<a href="#sdkmetrics" class="hash-link" aria-label="Direct link to sdk.metrics" title="Direct link to sdk.metrics" translate="no">​</a></h4>
+<p><strong><code>sdk.metrics</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary of metrics options.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.metrics.file_history_size</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">The history size for debug files per metric / variant combination</li>
+<li class="">Each metric / variant combination, <code>file_history_size</code> indicates the number of files stored in the upload destination</li>
+<li class="">Files are recycled so that <code>file_history_size</code> is the maximum number of files at any time.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.metrics.matplotlib_untitled_history_size</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">The maximum history size for <code>matplotlib</code> <code>imshow</code> files per plot title.</li>
+<li class="">File names for the uploaded images are recycled so that the number of images stored in the upload destination for each matplotlib plot title
+will not exceed the value of <code>matplotlib_untitled_history_size</code></li>
+</ul>
+<hr>
+<p><strong><code>sdk.metrics.plot_max_num_digits</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">The maximum number of digits after the decimal point in plot reporting. This can reduce the report size.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.metrics.tensorboard_single_series_per_graph</code></strong> (<em>bool</em>)</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>This option is deprecated. This plot behavior is now controlled via the UI</p></div></div>
+<ul>
+<li class="">
+<p>Indicates whether plots appear using TensorBoard behavior where each series is plotted in its own graph (plot-per-graph).</p>
+<p>The values are:</p>
+<ul>
+<li class=""><code>true</code> - Support TensorBoard behavior</li>
+<li class=""><code>false</code> - Do not</li>
+</ul>
+</li>
+</ul>
+<br>
+<h5 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdkmetricsimages">sdk.metrics.images<a href="#sdkmetricsimages" class="hash-link" aria-label="Direct link to sdk.metrics.images" title="Direct link to sdk.metrics.images" translate="no">​</a></h5>
+<p><strong><code>sdk.metrics.images</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary of metrics images options.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.metrics.images.format</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">The image file format for generated debug images (such as &quot;JPEG&quot;).</li>
+</ul>
+<hr>
+<p><strong><code>sdk.metrics.images.quality</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">The image quality for generated debug images.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.metrics.images.subsampling</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">The image subsampling for generated debug images.</li>
+</ul>
+<br>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdknetwork">sdk.network<a href="#sdknetwork" class="hash-link" aria-label="Direct link to sdk.network" title="Direct link to sdk.network" translate="no">​</a></h4>
+<p><strong><code>sdk.network.file_upload_retries</code></strong> (<em>int</em>)</p>
+<ul>
+<li class="">Number of retries before failing to upload a file</li>
+</ul>
+<hr>
+<p><strong><code>sdk.network.iteration</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary of network iteration options.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.network.iteration.max_retries_on_server_error</code></strong>` (<em>integer</em>)</p>
+<ul>
+<li class="">For retries when getting frames from the server, if the server returned an error (http code 500), then this is the maximum number of retries.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.network.iteration.retry_backoff_factor_sec</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">For retries when getting frames from the server, this is backoff factor for consecutive retry attempts. This is used to
+determine the number of seconds between retries. The retry backoff factor is calculated as <code>{backoff factor} * (2 ^ ({number of total retries} - 1))</code>.</li>
+</ul>
+<br>
+<h5 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdknetworkmetrics">sdk.network.metrics<a href="#sdknetworkmetrics" class="hash-link" aria-label="Direct link to sdk.network.metrics" title="Direct link to sdk.network.metrics" translate="no">​</a></h5>
+<p><strong><code>sdk.network.metrics</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary of network metrics options.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.network.metrics.file_upload_starvation_warning_sec</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">The number of seconds before a warning is issued that file-bearing events are sent for upload, but no uploads occur.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.network.metrics.file_upload_threads</code></strong> (<em>integer</em>)</p>
+<ul>
+<li class="">The number of threads allocated to uploading files when transmitting metrics for a specific iteration.</li>
+</ul>
+<br>
+<h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdkstorage">sdk.storage<a href="#sdkstorage" class="hash-link" aria-label="Direct link to sdk.storage" title="Direct link to sdk.storage" translate="no">​</a></h4>
+<p><strong><code>sdk.storage</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary of storage options.</li>
+</ul>
+<br>
+<h5 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdkstoragecache">sdk.storage.cache<a href="#sdkstoragecache" class="hash-link" aria-label="Direct link to sdk.storage.cache" title="Direct link to sdk.storage.cache" translate="no">​</a></h5>
+<p><strong><code>sdk.storage.cache</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary of storage cache options. The keys include:
+<ul>
+<li class=""><code>default_base_dir</code> (<em>str</em>) - The default base directory for caching. The default is the <code>&lt;system_temp_folder&gt;/clearml_cache</code>.</li>
+<li class=""><code>default_cache_manager_size</code> (<em>int</em>) - Maximum number of files in the cache (default 100 files).</li>
+</ul>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-important admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Enterprise features</div><div class="admonitionContent_BuS1"><p>The ClearML Enterprise plan also supports the following configuration options under <code>sdk.storage.cache</code>:</p><ul>
+<li class=""><code>size.max_used_bytes</code> (<em>str</em>) - Maximum size of the local cache directory. If set to <code>-1</code>, the directory can use
+the available disk space. Specified in storage units (for example: <code>1GB</code>, <code>2TB</code>, <code>500MB</code>).</li>
+<li class=""><code>size.min_free_bytes</code> (<em>str</em>) - Minimum amount of free disk space that should be left. If <code>size.max_used_bytes</code> is
+set to <code>-1</code>, this configuration option will limit the cache directory maximum size to <code>free disk space - size.min_free_bytes</code>.
+Specified in storage units (for example: <code>1GB</code>, <code>2TB</code>, <code>500MB</code>).</li>
+<li class=""><code>zero_file_size_check</code> (<em>bool</em>)- If set to <code>True</code>, each cache hit will also check the cached file size, making sure
+it is not zero (default <code>False</code>)</li>
+<li class=""><code>secondary</code> (<em>dict</em>) - Set up a secondary cache (acts as an L2 cache). When a request is made, the primary cache is
+queried first. If the data is not in the primary cache, the secondary cache is queried. In case of a cache
+miss, the data will be pulled to the primary cache, and then copied to the secondary cache. The
+<code>sdk.storage.cache.secondary</code> dictionary supports the same option as the primary cache: <code>default_base_dir</code> (required), <code>size.max_used_bytes</code>,
+<code>size.min_free_bytes</code>, etc. If an option is unspecified, it defaults to the primary cache&#x27;s value.</li>
+</ul></div></div>
+<br>
+<h5 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdkstoragedirect_access">sdk.storage.direct_access<a href="#sdkstoragedirect_access" class="hash-link" aria-label="Direct link to sdk.storage.direct_access" title="Direct link to sdk.storage.direct_access" translate="no">​</a></h5>
+<p><strong><code>sdk.storage.direct_access</code></strong> (<em>dict</em>)</p>
+<ul>
+<li class="">Dictionary of storage direct access options.</li>
+</ul>
+<hr>
+<p><strong><code>sdk.storage.direct_access.url</code></strong> (<em>string</em>)</p>
+<ul>
+<li class="">Specify a list of direct access objects using glob patterns which matches sets of files using wildcards. Direct access
+objects are not downloaded or cached, and any download request will return a direct reference.</li>
+</ul>
+<h5 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdkstoragelog">sdk.storage.log<a href="#sdkstoragelog" class="hash-link" aria-label="Direct link to sdk.storage.log" title="Direct link to sdk.storage.log" translate="no">​</a></h5>
+<p><strong><code>sdk.storage.log.report_download_chunk_size_mb</code></strong> (<em>int</em>)</p>
+<ul>
+<li class="">Specify how often in MB the <code>StorageManager</code> reports its download progress to the console. By default, it reports
+every 5MB</li>
+</ul>
+<hr>
+<p><strong><code>sdk.storage.log.report_upload_chunk_size_mb</code></strong> (<em>int</em>)</p>
+<ul>
+<li class="">Specify how often in MB the <code>StorageManager</code> reports its upload progress to the console. By default, it reports every
+5MB</li>
+</ul>
+<h5 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="sdkstoragepath_substitution">sdk.storage.path_substitution<a href="#sdkstoragepath_substitution" class="hash-link" aria-label="Direct link to sdk.storage.path_substitution" title="Direct link to sdk.storage.path_substitution" translate="no">​</a></h5>
+<p><strong><code>sdk.storage.path_substitution</code></strong> (<em>[dict]</em>)</p>
+<ul>
+<li class="">
+<p>List of dictionaries, where each dictionary contains path substitution mapping. This is useful in
+cases where data was originally logged in one location and later moved, or when different workloads access the data through different mounts.</p>
+</li>
+<li class="">
+<p>Each dictionary contains a <code>registered_prefix</code> and a <code>local_prefix</code>. <code>registered_prefix</code> is the URL prefix logged in ClearML. <code>local_prefix</code> is the URL prefix to be used at runtime instead of the <code>registered_prefix</code> to access the data.</p>
+<p>For example:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">sdk { </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">   storage {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      path_substitution = [</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">         {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">            registered_prefix = &quot;s3://bucket/research&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">            local_prefix = &quot;file:///mnt/shared/bucket/research&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">         },</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">         {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">            registered_prefix = &quot;file:///mnt/shared/folder/&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">            local_prefix = &quot;file:///home/user/shared/folder&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">         }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      ]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">   }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">}</span><br></span></code></pre></div></div>
+</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="environment-section">environment section<a href="#environment-section" class="hash-link" aria-label="Direct link to environment section" title="Direct link to environment section" translate="no">​</a></h3>
+<p><strong><code>environment</code></strong> (<em>dict</em>)</p>
+<p>Dictionary of environment variables and values which are applied to the OS environment as <code>key=value</code> for each key-value
+pair.</p>
+<p>Enable by setting <code>agent.apply_environment</code> OR <code>sdk.apply_environment</code> to <code>true</code>.</p>
+<p>Example:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">environment {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">   key_a: value_a</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">   key_b: value_b</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">}</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="files-section">files section<a href="#files-section" class="hash-link" aria-label="Direct link to files section" title="Direct link to files section" translate="no">​</a></h3>
+<p><strong><code>files</code></strong> (<em>dict</em>)</p>
+<p>The <code>files</code> section allows to define files which will be auto-generated at designated paths with predefined content and
+target format.</p>
+<p>Enable by setting <code>agent.apply_files</code> OR <code>sdk.apply_files</code> to <code>true</code>.</p>
+<p>Define each file&#x27;s contents in a dictionary. Files content options include:</p>
+<ul>
+<li class=""><code>contents</code> - Target file&#x27;s content, typically a string (or any base type int/float/list/dict etc.)</li>
+<li class=""><code>format</code> - Custom format for the contents. Currently supports <code>base64</code> to automatically decode a
+base64-encoded contents string, otherwise ignored</li>
+<li class=""><code>path</code> - Target file&#x27;s path, may include <code>~</code> and inplace env vars</li>
+<li class=""><code>target_format</code> - Format used to encode contents before writing into the target file. Supported values are <code>json</code>, <code>yaml</code>,
+<code>yml</code>, and <code>bytes</code> (in which case the file will be written in binary mode). Default is text mode.</li>
+<li class=""><code>mode</code> - File-system mode (permissions) to apply to the file after its creation. The mode string will be parsed into an integer (for example: <code>&quot;0o777&quot;</code> for <code>-rwxrwxrwx</code>)</li>
+<li class=""><code>overwrite</code> - Overwrite the target file in case it exists. Default is <code>true</code>.</li>
+</ul>
+<p>Example:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">files {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  myfile1 {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    contents: &quot;The quick brown fox jumped over the lazy dog&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    path: &quot;/tmp/fox.txt&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    mode: &quot;0o777&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  myjsonfile {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    contents: {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      some {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        nested {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">           value: [1, 2, 3, 4]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">        }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    path: &quot;/tmp/test.json&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    target_format: json</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  }</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">}</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    # Apply top-level files section from configuration into local file system</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">sdk {</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    </span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">    apply_files: true</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">}</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="configuration-vault">Configuration Vault<a href="#configuration-vault" class="hash-link" aria-label="Direct link to Configuration Vault" title="Direct link to Configuration Vault" translate="no">​</a></h2>
+<div class="theme-admonition theme-admonition-important admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Enterprise Feature</div><div class="admonitionContent_BuS1"><p>Configuration vaults are available under the ClearML Enterprise plan.</p></div></div>
+<p>The ClearML Enterprise Server includes the configuration vault. Users can add configuration sections to the vault and, once
+the vault is enabled, the configurations will be merged into the ClearML and ClearML Agent configurations upon code execution and/or agent launch.</p>
+<p>These configurations override the configurations written in the configuration file.</p>
+<p>See <a class="" href="/docs/webapp/settings/webapp_settings_profile#configuration-vault">configuration vault</a>.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/clearml/clearml-docs/edit/main/docs/configs/clearml_conf.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/configs/configuring_clearml"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Configuring ClearML</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/configs/env_vars"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Environment Variables</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#editing-your-configuration-file" class="table-of-contents__link toc-highlight">Editing Your Configuration File</a></li><li><a href="#environment-variables" class="table-of-contents__link toc-highlight">Environment Variables</a></li><li><a href="#configuration-file-sections" class="table-of-contents__link toc-highlight">Configuration File Sections</a><ul><li><a href="#agent-section" class="table-of-contents__link toc-highlight">agent section</a></li><li><a href="#api-section" class="table-of-contents__link toc-highlight">api section</a></li><li><a href="#sdk-section" class="table-of-contents__link toc-highlight">sdk section</a></li><li><a href="#environment-section" class="table-of-contents__link toc-highlight">environment section</a></li><li><a href="#files-section" class="table-of-contents__link toc-highlight">files section</a></li></ul></li><li><a href="#configuration-vault" class="table-of-contents__link toc-highlight">Configuration Vault</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://joinslack.clear.ml" target="_blank" rel="noopener noreferrer" class="footer__link-item">Slack<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.youtube.com/c/ClearML" target="_blank" rel="noopener noreferrer" class="footer__link-item">YouTube<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://twitter.com/clearmlapp" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/clearml" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/company/clearml" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://clear.ml/blog/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Blog</a></li><li class="footer__item"><a href="https://github.com/clearml/clearml" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 ClearML. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-clearml_serving/clearml_serving_cli" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">ClearML Serving CLI | ClearML</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://clear.ml/img/clearml_docs_meta.png"><meta data-rh="true" name="twitter:image" content="https://clear.ml/img/clearml_docs_meta.png"><meta data-rh="true" property="og:url" content="https://clear.ml/docs/clearml_serving/clearml_serving_cli"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="ClearML Serving CLI | ClearML"><meta data-rh="true" name="description" content="The clearml-serving utility is a CLI tool for model deployment and orchestration."><meta data-rh="true" property="og:description" content="The clearml-serving utility is a CLI tool for model deployment and orchestration."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://clear.ml/docs/clearml_serving/clearml_serving_cli"><link data-rh="true" rel="alternate" href="https://clear.ml/docs/clearml_serving/clearml_serving_cli" hreflang="en"><link data-rh="true" rel="alternate" href="https://clear.ml/docs/clearml_serving/clearml_serving_cli" hreflang="x-default"><link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=none"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","none",{anonymize_ip:!0})</script><link rel="stylesheet" href="/assets/css/styles.6ce7eab9.css">
+<script src="/assets/js/runtime~main.96f68a00.js" defer="defer"></script>
+<script src="/assets/js/main.deaeaca1.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><div class="theme-announcement-bar announcementBar_mb4j" role="banner"><div class="announcementBarPlaceholder_vyr4"></div><div class="content_knG7 announcementBarContent_xLdY">If you ❤️ ️<b>ClearML</b>, ⭐️ us on <a target="_blank" rel="noopener noreferrer" href="https://github.com/clearml/clearml">GitHub</a>!</div><button type="button" aria-label="Close" class="clean-btn close closeButton_CVFx announcementBarClose_gvF7"><svg viewBox="0 0 15 15" width="14" height="14"><g stroke="currentColor" stroke-width="3.1"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg></button></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ navbar--dark"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a href="https://clear.ml/" target="_blank" rel="noopener noreferrer" class="navbar__brand"><div class="navbar__logo"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"> </b></a><a class="navbar__item navbar__link" href="/docs/">Overview</a><a class="navbar__item navbar__link" href="/docs/clearml_sdk/clearml_sdk_setup">Setup</a><a class="navbar__item navbar__link" href="/docs/getting_started/auto_log_exp">Using ClearML</a><div class="navbar__item dropdown dropdown--hoverable"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/fundamentals/projects">Developer Center</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/fundamentals/projects">ClearML Basics</a></li><li><a class="dropdown__link" href="/docs/references/sdk/task">References</a></li><li><a class="dropdown__link" href="/docs/best_practices/data_scientist_best_practices">Best Practices</a></li><li><a class="dropdown__link" href="/docs/guides">Tutorials</a></li><li><a class="dropdown__link" href="/docs/integrations">Code Integrations</a></li><li><a class="dropdown__link" href="/docs/faq">FAQ</a></li><li><a class="dropdown__link" href="/docs/release_notes/clearml_server/open_source/ver_2_4">Release Notes</a></li></ul></div><a class="navbar__item navbar__link" href="/docs/community">Community</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://joinslack.clear.ml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--slack" aria-label="Slack Channel"></a><a href="https://youtube.com/clearml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--youtube" aria-label="YouTube"></a><a href="https://twitter.com/clearmlapp" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--twitter" aria-label="Twitter"></a><a href="https://www.linkedin.com/company/clearml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--linkedin" aria-label="LinkedIn"></a><a href="https://github.com/clearml/clearml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--github" aria-label="GitHub repository"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>ClearML Serving CLI</h1></header><p>The <code>clearml-serving</code> utility is a CLI tool for model deployment and orchestration.</p>
+<p>The following page provides a reference for <code>clearml-serving</code>&#x27;s CLI commands:</p>
+<ul>
+<li class=""><a href="#list" class="">list</a> - List running Serving Services</li>
+<li class=""><a href="#create" class="">create</a> - Create a new Serving Service</li>
+<li class=""><a href="#metrics" class="">metrics</a> - Configure inference metrics Service</li>
+<li class=""><a href="#config" class="">config</a> - Configure a new Serving Service</li>
+<li class=""><a href="#model" class="">model</a> - Configure model endpoints for a running Service</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="global-parameters">Global Parameters<a href="#global-parameters" class="hash-link" aria-label="Direct link to Global Parameters" title="Direct link to Global Parameters" translate="no">​</a></h2>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-serving [-h] [--debug] [--yes] [--id ID] {list,create,metrics,config,model} </span><br></span></code></pre></div></div>
+<div class="tbl-cmd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Description</th><th>Mandatory</th></tr></thead><tbody><tr><td><code>--id</code></td><td>Serving Service (Control plane) Task ID to configure (if not provided, automatically detect the running control plane Task)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--debug</code></td><td>Print debug messages</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--yes</code></td><td>Always answer YES on interactive inputs</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr></tbody></table>
+</div>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Service ID</div><div class="admonitionContent_BuS1"><p>The Serving Service&#x27;s ID (<code>--id</code>) is required to execute the <code>metrics</code>, <code>config</code>, and <code>model</code> commands.</p></div></div>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="list">list<a href="#list" class="hash-link" aria-label="Direct link to list" title="Direct link to list" translate="no">​</a></h2>
+<p>List running Serving Services.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-serving list [-h]</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="create">create<a href="#create" class="hash-link" aria-label="Direct link to create" title="Direct link to create" translate="no">​</a></h2>
+<p>Create a new Serving Service.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-serving create [-h] [--name NAME] [--tags TAGS [TAGS ...]] [--project PROJECT]</span><br></span></code></pre></div></div>
+<p><strong>Parameters</strong></p>
+<div class="tbl-cmd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Description</th><th>Mandatory</th></tr></thead><tbody><tr><td><code>--name</code></td><td>Serving service&#x27;s name. Default: <code>Serving-Service</code></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--project</code></td><td>Serving service&#x27;s project. Default: <code>DevOps</code></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--tags</code></td><td>Serving service&#x27;s user tags. The serving service can be labeled, which can be useful for organizing</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr></tbody></table>
+</div>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="metrics">metrics<a href="#metrics" class="hash-link" aria-label="Direct link to metrics" title="Direct link to metrics" translate="no">​</a></h2>
+<p>Configure inference metrics Service.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-serving metrics [-h] {add,remove,list}</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="add">add<a href="#add" class="hash-link" aria-label="Direct link to add" title="Direct link to add" translate="no">​</a></h3>
+<p>Add/modify metric for a specific endpoint.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-serving metrics add [-h] --endpoint ENDPOINT [--log-freq LOG_FREQ]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                            [--variable-scalar VARIABLE_SCALAR [VARIABLE_SCALAR ...]]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                            [--variable-enum VARIABLE_ENUM [VARIABLE_ENUM ...]]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                            [--variable-value VARIABLE_VALUE [VARIABLE_VALUE ...]]</span><br></span></code></pre></div></div>
+<p><strong>Parameters</strong></p>
+<div class="tbl-cmd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Description</th><th>Mandatory</th></tr></thead><tbody><tr><td><code>--endpoint</code></td><td>Metric endpoint name including version (e.g. <code>&quot;model/1&quot;</code> or a prefix <code>&quot;model/*&quot;</code>). Notice: it will override any previous endpoint logged metrics</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--log-freq</code></td><td>Logging request frequency, between 0.0 to 1.0. Example: 1.0 means all requests are logged, 0.5 means half of the requests are logged if not specified. To use global logging frequency, see <a href="#config" class=""><code>config --metric-log-freq</code></a></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--variable-scalar</code></td><td>Add float (scalar) argument to the metric logger, <code>&lt;name&gt;=&lt;histogram&gt;</code>. Example: with specific buckets: <code>&quot;x1=0,0.2,0.4,0.6,0.8,1&quot;</code> or with min/max/num_buckets <code>&quot;x1=0.0/1.0/5&quot;</code>. Notice: In cases where 1000s of requests per second reach the serving, it makes no sense to display every datapoint. So scalars can be divided in buckets, and for each minute for example. Then it&#x27;s possible to calculate what % of the total traffic fell in bucket 1, bucket 2, bucket 3 etc. The Y axis represents the buckets, color is the value in % of traffic in that bucket, and X is time.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--variable-enum</code></td><td>Add enum (string) argument to the metric logger, <code>&lt;name&gt;=&lt;optional_values&gt;</code>. Example: <code>&quot;detect=cat,dog,sheep&quot;</code></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--variable-value</code></td><td>Add non-samples scalar argument to the metric logger, <code>&lt;name&gt;</code>. Example: <code>&quot;latency&quot;</code></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr></tbody></table>
+</div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="remove">remove<a href="#remove" class="hash-link" aria-label="Direct link to remove" title="Direct link to remove" translate="no">​</a></h3>
+<p>Remove metric from a specific endpoint.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-serving metrics remove [-h] [--endpoint ENDPOINT]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                               [--variable VARIABLE [VARIABLE ...]]</span><br></span></code></pre></div></div>
+<p><strong>Parameters</strong></p>
+<div class="tbl-cmd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Description</th><th>Mandatory</th></tr></thead><tbody><tr><td><code>--endpoint</code></td><td>Metric endpoint name including version (e.g. <code>&quot;model/1&quot;</code> or a prefix <code>&quot;model/*&quot;</code>)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--variable</code></td><td>Remove (scalar/enum) argument from the metric logger, <code>&lt;name&gt;</code> example: <code>&quot;x1&quot;</code></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr></tbody></table>
+</div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="list-1">list<a href="#list-1" class="hash-link" aria-label="Direct link to list" title="Direct link to list" translate="no">​</a></h3>
+<p>List metrics logged on all endpoints.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-serving metrics list [-h]</span><br></span></code></pre></div></div>
+<br>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="config">config<a href="#config" class="hash-link" aria-label="Direct link to config" title="Direct link to config" translate="no">​</a></h2>
+<p>Configure a new Serving Service.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-serving config [-h] [--base-serving-url BASE_SERVING_URL]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                       [--triton-grpc-server TRITON_GRPC_SERVER]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                       [--kafka-metric-server KAFKA_METRIC_SERVER]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                       [--metric-log-freq METRIC_LOG_FREQ]</span><br></span></code></pre></div></div>
+<p><strong>Parameters</strong></p>
+<div class="tbl-cmd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Description</th><th>Mandatory</th></tr></thead><tbody><tr><td><code>--base-serving-url</code></td><td>External base serving service url. Example: <code>http://127.0.0.1:8080/serve</code></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--triton-grpc-server</code></td><td>External ClearML-Triton serving container gRPC address. Example: <code>127.0.0.1:9001</code></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--kafka-metric-server</code></td><td>External Kafka service url. Example: <code>127.0.0.1:9092</code></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--metric-log-freq</code></td><td>Set default metric logging frequency between 0.0 to 1.0. 1.0 means that 100% of all requests are logged</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr></tbody></table>
+</div>
+<br>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="model">model<a href="#model" class="hash-link" aria-label="Direct link to model" title="Direct link to model" translate="no">​</a></h2>
+<p>Configure model endpoints for an already running Service.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-serving model [-h] {list,remove,upload,canary,auto-update,add}</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="list-2">list<a href="#list-2" class="hash-link" aria-label="Direct link to list" title="Direct link to list" translate="no">​</a></h3>
+<p>List current models.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-serving model list [-h]</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="remove-1">remove<a href="#remove-1" class="hash-link" aria-label="Direct link to remove" title="Direct link to remove" translate="no">​</a></h3>
+<p>Remove model by its endpoint name.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-serving model remove [-h] [--endpoint ENDPOINT]</span><br></span></code></pre></div></div>
+<p><strong>Parameter</strong></p>
+<div class="tbl-cmd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Description</th><th>Mandatory</th></tr></thead><tbody><tr><td><code>--endpoint</code></td><td>Model endpoint name</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" class="icon size-md center-md img_ev3q"></td></tr></tbody></table>
+</div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="upload">upload<a href="#upload" class="hash-link" aria-label="Direct link to upload" title="Direct link to upload" translate="no">​</a></h3>
+<p>Upload and register model files/folder.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-serving model upload [-h] --name NAME [--tags TAGS [TAGS ...]] --project PROJECT</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                             [--framework {tensorflow,tensorflowjs,tensorflowlite,pytorch,torchscript,caffe,caffe2,onnx,keras,mknet,cntk,torch,darknet,paddlepaddle,scikitlearn,xgboost,lightgbm,parquet,megengine,catboost,tensorrt,openvino,custom}]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                             [--publish] [--path PATH] [--url URL]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                             [--destination DESTINATION]</span><br></span></code></pre></div></div>
+<p><strong>Parameters</strong></p>
+<div class="tbl-cmd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Description</th><th>Mandatory</th></tr></thead><tbody><tr><td><code>--name</code></td><td>Specifying the model name to be registered in</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--tags</code></td><td>Add tags to the newly created model</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--project</code></td><td>Specify the project for the model to be registered in</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--framework</code></td><td>Specify the model framework. Options are: &#x27;tensorflow&#x27;, &#x27;tensorflowjs&#x27;, &#x27;tensorflowlite&#x27;, &#x27;pytorch&#x27;, &#x27;torchscript&#x27;, &#x27;caffe&#x27;, &#x27;caffe2&#x27;, &#x27;onnx&#x27;, &#x27;keras&#x27;, &#x27;mknet&#x27;, &#x27;cntk&#x27;, &#x27;torch&#x27;, &#x27;darknet&#x27;, &#x27;paddlepaddle&#x27;, &#x27;scikitlearn&#x27;, &#x27;xgboost&#x27;, &#x27;lightgbm&#x27;, &#x27;parquet&#x27;, &#x27;megengine&#x27;, &#x27;catboost&#x27;, &#x27;tensorrt&#x27;, &#x27;openvino&#x27;, &#x27;custom&#x27;</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--publish</code></td><td>Publish the newly created model (change model state to &quot;published&quot; (i.e. locked and ready to deploy)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--path</code></td><td>Specify a model file/folder to be uploaded and registered</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--url</code></td><td>Specify an already uploaded model url (e.g. <code>s3://bucket/model.bin</code>, <code>gs://bucket/model.bin</code>)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--destination</code></td><td>Specify the target destination for the model to be uploaded. For example: <ul><li class="">S3: <code>s3://bucket/folder</code></li><li class="">Non-AWS S3-like services (such as MinIO): <code>s3://host_addr:port/bucket</code>. <strong>Note that port specification is required</strong>.</li><li class="">Google Cloud Storage: <code>gs://bucket-name/folder</code></li><li class="">Azure Storage: <code>azure://&lt;account name&gt;.blob.core.windows.net/path/to/file</code></li></ul></td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr></tbody></table>
+</div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="canary">canary<a href="#canary" class="hash-link" aria-label="Direct link to canary" title="Direct link to canary" translate="no">​</a></h3>
+<p>Add model Canary/A/B endpoint.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-serving model canary [-h] [--endpoint ENDPOINT] [--weights WEIGHTS [WEIGHTS ...]]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                             [--input-endpoints INPUT_ENDPOINTS [INPUT_ENDPOINTS ...]]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                             [--input-endpoint-prefix INPUT_ENDPOINT_PREFIX]</span><br></span></code></pre></div></div>
+<p><strong>Parameters</strong></p>
+<div class="tbl-cmd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Description</th><th>Mandatory</th></tr></thead><tbody><tr><td><code>--endpoint</code></td><td>Model canary serving endpoint name (e.g. <code>my_model/latest</code>)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--weights</code></td><td>Model canary weights (order matching model ep), (e.g. 0.2 0.8)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--input-endpoints</code></td><td>Model endpoint prefixes, can also include version (e.g. <code>my_model</code>, <code>my_model/v1</code>)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--input-endpoint-prefix</code></td><td>Model endpoint prefix, lexicographic order or by version <code>&lt;int&gt;</code> (e.g. <code>my_model/1</code>, <code>my_model/v1</code>), where the first weight matches the last version.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr></tbody></table>
+</div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="auto-update">auto-update<a href="#auto-update" class="hash-link" aria-label="Direct link to auto-update" title="Direct link to auto-update" translate="no">​</a></h3>
+<p>Add/Modify model auto-update service.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-serving model auto-update [-h] [--endpoint ENDPOINT] --engine ENGINE</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                                  [--max-versions MAX_VERSIONS] [--name NAME]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                                  [--tags TAGS [TAGS ...]] [--project PROJECT]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                                  [--published] [--preprocess PREPROCESS]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                                  [--input-size INPUT_SIZE [INPUT_SIZE ...]]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                                  [--input-type INPUT_TYPE] [--input-name INPUT_NAME]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                                  [--output-size OUTPUT_SIZE [OUTPUT_SIZE ...]]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                                  [--output_type OUTPUT_TYPE] [--output-name OUTPUT_NAME]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                                  [--aux-config AUX_CONFIG [AUX_CONFIG ...]]</span><br></span></code></pre></div></div>
+<p><strong>Parameters</strong></p>
+<div class="tbl-cmd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Description</th><th>Mandatory</th></tr></thead><tbody><tr><td><code>--endpoint</code></td><td>Base model endpoint (must be unique)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--engine</code></td><td>Model endpoint serving engine (triton, sklearn, xgboost, lightgbm)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--max-versions</code></td><td>Max versions to store (and create endpoints) for the model. Highest number is the latest version</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--name</code></td><td>Specify model name to be selected and auto-updated (notice regexp selection use <code>&quot;$name^&quot;</code> for exact match)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--tags</code></td><td>Specify tags to be selected and auto-updated</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--project</code></td><td>Specify model project to be selected and auto-updated</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--published</code></td><td>Only select published model for auto-update</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--preprocess</code></td><td>Specify Pre/Post processing code to be used with the model (point to local file / folder) - this should hold for all the models</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--input-size</code></td><td>Specify the model matrix input size [Rows x Columns X Channels etc ...]</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--input-type</code></td><td>Specify the model matrix input type. Examples: uint8, float32, int16, float16 etc.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--input-name</code></td><td>Specify the model layer pushing input into. Example: layer_0</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--output-size</code></td><td>Specify the model matrix output size [Rows x Columns X Channels etc ...]</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--output_type</code></td><td>Specify the model matrix output type. Examples: uint8, float32, int16, float16 etc.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--output-name</code></td><td>Specify the model layer pulling results from. Examples: layer_99</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--aux-config</code></td><td>Specify additional engine specific auxiliary configuration in the form of key=value. Example: <code>platform=onnxruntime_onnx response_cache.enable=true max_batch_size=8</code>. Notice: you can also pass a full configuration file (e.g. Triton &quot;config.pbtxt&quot;)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr></tbody></table>
+</div>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="add-1">add<a href="#add-1" class="hash-link" aria-label="Direct link to add" title="Direct link to add" translate="no">​</a></h3>
+<p>Add/Update model.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-serving model add [-h] --engine ENGINE --endpoint ENDPOINT [--version VERSION]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                          [--model-id MODEL_ID] [--preprocess PREPROCESS]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                          [--input-size INPUT_SIZE [INPUT_SIZE ...]]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                          [--input-type INPUT_TYPE] [--input-name INPUT_NAME]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                          [--output-size OUTPUT_SIZE [OUTPUT_SIZE ...]]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                          [--output-type OUTPUT_TYPE] [--output-name OUTPUT_NAME]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                          [--aux-config AUX_CONFIG [AUX_CONFIG ...]] [--name NAME]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">                          [--tags TAGS [TAGS ...]] [--project PROJECT] [--published]</span><br></span></code></pre></div></div>
+<p><strong>Parameters</strong></p>
+<div class="tbl-cmd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Description</th><th>Mandatory</th></tr></thead><tbody><tr><td><code>--engine</code></td><td>Model endpoint serving engine (triton, sklearn, xgboost, lightgbm)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--endpoint</code></td><td>Base model endpoint (must be unique)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--version</code></td><td>Model endpoint version (default: None)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--model-id</code></td><td>Specify a model ID to be served</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--preprocess</code></td><td>Specify Pre/Post processing code to be used with the model (point to local file / folder) - this should hold for all the models</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--input-size</code></td><td>Specify the model matrix input size [Rows x Columns X Channels etc ...]</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--input-type</code></td><td>Specify the model matrix input type. Examples: uint8, float32, int16, float16 etc.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--input-name</code></td><td>Specify the model layer pushing input into. Example: layer_0</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--output-size</code></td><td>Specify the model matrix output size [Rows x Columns X Channels etc ...]</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--output_type</code></td><td>Specify the model matrix output type. Examples: uint8, float32, int16, float16 etc.</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--output-name</code></td><td>Specify the model layer pulling results from. Examples: layer_99</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--aux-config</code></td><td>Specify additional engine specific auxiliary configuration in the form of key=value. Example: <code>platform=onnxruntime_onnx response_cache.enable=true max_batch_size=8</code>. Notice: you can also pass a full configuration file (e.g. Triton &quot;config.pbtxt&quot;)</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--name</code></td><td>Instead of specifying <code>--model-id</code> select based on model name</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--tags</code></td><td>Specify tags to be selected and auto-updated</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--project</code></td><td>Instead of specifying <code>--model-id</code> select based on model project</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr><tr><td><code>--published</code></td><td>Instead of specifying <code>--model-id</code> select based on model published</td><td><img decoding="async" loading="lazy" src="/docs/latest/icons/ico-optional-no.svg" alt="No" class="icon size-md center-md img_ev3q"></td></tr></tbody></table>
+</div></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/clearml/clearml-docs/edit/main/docs/clearml_serving/clearml_serving_cli.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#global-parameters" class="table-of-contents__link toc-highlight">Global Parameters</a></li><li><a href="#list" class="table-of-contents__link toc-highlight">list</a></li><li><a href="#create" class="table-of-contents__link toc-highlight">create</a></li><li><a href="#metrics" class="table-of-contents__link toc-highlight">metrics</a><ul><li><a href="#add" class="table-of-contents__link toc-highlight">add</a></li><li><a href="#remove" class="table-of-contents__link toc-highlight">remove</a></li><li><a href="#list-1" class="table-of-contents__link toc-highlight">list</a></li></ul></li><li><a href="#config" class="table-of-contents__link toc-highlight">config</a></li><li><a href="#model" class="table-of-contents__link toc-highlight">model</a><ul><li><a href="#list-2" class="table-of-contents__link toc-highlight">list</a></li><li><a href="#remove-1" class="table-of-contents__link toc-highlight">remove</a></li><li><a href="#upload" class="table-of-contents__link toc-highlight">upload</a></li><li><a href="#canary" class="table-of-contents__link toc-highlight">canary</a></li><li><a href="#auto-update" class="table-of-contents__link toc-highlight">auto-update</a></li><li><a href="#add-1" class="table-of-contents__link toc-highlight">add</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://joinslack.clear.ml" target="_blank" rel="noopener noreferrer" class="footer__link-item">Slack<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.youtube.com/c/ClearML" target="_blank" rel="noopener noreferrer" class="footer__link-item">YouTube<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://twitter.com/clearmlapp" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/clearml" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/company/clearml" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://clear.ml/blog/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Blog</a></li><li class="footer__item"><a href="https://github.com/clearml/clearml" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 ClearML. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

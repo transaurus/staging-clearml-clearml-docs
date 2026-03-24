@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_an_mlops_engineer" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">How ClearML is used by an MLOps Engineer | ClearML</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://clear.ml/img/clearml_docs_meta.png"><meta data-rh="true" name="twitter:image" content="https://clear.ml/img/clearml_docs_meta.png"><meta data-rh="true" property="og:url" content="https://clear.ml/docs/getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_an_mlops_engineer"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="How ClearML is used by an MLOps Engineer | ClearML"><meta data-rh="true" name="description" content="An overview of how you can use ClearML as an MLOps Engineer."><meta data-rh="true" property="og:description" content="An overview of how you can use ClearML as an MLOps Engineer."><meta data-rh="true" name="keywords" content="mlops,components,machine learning,mlops engineer"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://clear.ml/docs/getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_an_mlops_engineer"><link data-rh="true" rel="alternate" href="https://clear.ml/docs/getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_an_mlops_engineer" hreflang="en"><link data-rh="true" rel="alternate" href="https://clear.ml/docs/getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_an_mlops_engineer" hreflang="x-default"><link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=none"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","none",{anonymize_ip:!0})</script><link rel="stylesheet" href="/assets/css/styles.6ce7eab9.css">
+<script src="/assets/js/runtime~main.96f68a00.js" defer="defer"></script>
+<script src="/assets/js/main.deaeaca1.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><div class="theme-announcement-bar announcementBar_mb4j" role="banner"><div class="announcementBarPlaceholder_vyr4"></div><div class="content_knG7 announcementBarContent_xLdY">If you ❤️ ️<b>ClearML</b>, ⭐️ us on <a target="_blank" rel="noopener noreferrer" href="https://github.com/clearml/clearml">GitHub</a>!</div><button type="button" aria-label="Close" class="clean-btn close closeButton_CVFx announcementBarClose_gvF7"><svg viewBox="0 0 15 15" width="14" height="14"><g stroke="currentColor" stroke-width="3.1"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg></button></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ navbar--dark"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a href="https://clear.ml/" target="_blank" rel="noopener noreferrer" class="navbar__brand"><div class="navbar__logo"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"> </b></a><a class="navbar__item navbar__link" href="/docs/">Overview</a><a class="navbar__item navbar__link" href="/docs/clearml_sdk/clearml_sdk_setup">Setup</a><a class="navbar__item navbar__link" href="/docs/getting_started/auto_log_exp">Using ClearML</a><div class="navbar__item dropdown dropdown--hoverable"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/fundamentals/projects">Developer Center</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/fundamentals/projects">ClearML Basics</a></li><li><a class="dropdown__link" href="/docs/references/sdk/task">References</a></li><li><a class="dropdown__link" href="/docs/best_practices/data_scientist_best_practices">Best Practices</a></li><li><a class="dropdown__link" href="/docs/guides">Tutorials</a></li><li><a class="dropdown__link" href="/docs/integrations">Code Integrations</a></li><li><a class="dropdown__link" href="/docs/faq">FAQ</a></li><li><a class="dropdown__link" href="/docs/release_notes/clearml_server/open_source/ver_2_4">Release Notes</a></li></ul></div><a class="navbar__item navbar__link" href="/docs/community">Community</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://joinslack.clear.ml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--slack" aria-label="Slack Channel"></a><a href="https://youtube.com/clearml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--youtube" aria-label="YouTube"></a><a href="https://twitter.com/clearmlapp" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--twitter" aria-label="Twitter"></a><a href="https://www.linkedin.com/company/clearml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--linkedin" aria-label="LinkedIn"></a><a href="https://github.com/clearml/clearml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--github" aria-label="GitHub repository"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd sidebarWithHideableNavbar_wUlq"><a href="https://clear.ml/" target="_blank" rel="noopener noreferrer" tabindex="-1" class="sidebarLogo_isFc"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--dark_xIcU"><b> </b></a><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG menuWithAnnouncementBar_GW3s"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/auto_log_exp"><span title="Auto-logging Experiments" class="linkLabel_WmDU">Auto-logging Experiments</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/track_tasks"><span title="Tracking Tasks" class="linkLabel_WmDU">Tracking Tasks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/reproduce_tasks"><span title="Reproducing Task Runs" class="linkLabel_WmDU">Reproducing Task Runs</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/logging_using_artifacts"><span title="Logging and Using Task Artifacts" class="linkLabel_WmDU">Logging and Using Task Artifacts</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/data_management"><span title="Managing Your Data" class="linkLabel_WmDU">Managing Your Data</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/remote_execution"><span title="Remote Execution" class="linkLabel_WmDU">Remote Execution</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/building_pipelines"><span title="Building Pipelines" class="linkLabel_WmDU">Building Pipelines</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/hpo"><span title="Hyperparameter Optimization" class="linkLabel_WmDU">Hyperparameter Optimization</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/clearml_agent_docker_exec"><span title="Building Executable Task Containers" class="linkLabel_WmDU">Building Executable Task Containers</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/clearml_agent_base_docker"><span title="Building Task Execution Environments in a Container" class="linkLabel_WmDU">Building Task Execution Environments in a Container</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/clearml_agent_scheduling"><span title="Managing Agent Work Schedules" class="linkLabel_WmDU">Managing Agent Work Schedules</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/clearml_serving/"><span title="Deploying Model Endpoints" class="categoryLinkLabel_W154">Deploying Model Endpoints</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/apps/clearml_session"><span title="Launching a Remote IDE" class="categoryLinkLabel_W154">Launching a Remote IDE</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/webapp/applications/apps_gradio"><span title="Building Interactive Model Demos" class="categoryLinkLabel_W154">Building Interactive Model Demos</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/task_trigger_schedule"><span title="Scheduling and Triggering Task Execution" class="linkLabel_WmDU">Scheduling and Triggering Task Execution</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/project_progress"><span title="Monitoring Project Progress" class="linkLabel_WmDU">Monitoring Project Progress</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/getting_started/video_tutorials/quick_introduction"><span title="Video Tutorials" class="categoryLinkLabel_W154">Video Tutorials</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting_started/video_tutorials/quick_introduction"><span title="Quick Introduction" class="linkLabel_WmDU">Quick Introduction</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting_started/video_tutorials/core_component_overview"><span title="Core Component Overview" class="linkLabel_WmDU">Core Component Overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting_started/video_tutorials/experiment_manager_hands-on"><span title="Experiment Manager Hands-on" class="linkLabel_WmDU">Experiment Manager Hands-on</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting_started/video_tutorials/experiment_management_best_practices"><span title="Experiment Management Best Practices" class="linkLabel_WmDU">Experiment Management Best Practices</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting_started/video_tutorials/agent_remote_execution_and_automation"><span title="Agent Remote Execution and Automation" class="linkLabel_WmDU">Agent Remote Execution and Automation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting_started/video_tutorials/hyperparameter_optimization"><span title="Hyperparameter Optimization" class="linkLabel_WmDU">Hyperparameter Optimization</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting_started/video_tutorials/pipelines_from_code"><span title="Pipelines from Code" class="linkLabel_WmDU">Pipelines from Code</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting_started/video_tutorials/pipelines_from_tasks"><span title="Pipelines from Tasks" class="linkLabel_WmDU">Pipelines from Tasks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting_started/video_tutorials/clearml-data"><span title="ClearML Data" class="linkLabel_WmDU">ClearML Data</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting_started/video_tutorials/the_clearml_autoscaler"><span title="The ClearML Autoscaler" class="linkLabel_WmDU">The ClearML Autoscaler</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting_started/video_tutorials/hyperdatasets_data_versioning"><span title="Hyper-Datasets Data Versioning" class="linkLabel_WmDU">Hyper-Datasets Data Versioning</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs/getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_a_data_scientist"><span title="Hands-on MLOps Tutorials" class="categoryLinkLabel_W154">Hands-on MLOps Tutorials</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_a_data_scientist"><span title="How ClearML is used by a Data Scientist" class="linkLabel_WmDU">How ClearML is used by a Data Scientist</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_an_mlops_engineer"><span title="How ClearML is used by an MLOps Engineer" class="linkLabel_WmDU">How ClearML is used by an MLOps Engineer</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/getting_started/video_tutorials/hands-on_mlops_tutorials/ml_ci_cd_using_github_actions_and_clearml"><span title="Machine Learning CI/CD using GitHub Actions and ClearML" class="linkLabel_WmDU">Machine Learning CI/CD using GitHub Actions and ClearML</span></a></li></ul></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>How ClearML is used by an MLOps Engineer</h1></header><h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="video-tutorial">Video Tutorial<a href="#video-tutorial" class="hash-link" aria-label="Direct link to Video Tutorial" title="Direct link to Video Tutorial" translate="no">​</a></h2>
+<div class="vid">
+<iframe src="https://www.youtube.com/embed/7aKZGp1YOlo?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen="">
+</iframe>
+</div>
+<br>
+<details class="details_lb9f alert alert--info details_b_Ee panel info" data-collapsed="true"><summary class="panel-title">Video Transcript</summary><div><div class="collapsibleContent_i85q">
+<!-- -->
+<p>Hello again and welcome to ClearML. In this video we&#x27;ll be going over a workflow of a potential MLOps Engineer. Now an
+MLOps Engineer is a vague term. This might be a specific person in your team that is doing only the Ops part of
+machine learning. So the infrastructure and all of the workers and whatnot. Or it could be you as a data scientist. It
+could be just the data scientist of the team that is most into things like docker and deployments. And that person now
+has the job of a MLOps Engineer. So it really doesn&#x27;t matter who you are. This video is going to be about what this kind
+of person will be doing and what ClearML can do to make their life a little easier. Just a little.</p>
+<p>So what we&#x27;re going to do here is take a look or get started at the very least with our Workers and <strong>Queues</strong> tab. So if
+you&#x27;ve followed along with the Getting Started videos, this is actually something you&#x27;ve probably seen before. but I&#x27;m
+going to go a little bit more into depth in this video.</p>
+<p>So the <strong>Workers and Queues</strong> tab, what does it do? So we have what we can expect. We have the <strong>Workers</strong> tab, and we have the
+<strong>Queues</strong> tab. Workers in ClearML are actually called agents. So you can see here that we have a bunch of available workers
+which are spun up by using the ClearML Agent. I&#x27;ll go more in depth in that in a minute. So we have a few available
+workers. We have Beast Zero, One, Two, and Three. I&#x27;m the person that called my own computer Beast. So my own computer
+is running a few workers here. And then we also have Apps Agents, and I&#x27;ll go a little bit more into detail what that
+means later. Essentially, what it means is you have the applications right here and what that&#x27;s going to do is give you
+a few pre-made applications for automation that you can use straight out of the box. And if you use any of them, in this
+case a GPU scaler, an auto scaler from the cloud, then it will spin up an available worker for you that will just manage
+the orchestration there so that that worker will do nothing else but just tell things where to go and what they should
+do.</p>
+<p>So if we go a little bit more into depth here, we can also see which worker is running which experiment at this moment.
+So we have example: Task 0 1, 2 and 3, programmer terms of course. We see the experiment running time. We see the
+iterations. In this case, it&#x27;s a classical machine learning model, so we don&#x27;t really have iterations, but if you have a
+deep learning model, this is where your amount of iterations would come into play.</p>
+<p>If we click on any of these, we can see the worker name, and we can see its utilization over time here as well. All
+right, so we can obviously make this longer. I&#x27;ve only been running this for a few hours or for an hour. So we have the
+worker name right here. We have the update time, so just to know when was the last time that the worker actually
+sent in any new data. We have the current experiment on which we can click through, so I&#x27;ll do that in a minute, and we
+have the experiment runtime, and experiment iterations here as well.</p>
+<p>We also have the queues, which means that we can actually find out what queues this worker is listening to. I should
+give some more context here. So if we go into the queues, ClearML works with a system of queues as well as workers. So
+this actually comes from the fact that originally people were just giving out SSH keys to everyone to get them to work
+on a remote system. And this is far far far from perfect, right? So you have several people SSHing in, you have several
+people running their own workloads on the same GPUs. They have to share everything. Because of the amount of people that
+are also running their stuff on the GPU, you actually have no idea how long your own task will take, so that&#x27;s something.
+You can&#x27;t have any priorities. So if everyone is just running their stuff and actually probably killing your stuff as
+well because it&#x27;s out of memory, because too many people are using it. So that&#x27;s just a disaster, right? If you have a
+large GPU machine that you have to share with multiple people, or just want to orchestrate several different tasks
+on, with different priorities, it becomes a real hassle. So that&#x27;s actually why ClearML has workers and queues to try
+and deal with that a little bit. And this is actually what we&#x27;re calling orchestration. So if you look at our website,
+you&#x27;ll see orchestration and automation. Those terms might not mean very much. So this is what I&#x27;m going to be talking
+about in this video.</p>
+<p>Orchestration in this case, is like a director in an orchestra. You&#x27;re essentially saying who should do what when, so
+which worker should run which experiment, or which task at what time and in what priority. So this is what the queues
+are all for. Essentially, queues are just what they&#x27;re called, right. They&#x27;re queues, but you can have as many of them
+as you want. So in this case, we have the services queue, we have the default queue, GPU queue, and CPU queue. You can
+create new queues by clicking the button here, so it&#x27;s very simple. I can make a very simple queue, but this is very
+worthless, right? But you can make however many of them you want. I can delete that queue again. We can see for each
+queue how many workers it has. So I&#x27;ll show you that in a minute when we spin up a new worker. But we can actually
+pretty easily see how many workers are serving a specific queue. So listening to that queue and that actually has an
+effect on the overall waiting time. So for example, here we have four workers that we saw here before, right? So these
+are these four workers. They&#x27;re all listening to the CPU queue. They&#x27;re all running a CPU experiment. But then we still
+have a bunch of other experiments in the queue. So this is just a list of the next, like, essentially the order in which
+the next example tasks will be executed. So we see here that the next experiment is task four. We see that it was last
+updated there, and now we see the queue experiment time rising rapidly. Because people are waiting in queue here, there
+are many more tasks to be executed. We also have CPU queued experiments, which is just the amount of queued experiments
+per queue.</p>
+<p>So we also have a GPU queue and in this case, we see that we have zero workers here. Now we&#x27;ll go a little
+bit more into depth on that later because we don&#x27;t actually have zero workers there. We actually have an auto scaler
+listening to this. Then we have the default queue, and we have the services queue and I should stop a little bit on the
+services queue because the services queue is relatively special in ClearML. You have all of your custom queues that you
+can create however you want CPU queue, GPU queue, whatever. The services queue is actually meant to host specific, not
+very heavy workloads, but that does this kind of orchestration that I was talking about. So imagine you have a pipeline
+for example, if you don&#x27;t know what a pipeline does in ClearML, you can look at the Getting Started video that we made
+on pipelines. And if you want to run a pipeline, you will need a pipeline controller. Essentially, it&#x27;s a very small
+piece of code that tells ClearML now you should run this step, then take that output, give it to the other step, run the
+other step, give that to the output of the next three steps, take those three steps, run them, and so on, and so forth.
+It&#x27;s essentially the director. It&#x27;s orchestration, right? And so that&#x27;s what the services queue is meant for is it&#x27;s
+usually meant to put in those orchestration tasks, those long-running, not very heavy tasks. So that allows you to
+essentially assign a bunch of not very powerful CPU machines to that queue just to do the orchestration and then
+everything else, like your GPU machines or your heavy CPU machines, can be assigned to the CPU and GPU queues in which
+we can choose to just enqueue tasks or experiments that do simply that. So that&#x27;s essentially what a services queue is
+when compared to other user-made queues.</p>
+<p>We can see here that we have a bunch of workers, so we have the Beast 0, 1, 2 and 3 that are assigned to this services
+queue. But as we can see if we go and take a look at the CPU queue, we have a whole bunch of tasks here. So there are a
+lot of people waiting for their turn. So actually one thing that we can do is we can already change the priority. So
+imagine we have example Person 19 that has a very, very tight deadline, and they actually need to be first. So we can
+just drag them all the way up, let me scroll there, all the way up and now. There we go, all the way up top. So now we
+can see that example 18, for example task 18 is the first in the queue. So once any of the four workers finish off their
+example 0, 1, 2 or 3, the next one will be example 18. So in this case, you can actually very easily change the priority
+and make sure that the people that have their deadline meet their deadline. So that this could be a common question in
+the day of the life of an MLOps engineer is, please give me priority. Please let my stuff work first. So that&#x27;s something
+you can do.</p>
+<p>Another thing you can do, which is relatively simple to do, is aborting a task. So a task is essentially just a Python
+script that was cloned or that was already in the system or that was put into the system that can be recreated on a
+different machine. So what we could do is, we could go into the queues here and then say clear, which will clear the
+complete queue. So that&#x27;s something we don&#x27;t necessarily want in this case. But in this case, we, for example, want to
+abort task 0. So one way of doing that would be to go to the current experiment, right here. And if I click on that,
+ClearML will actually bring me to the original experiment view, the experiment manager, remember everything is
+integrated here. The experiment manager of that example task. So what I can do here if I look at the console, I have a
+bunch of output here. I can actually abort it as well. And if I abort it, what will happen is this task will stop
+executing. Essentially, it will send a <code>ctrl c</code>, so a quit command or a terminate command, to the original task on the
+remote machine. So the remote machine will say okay, I&#x27;m done here. I will just quit it right here. If, for example,
+your model is not performing very well, or you see like oh, something is definitely wrong here, you can always just
+abort it. And the cool thing is if we go back to the <strong>Workers and Queues</strong>, we&#x27;ll see that the <code>Beast 0</code> has given up working
+on task 0 and has now picked task 18 instead. Which is the task that we put there in terms of priority. So this has the
+next priority. Work has already started on task 18. So this is really, really cool.</p>
+<p>But we can see that in the CPU queue, the amount of tasks is still very, very high. Even though we just aborted one,
+people are waiting. The waiting time is rising. The amount of tasks is very, very high. So what we should do now is
+actually start up a new worker. This could be something that is very much in daily life over an MLOps engineer. It&#x27;s
+just to add workers to your worker pool. I&#x27;ll put it on workers so that we can see very clearly when we added it here.
+Go out of full screen, and we&#x27;re going into a remote machine here. So you could remote in almost any machine, right?
+It doesn&#x27;t really matter which type of machine it is, if it&#x27;s a cloud VM, if it&#x27;s on-premise, if it&#x27;s your own laptop,
+it could be any remote machine that you want. It&#x27;s very easy to turn those into a ClearML agent or a worker for the
+ClearML ecosystem.
+The first thing you&#x27;ll have to do though, is <code>pip install clearml-agent</code>. So this will install the
+very thing that is necessary to turn it into a worker and that&#x27;s actually everything you need. That&#x27;s all the packages
+you need. It is a Python package, but usually you have Pip3 available. So then the next thing you should do is
+<code>clearml-init</code>. Now <code>clearml-init</code> will connect this machine to your server, to the actual orchestration server, this
+one that will handle all the workers and queues. So in this case it&#x27;s <a href="https://app.clear.ml" target="_blank" rel="noopener noreferrer" class="">app.clear.ml</a> which is the
+hosted version. You can also host your own open source server if you so require. If I run <code>clearml-init</code>, you&#x27;ll see
+that I have already done this of course, but in this case you should be able to just add your credentials from the
+server, and it should connect no problem. If you want more information on that, we have tutorial videos on that as well.
+And then the next thing we should do is <code>clearml-agent daemon --queue</code> Now we can decide which queues we want this
+ClearML agent to listen to. So in this case, if we go and take a look at queues, we have a CPU queue, which is by far the
+most requested queue. So in this case, imagine we have an extra machine on hand in the faculty or in the company you&#x27;re
+working with, and you should just add this machine or its resources to the pool. So in this case we&#x27;re just going to say
+<code>CPU Queue</code> and that&#x27;s everything. So we just want a simple extra machine for the CPU queue. Then we&#x27;re going to
+add <code>--docker</code> because personally I quite like the fact that the machine would be using docker. So essentially what will
+happen here is that the ClearML agent will pull a new task from the queue, and then we&#x27;ll spin up a new container
+depending on either the default image that I give here or the image that is attached to the task itself. So people, the
+data scientists that are creating their remote tasks or their experiments, they can also assign a docker file or a
+docker image to that, that it should be running. So if you have very specific package requirements or very specific
+needs, you can, as a data scientist, already say I want to attach this docker image to it, and it will be run like such
+on the ClearML agent. So that gives you a lot of power. But in this case I will just say if the data scientists
+gave no indication of what docker container to use, just use Python 3.7. This is the standard in our company, let&#x27;s say,
+and this is what we want to use. Okay, so if I run this, it should start up a new ClearML agent. So in this case you can
+see it&#x27;s running in docker mode, it&#x27;s using default image Python 3.7, and it&#x27;s listening to the CPU queue. Now if we go
+back to our <strong>Workers and Queues</strong> tab. We can see that here <code>any-remote-machine:0</code>. So we can actually see that we now
+immediately have a new remote worker, and it&#x27;s actually already started on the next task. So now we&#x27;re currently running
+five workers on the CPU queue instead of four. So this was very, very easy to handle, very, very easy to set up. So this
+is one part of what an MLOps engineer could be doing.</p>
+<p>Now this is very, very manual to set up and the MLOps engineer is king of the automation after all. So we want some kind
+of way to automate all of this, right? So what we can do here is go to applications. And what we have is AWS
+Autoscaler and GCP Autoscaler in essence. Also, Azure will come later so that will be out soon. So if we go into the
+AWS Autoscaler. What we see here is we have an MLOps GPU scaler and what that means is, we don&#x27;t always have fixed
+demand for GPU resources, right? So imagine you have a company in this case that has a lot of demand for CPU compute
+in this case, five workers and a lot of tasks. We only have GPU requests only every so often. And it&#x27;s not very
+economical to buy a few very, very powerful GPUs just for a few minutes every week, for example, or a few hours every
+week. So what is much more economical there is to use the cloud instead, in which you pay for the hours that you use a
+GPU and you don&#x27;t pay for the hours you don&#x27;t use it anymore. Of course, what you could be doing is if a data scientist
+needs a GPU machine, you could go to the cloud console, spin up a new VM, SSH into it, and then create a ClearML agent
+for it, to be able to access it from the queue. But that could also be done automatically. And that&#x27;s essentially what
+an Autoscaler is doing for you. So the Autoscaler will detect if there is a task in the queue, and then will spin up a
+new machine on the cloud, run the ClearML agent there, reconnect it to your own server, and then run that specific task.
+And then if that task is done and the agent and the machine are up for like a minute without doing anything, you can
+choose that minute by the way, if it&#x27;s up for a while, and it&#x27;s not doing anything, it will just shut itself down again.
+And that actually makes it very, very economical. Because if you&#x27;ve ever forgotten to close down or to shut off a
+machine, especially a GPU machine on the cloud over the weekend, it&#x27;s super expensive. So you can actually pay ClearML
+Pro for a year for just the same amount of money as forgetting to shut down a large GPU machine for a single day. So
+just to give an idea of how economical this can be.</p>
+<p>If we go and take a look at our configuration here, we can see that we have our AWS credentials and GCP will be
+obviously GCP credentials. We have our Git configuration and this is what the MLOps engineer will be doing. They will be
+configuring this kind of thing. They will be configuring the max idle time, which says how long should the machine be
+doing nothing before we shut it down again. It could be beneficial to keep it up for a little while because if then
+another task comes in like two minutes later, it&#x27;s immediately launched. You don&#x27;t have to wait for the machine to boot
+up. You can add prefixes, you can add polling intervals, you can add a base docker image that you can use, but obviously
+you can overwrite that again. And then there are obviously the computer resources. You can have GPU machines of a
+specific type, this obviously depends on which cloud provider that you&#x27;re using, but it&#x27;s all basically the same thing.
+You can run it in CPU mode, use Spot instances to have some savings there, availability zones, etc. So this is the kind
+of thing that an MLOps engineer would probably spend a lot of their time tuning and fine-tuning and getting up and
+working.</p>
+<p>Another way next to running your ClearML agent just manually and spinning up an autoscaler to get some extra agents is
+to run them on Kubernetes. So if I go to the ClearML GitHub and go to the ClearML Agent repository, you have two
+different versions of integration of the ClearML agent in Kubernetes. And the really cool thing is, Kubernetes can
+scale. So you can actually use the scaling of Kubernetes to handle the load of your different tasks that are being
+pulled by the ClearML agent. Now, one way of doing this is spinning up a ClearML agent as a long-lasting service pod
+that has access to the docker socket, so it can actually spin up new docker containers as it sees fit. Or you can use
+Kubernetes glue, which is some code that we wrote that allows you to actually map ClearML jobs directly to Kubernetes
+jobs. So that&#x27;s actually also a really neat way of doing this. Now we would go a little bit too far if we go straight
+into Kubernetes in this video, but if you&#x27;re interested, let me know in the comments, and we&#x27;ll make a video about it.</p>
+<p>Now that we have all our agents, let&#x27;s take a look at the code, and I&#x27;ll give you some examples on how you can enqueue
+some tasks into these queues and get these workers that we&#x27;ve just spun up working their hardest. So if we go and
+take a look here, what we see is a simple Python file that does some training. This is CPU based training. It&#x27;s
+essentially using LightGBM to train a model. So this is the kind of thing that a data scientist would give to you that
+you would have made yourself, and now you want to get it into the queue. Now one way of doing that is what we saw before
+you could do a <code>Task.init</code> which essentially tracks the run of your code as an experiment in the experiment manager, and
+then you could go and clone the experiment and then enqueue it. This is something that we saw in the Getting Started videos before.</p>
+<p>Now, another way of doing this is to actually use what you can see here, which is <code>Task.execute_remotely()</code>. What this line
+specifically will do, is when you run the file right here. Let me just do that real quick. So if we do
+<code>python setup/example_task_CPU.py</code> what will happen is ClearML will do the <code>Task.init</code> like it would always do, but then
+it would encounter the <code>Task.execute_remotely()</code> and what that will tell ClearML is say okay, take all of this code, take
+all of the packages that are installed, take all of the things that you would normally take as part of the experiment
+manager, but stop executing right here and then send the rest, send everything through to a ClearML agent or to the queue
+so that a ClearML agent can start working on it. So one way of doing this is to add a <code>Task.execute_remotely()</code> just all
+the way at the top and then once you run it, you will see here <code>clearml WARNING - Terminating local execution process</code>,
+and so if we&#x27;re seeing here if we&#x27;re going to take a look we can see that Model Training currently running, and if we go
+and take a look, at our queues here, we have <code>any-remote-machine</code> running Model Training right here. And if we go and
+click on this, we go back to our actual training task, and we just can easily follow along with what is happening here.</p>
+<p>So okay let&#x27;s take a look at how you can do this differently as well. So there is a specific different kind of way of
+doing this. And let me take the example task GPU here. So this is a lot larger in terms of what it does. But essentially
+it just trains a model. So you have trained tests and main. And what you can see here is, we have the <code>Task.init</code> in main.
+It&#x27;s just a global scope so that&#x27;s all fine. Then we parse a bunch of arguments and then something very interesting
+happens. So we create our train loader and our test loader right here. But then what we can also do is say okay for epoch
+in all our epochs, so for in the epoch range, what we can say is if the epoch is larger than one, it doesn&#x27;t execute
+remotely in the GPU queue, and so what this will do is it will train the model for one epoch locally. Which means that
+you can test that it works and if you get a single epoch it usually means it&#x27;s working. And then if we get to that point
+and start epoch number two, we actually just run it remotely and then ClearML will take this whole bunch and start
+working on it remotely instead. Which means that you can very easily locally debug and see if everything works and once
+everything does work, it will just immediately send it to a remote machine that will do the actual heavy lifting instead
+of you having to do it on your laptop or computer. So if we actually run this, it will be GPU right here. Then it&#x27;s very
+interesting to see this happen. I really like this workflow because you have this local debugging first. So as you can
+see here, let&#x27;s wait a little bit, so as you can see it&#x27;s completed it&#x27;s training. And we can also see that it&#x27;s only
+been for one epoch so in this case it only went for one epoch and then once it reached that point as we saw in the code
+it will say <code>clearml WARNING - Terminating local execution process</code>, so in this case it&#x27;s already sent it to the remote
+machine. Now if we&#x27;re going to take a look at the remote machine, we can see that we have our Model Training GPU in
+<code>pending</code> state and remember we had no workers at all in our GPU queue. We have zero workers and the next experiment is
+our Model Training GPU. But remember again that we also have the autoscaler. So if I go to Applications and go to
+autoscaler, you&#x27;ll see here that we indeed have one task in the GPU queue. And we also see that the <code>GPU_machines</code>
+Running Instances is one as well. So we can follow along with the logs here. And it actually detected that there is a
+task in a GPU queue, and it&#x27;s now spinning up a new machine, a new GPU machine to be running that specific task, and then
+it will shut that back down again when it&#x27;s done. So this is just one example of how you can use <code>Task.execute_remotely()</code>
+to very efficiently get your tasks into the queue. Actually, it could also be the first time. So if you don&#x27;t want to
+use the experiment manager for example, you don&#x27;t actually have to use a task that is already in the system, you can
+just say it does not execute remotely, and it will just put it into the system for you and immediately launch it remotely.
+You don&#x27;t ever have to run anything locally if you don&#x27;t want to.</p>
+<p>So this is essentially what we&#x27;re talking about when
+I&#x27;m talking about orchestration. So the autoscaler, the workers, the queues, the ClearML agent, everything here is
+what we call orchestration. It&#x27;s essentially saying you should run this then there and everything is managed for you.
+That&#x27;s the idea here.</p>
+<p>But there&#x27;s also something else that we usually talk about quite a lot. And that is Automations.
+And Automations is specifically trying to automate a lot of manual stuff that you probably would be doing, but without
+actually noticing that it could be automated. So let me tell you what I mean with that.</p>
+<p>Let&#x27;s go into automation here
+and get for example, the task Scheduler. And the task Scheduler, it&#x27;s very, very intuitive to know what it does right?
+So a task scheduler will essentially take a specific task, and it will schedule it to run every X amount of time. So in
+this case, for example, the MLOps engineer gets called in by Project Team NASA. So Project Team NASA, which is really cool,
+they&#x27;re actually creating a model here that is meant to detect if asteroids are going to be hazardous for earth or not.
+So they come in, they have a specific project of their own. So if I go into Project Team NASA here, you see that they
+have a bunch of tasks here. For example, getting the data, they will pour that into a real asteroid dataset that will
+preprocess the data and actually put that preprocessed data in another dataset version which is preprocessed asteroid
+dataset. And then you have a bunch of model training that they do on top of it in which they have scalars with test and
+train. You all know the drill. This is the kind of thing they&#x27;re doing. So they actually have their feature importances,
+which is really cool.</p>
+<p>So they call you in as an MLOps engineer, or you are part of the team, and you&#x27;re the MLOps engineer, the designated
+developers engineer and you essentially, what you want to do is, if we go to get data here, and we go into configuration,
+you see that there is a query date and if we go into the code of this query date. What we&#x27;ll see here, this is the
+original repository of the NASA Team. We&#x27;ll see that they actually query a database with a specific query and the
+specific query is select everything from asteroids which is their data, where the date is smaller than the data given.
+So they have an actual end date and everything before that given date is the data they want to work with. So if we&#x27;re
+going to take a look, the query date here is a specific date, but that&#x27;s not today. So essentially what they
+want to do is rerun this, get data every single day or week or month depending on how quickly they can get their data
+labeled.</p>
+<p>So this could be done manually relatively easily. You could just do every week, click, go here, and it will just put a
+new entry in the experiment list, or you could of course automate it. And that&#x27;s essentially what we&#x27;re going to do with
+the task scheduler. So you just get the task scheduler object from the automation module. You say the amount of sync
+frequency. So this is essentially just when you change something in the configuration of the task scheduler, it will
+poll every minute to get that. So this can be very low or very high depending on what you want. I want the scheduler
+itself, which again, everything in ClearML is a task. So I want the scheduler itself a scheduled task, to be in the
+Project MLOps because this is the actual scheduler. I want to be taking care of that and then the actual task will be in
+the original NASA project. Also, I want to call it NASA Scheduler because it just sounds cool. Then what we could do is
+get a task from the Project Team NASA project folder, and then the <code>get data</code> task. But there is something else that we
+can do. You could easily just clone a task. This is essentially what the task scheduler is doing. If you watch the
+Getting Started videos, you know that we can actually clone any of the experiments that are in the system and then
+change the parameters and rerun it. So we could get the data or clone the <code>get data</code> and then do a task parameter
+override of the query date with the current date today. That&#x27;s very valid, but the NASA team actually made something
+really cool.</p>
+<p>If we go to pipelines here, you see that there is a NASA pipeline as well and the NASA pipeline is actually
+the exact steps that we saw before, but they train three different models with three different parameters and then pick
+the best model from there. And what we see is that the query date is actually a parameter of the pipeline as well. And
+if you remember correctly, pipelines are also tasks in ClearML, everything is a task, so that means that you can use
+this the task scheduler also to schedule a complete pipeline run. And then overwrite the parameters of the pipeline run
+just as easily as you could do with any other task. So if I go into the full details of this task here, you will see
+that this is actually the pipeline itself. The pipeline has just as any other task, these different tabs with info,
+consoles, scalars, etc. and it has an ID as well. And this ID, if we copy it, we can actually use that instead. So let
+me paste it, it&#x27;s already there.</p>
+<p>So the task to schedule is in fact the pipeline that we want to schedule. And then if I
+do <code>scheduler.add_task</code>, I take the ID of the task to schedule, which is the pipeline in this case, I want to enqueue it
+in the CPU queue. I want it to be at the hour 08:30 every Friday. So every week at 08:30, this will be run. So the
+pipeline will be cloned and run using this parameter override. And the parameter override says essentially, take the
+query date, but set it to the date of the day instead of whatever was before and then started remotely. So if I run
+this, we have automation and then task scheduler. So if I run this, it will create a new scheduler task in the Project
+MLOps folder, and then it will start. Because I said here, execute immediately, it will immediately clone and recreate a
+pipeline already, right now. And then we&#x27;ll start doing this every other week on Friday 08:30. So if we&#x27;re looking at
+our projects here, we see that we have Project MLOps. We have the NASA scheduler, and the NASA scheduler is of course
+<code>pending</code> because it itself is a task that needs to be grabbed by one of the agents. And so in this case, we can
+probably see that our agents are still busy on the different tasks. So let&#x27;s just abort one so that we can easily take
+over what we should do. Let&#x27;s abort all of the example tasks just so we can get going here. Oh, actually, you can do
+that with multiple at the same time. So you have abort here. If you selected two, that will all work quite well.</p>
+<p>So we have our CPU queue here, we have our GPU queue here. There are all our workers. And now we see that the NASA
+scheduler is actually scheduled on Beast 1, so it&#x27;s currently running. If we go to Project MLOps, we see that our
+scheduler is in fact running. And then if we go to our console, we can follow along with its setup. And then if we go
+into our pipelines, we should be able to see that a new pipeline is being started up by the scheduler. Now there we go.
+It says here: Launching Jobs, Schedule Job, Base Task ID, Base Function, Blah blah blah. Essentially, it&#x27;s saying I&#x27;ve
+launched the pipeline. So if we go into the NASA pipeline, we should see that in fact, there is now NASA Pipeline 2 that
+is currently running that is using the exact date of today instead of the previous version, which is using the date of
+before. So this is a very easy way of automating or scheduling essentially, just tasks, pipelines, datasets, whatever
+you want in the ClearML ecosystem, you can schedule it.</p>
+<p>Then there is a second type of automation that we can do. So we have the trigger scheduler as well. And the trigger
+scheduler is something relatively similar to a task scheduler. Only the difference is that instead of with a task
+scheduler, you create a task, or you clone a task and run it and then queue it based on a specific schedule. With a
+trigger is based on a trigger. So a trigger could be any event in the ClearML ecosystem. In this case, it could be a
+successful dataset, a tagging of a dataset, or any other kind of event that the ClearML ecosystem can produce, you can
+use as a base to launch a new kind of task.</p>
+<p>So if we&#x27;re going to take a look here, we actually want to create a trigger scheduler for something called Alice Bob.
+And I&#x27;m going to explain what that means. So if we&#x27;re going into our Alice project here, Alice is a data scientist on
+our team, and she essentially asked me to help her. So she has a bunch of model training tasks here. She actually uses
+the stable tag as well. We&#x27;ll come back to that later. And essentially what she&#x27;s doing is just training a model based
+on the dataset of another data scientist in another project. So if we&#x27;re going to take a look at that other project,
+it&#x27;s called Bob. So Bob is the other data scientist which is in charge of producing the dataset that is required.
+So essentially, he uses the production tag to tell Alice this is the kind of dataset that you want. This is the dataset
+that you want to use. This is the best so far. He has more recent datasets, but hasn&#x27;t tagged them as production yet
+because he says they&#x27;re not ready. So he can just keep continuing to experiment, and do all the kinds of things that he
+wants while Alice is still firmly using production. So what Alice is doing is she&#x27;s essentially querying on the dataset
+of production. But it&#x27;s annoying because they&#x27;re in a different time zone, for example. And when Bob publishes a new
+dataset, Alice has to be notified by using a chat application or whatever. And then Alice has to re-run everything
+remotely so that her training is using the latest version. So this is not ideal, we can automate all of this. And this
+is essentially what the task trigger is trying to do.</p>
+<p>So again, we make a scheduler just like we did with task scheduler. Polling frequency in minutes is again to poll the
+configuration as well as sync frequency minutes. We put again the scheduler itself. We put it in the Project MLOps.
+We call it Alice-Bob Trigger instead of the scheduler before. And then we get the task that we want to actually trigger.
+So not the task that triggers, but the task that we want to create when the trigger is triggered, if that makes sense. So
+the actual task that we want to make is, we want Project Alice, so we want the training job for from Alice. Actually,
+so we use the project name, Project Alice and or Project Alice I think. Let me just check real quick. Project Alice Not
+Project Alice. There was a little mistake there. So we have task name Model Training. So we want any of the Model
+Training and Alice actually uses a stable tag. Like I said before, she uses a stable tag to say, this is actually my
+latest good version of an experiment. So if there is a new dataset I want to retrain a clone and enqueue and retrain
+this specific version of my experiment. This also allows Alice to experiment and continue experimenting without the
+dread of having a new dataset come in and then be it being retrained on code that is not stable yet. So we can use the
+tag for that purpose. But if I go back to the task trigger, essentially what we&#x27;re going to get here is a task from the
+project Project Alice with the name Model Training but also crucially with the tag stable. And then if there&#x27;s multiple
+tasks that fit this description, it will just take the latest one. So it will take the latest task that has a tag stable
+from this project.</p>
+<p>Now we have to add a trigger. And you can add a dataset trigger, you can add a task trigger, you can add any kind of
+trigger that you wish. In this case it will be a dataset trigger. If we have a different dataset, a new kind of dataset
+that fits this description, we want to trigger this task. So essentially the scheduled task ID is the task that we want
+to run if the trigger is triggered, which is in this case <code>training_task.id</code> is the Project Alice task, the Model Training
+task. We have the schedule queue, so we want to obviously schedule it in any of the queues. We can use the CPU queue in
+this case, and then we can give it a name as well. And just to make it clear that this training is not actually training
+from Alice herself, but it&#x27;s training on the new data of Bob. It&#x27;s an automated training. We can give it a specific name
+so that Alice knows this was triggered automatically, and then we can use <code>trigger_on_tags</code> where we should look to
+actually trigger the trigger. Damn this is a lot of trigger.</p>
+<p>So what happens here is we look in the Project Bob folder and then if a new tag production is found that wasn&#x27;t there
+before we trigger, and in this case, this means we create a new task project Alice. So if we&#x27;re going to run this
+automation, not task scheduler but task trigger, this will again create a new specific let&#x27;s call it orchestration task
+or automation task. And these are the kind of tasks that you want in the services queue. These are the tasks that
+essentially just keep track of, is there a new data set version or not and it&#x27;s very light to do so. This is typically
+something you want in the services queue.</p>
+<p>So we have terminating local process, so it should now be in Project MLOps right here. So we see that our NASA scheduler
+is running, but the Alice-Bob Trigger is still pending because obviously we have our pipeline running and our workers
+need to first work on that, and then they can go on. So if we take a look at the queues, we&#x27;re actually now using the
+tools that we need. So we see that in the services queue the Alice-Bob Trigger was the next experiment, and it&#x27;s just
+been picked up. So we should see here that indeed, one of the beasts workers here has picked up Alice-Bob Trigger which
+is essentially what the queues are meant for. We&#x27;re pushing too much into the system, so they&#x27;re just waiting a little bit
+before the next thing has finished. If we take a look at our NASA pipeline, we see that it&#x27;s actually going very well here.
+So these are the kind of tasks that our workers were busy with before they picked up the Alice-Bob Trigger.</p>
+<p>So now we see that the Alice-Bob Trigger is in fact running. We can take a look at the console, and it can tell you that
+okay, everything is installed. It gives you a few error messages, which is usually a good thing because it says that
+it&#x27;s actually doing something. It&#x27;s sleeping until the next poll in one minute. So it&#x27;s polling every minute. So now we
+should be able to go into Bob&#x27;s project. And if we say okay, I want to add a tag here, production. And in this case,
+what I just did is I created a new dataset version with this specific tag. I said okay, this example dataset. I&#x27;ve
+tested it. I&#x27;ve checked it. I&#x27;m Bob in this case. So I&#x27;ve tested it. I&#x27;ve checked it. Everything seems to be in order.
+So I&#x27;m going to tag this as production and this should technically trigger the task trigger or the trigger task to pick
+that up and to then spin up a new Model Training run for Alice. And Alice will then pull the latest version that fits
+the production tag. So essentially she will pull this one and then end up with a new version or like with the new task
+that is running. So if we&#x27;re going to take a look, it&#x27;s sleeping for a while. Technically it won&#x27;t be in Alice yet. So
+we should wait just a little bit before the Alice-Bob Trigger picks it up. But it shouldn&#x27;t take very long.</p>
+<p>So as we can see the scheduling job, Alice-Bob, new training data or new data, training has been scheduled on the CPU
+queue, so it has essentially figured out that Okay, we actually do have a new tag now, so it is being scheduled. If
+we&#x27;re going to take a look at Project Alice now, you can see that in fact, Model Training is running currently, so it&#x27;s
+been enqueued, it&#x27;s running, and it&#x27;s been tagged as Alice-Bob New Data Training. So Alice actually knows that this time
+this model is automated.</p>
+<p>Finally, there are some things that I want to show you that might make your life easier. Yet again, that is the name of
+the game in this video, but they&#x27;re just a little bit smaller. So one of the things that I want to show you is the
+monitor. It&#x27;s the ClearML monitor. It&#x27;s essentially an object that you can implement that you can override, and it
+allows you to take a look into the depths of the ClearML ecosystem, what happens there? So it can give you an idea of
+when tasks failed, when tasks succeeded, all of the types of events that ClearML can generate for you. So one of the
+things you can do with it, and this is part of the example, it&#x27;s also in the example repository, is create a Slack bot
+for it. So essentially we&#x27;ve just used a bunch of Slack APIs around this monitor, which is just a Slack monitor that we
+created ourselves and that will essentially just give you a message whenever a task succeeds, fails, whatever you want
+to do. So in this case, it&#x27;s fully equipped. We added a lot of arguments there so that you can just use it as a
+command line tool, but you can create your own script based on your own requirements. Now what it will do is, let me
+show you, is in this case, I&#x27;ll make it a little bit bigger. You can see that there is a ClearML Alert Bot that you can
+just add to your Slack if you want it, and it will essentially just tell you what kind of projects, what kind of tasks
+are succeeded or failed. You can set, I want only alerts from this project, I want only alerts that are failed, only
+alerts that are completed, will give you a bunch of output as well, which is really, really useful to see, etc. So this
+is just a very small extra thing that you can take a look at to have some monitoring as well so that you don&#x27;t even have
+to wait or take a look yourself when your tasks are finished.</p>
+<p>Another thing that I want to show you is a cool way to just get a little bit more of that juicy GPU power. One way you
+can add agents next to Kubernetes spinning up themselves, spinning up a ClearML agent on your own machines or the auto
+scaler is Colab. So the runtime was just connected here, but Colab is something we all know, we all love. It&#x27;s an easy way
+to get notebooks on a GPU machine very easily, but it&#x27;s also very easy to get a ClearML agent running on this. So this
+is really, really cool. I personally really like it. So I can say <code>!clearml-agent daemon --queue &quot;GPU Queue&quot;</code> and if I
+run this, essentially we get a free GPU worker. So it is currently doing the ClearML agent thing. This is the output of
+the ClearML agent and if we go into our project here. We can now see we have a GPU all worker that is essentially just
+Google Colab. So you can spin up a bunch of Google Colabs, run all of your agents on here. And the only downside is that
+you can&#x27;t use the docker mode. So this will mean that every single task that is being run by this Colab instance is
+actually going to be run in the environment of the Colab instance. So if the Colab instance has a different Python
+version than you, it&#x27;s a bit annoying, you can&#x27;t spin up a different container. But that&#x27;s really only the only
+downside. So this is just a quick way. The actual notebook you can find on our GitHub. But this is just a really cool
+way to get some extra GPU power as well.</p>
+<p>Now, all of these agents are one thing. You have the queues now, finally. Now, thank you for making it through this far.
+We haven&#x27;t actually even covered everything that ClearML can automate for you. There is HPO, which is hyperparameter
+optimization. There are pipelines as well that can chain everything together. You saw a little bit when I showed you the
+NASA project, but yeah, we&#x27;re not there yet. There&#x27;s also even a ClearML Session that you can use to run on a specific
+machine, on a remote machine, and it will give you a remote interactive Jupyter Notebook instance or even a VS code
+instance so that you can always code already on the remote machine. So that&#x27;s also really, really cool. It&#x27;s something
+we&#x27;re going to cover soon, but I think the video is already long enough. So thank you very, very much for watching.
+Thank you very, very much for your attention. Let me know in the comments: if you want to see videos of these
+hyperparameters, and pipelines, and sessions, and don&#x27;t forget to join our <a href="https://joinslack.clear.ml" target="_blank" rel="noopener noreferrer" class="">Slack channel</a> if you need any help.</p>
+</div></div></details></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/clearml/clearml-docs/edit/main/docs/getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_an_mlops_engineer.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_a_data_scientist"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">How ClearML is used by a Data Scientist</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/getting_started/video_tutorials/hands-on_mlops_tutorials/ml_ci_cd_using_github_actions_and_clearml"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Machine Learning CI/CD using GitHub Actions and ClearML</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#video-tutorial" class="table-of-contents__link toc-highlight">Video Tutorial</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://joinslack.clear.ml" target="_blank" rel="noopener noreferrer" class="footer__link-item">Slack<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.youtube.com/c/ClearML" target="_blank" rel="noopener noreferrer" class="footer__link-item">YouTube<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://twitter.com/clearmlapp" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/clearml" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/company/clearml" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://clear.ml/blog/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Blog</a></li><li class="footer__item"><a href="https://github.com/clearml/clearml" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 ClearML. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

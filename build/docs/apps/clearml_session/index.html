@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-apps/clearml_session" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">ClearML Session CLI | ClearML</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://clear.ml/img/clearml_docs_meta.png"><meta data-rh="true" name="twitter:image" content="https://clear.ml/img/clearml_docs_meta.png"><meta data-rh="true" property="og:url" content="https://clear.ml/docs/apps/clearml_session"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="ClearML Session CLI | ClearML"><meta data-rh="true" name="description" content="clearml-session is a feature that allows to launch a session of JupyterLab, VS Code, and SSH, and to execute code on a remote"><meta data-rh="true" property="og:description" content="clearml-session is a feature that allows to launch a session of JupyterLab, VS Code, and SSH, and to execute code on a remote"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://clear.ml/docs/apps/clearml_session"><link data-rh="true" rel="alternate" href="https://clear.ml/docs/apps/clearml_session" hreflang="en"><link data-rh="true" rel="alternate" href="https://clear.ml/docs/apps/clearml_session" hreflang="x-default"><link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=none"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","none",{anonymize_ip:!0})</script><link rel="stylesheet" href="/assets/css/styles.6ce7eab9.css">
+<script src="/assets/js/runtime~main.96f68a00.js" defer="defer"></script>
+<script src="/assets/js/main.deaeaca1.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><div class="theme-announcement-bar announcementBar_mb4j" role="banner"><div class="announcementBarPlaceholder_vyr4"></div><div class="content_knG7 announcementBarContent_xLdY">If you ❤️ ️<b>ClearML</b>, ⭐️ us on <a target="_blank" rel="noopener noreferrer" href="https://github.com/clearml/clearml">GitHub</a>!</div><button type="button" aria-label="Close" class="clean-btn close closeButton_CVFx announcementBarClose_gvF7"><svg viewBox="0 0 15 15" width="14" height="14"><g stroke="currentColor" stroke-width="3.1"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg></button></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ navbar--dark"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a href="https://clear.ml/" target="_blank" rel="noopener noreferrer" class="navbar__brand"><div class="navbar__logo"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"> </b></a><a class="navbar__item navbar__link" href="/docs/">Overview</a><a class="navbar__item navbar__link" href="/docs/clearml_sdk/clearml_sdk_setup">Setup</a><a class="navbar__item navbar__link" href="/docs/getting_started/auto_log_exp">Using ClearML</a><div class="navbar__item dropdown dropdown--hoverable"><a class="navbar__link" aria-haspopup="true" aria-expanded="false" role="button" href="/docs/fundamentals/projects">Developer Center</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/docs/fundamentals/projects">ClearML Basics</a></li><li><a class="dropdown__link" href="/docs/references/sdk/task">References</a></li><li><a class="dropdown__link" href="/docs/best_practices/data_scientist_best_practices">Best Practices</a></li><li><a class="dropdown__link" href="/docs/guides">Tutorials</a></li><li><a class="dropdown__link" href="/docs/integrations">Code Integrations</a></li><li><a class="dropdown__link" href="/docs/faq">FAQ</a></li><li><a class="dropdown__link" href="/docs/release_notes/clearml_server/open_source/ver_2_4">Release Notes</a></li></ul></div><a class="navbar__item navbar__link" href="/docs/community">Community</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://joinslack.clear.ml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--slack" aria-label="Slack Channel"></a><a href="https://youtube.com/clearml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--youtube" aria-label="YouTube"></a><a href="https://twitter.com/clearmlapp" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--twitter" aria-label="Twitter"></a><a href="https://www.linkedin.com/company/clearml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--linkedin" aria-label="LinkedIn"></a><a href="https://github.com/clearml/clearml" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-ico header-ico--github" aria-label="GitHub repository"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS darkNavbarColorModeToggle_X3D1" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd sidebarWithHideableNavbar_wUlq"><a href="https://clear.ml/" target="_blank" rel="noopener noreferrer" tabindex="-1" class="sidebarLogo_isFc"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="ClearML" class="themedComponent_mlkZ themedComponent--dark_xIcU"><b> </b></a><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG menuWithAnnouncementBar_GW3s"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/auto_log_exp"><span title="Auto-logging Experiments" class="linkLabel_WmDU">Auto-logging Experiments</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/track_tasks"><span title="Tracking Tasks" class="linkLabel_WmDU">Tracking Tasks</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/reproduce_tasks"><span title="Reproducing Task Runs" class="linkLabel_WmDU">Reproducing Task Runs</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/logging_using_artifacts"><span title="Logging and Using Task Artifacts" class="linkLabel_WmDU">Logging and Using Task Artifacts</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/data_management"><span title="Managing Your Data" class="linkLabel_WmDU">Managing Your Data</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/remote_execution"><span title="Remote Execution" class="linkLabel_WmDU">Remote Execution</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/building_pipelines"><span title="Building Pipelines" class="linkLabel_WmDU">Building Pipelines</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/hpo"><span title="Hyperparameter Optimization" class="linkLabel_WmDU">Hyperparameter Optimization</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/clearml_agent_docker_exec"><span title="Building Executable Task Containers" class="linkLabel_WmDU">Building Executable Task Containers</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/clearml_agent_base_docker"><span title="Building Task Execution Environments in a Container" class="linkLabel_WmDU">Building Task Execution Environments in a Container</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/clearml_agent_scheduling"><span title="Managing Agent Work Schedules" class="linkLabel_WmDU">Managing Agent Work Schedules</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/clearml_serving/"><span title="Deploying Model Endpoints" class="categoryLinkLabel_W154">Deploying Model Endpoints</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/apps/clearml_session"><span title="Launching a Remote IDE" class="categoryLinkLabel_W154">Launching a Remote IDE</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/apps/clearml_session"><span title="ClearML Session CLI" class="linkLabel_WmDU">ClearML Session CLI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/webapp/applications/apps_ssh_session"><span title="SSH Session" class="linkLabel_WmDU">SSH Session</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/webapp/applications/apps_jupyter_lab"><span title="Jupyter Lab" class="linkLabel_WmDU">Jupyter Lab</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/webapp/applications/apps_vscode"><span title="VS Code" class="linkLabel_WmDU">VS Code</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/webapp/applications/apps_gradio"><span title="Building Interactive Model Demos" class="categoryLinkLabel_W154">Building Interactive Model Demos</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/task_trigger_schedule"><span title="Scheduling and Triggering Task Execution" class="linkLabel_WmDU">Scheduling and Triggering Task Execution</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting_started/project_progress"><span title="Monitoring Project Progress" class="linkLabel_WmDU">Monitoring Project Progress</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/getting_started/video_tutorials/quick_introduction"><span title="Video Tutorials" class="categoryLinkLabel_W154">Video Tutorials</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>ClearML Session CLI</h1></header><p><code>clearml-session</code> is a feature that allows to launch a session of JupyterLab, VS Code, and SSH, and to execute code on a remote
+machine that better meets resource needs. This feature provides local links to access JupyterLab and VS Code on a
+remote machine over a secure and encrypted SSH connection. By default, the JupyterLab and
+VS Code remote sessions use ports 8878 and 8898 respectively.</p>
+<details class="details_lb9f alert alert--info details_b_Ee panel screenshot" data-collapsed="true"><summary class="panel-title">JupyterLab Window</summary><div><div class="collapsibleContent_i85q">
+<!-- -->
+<p><img decoding="async" loading="lazy" alt="JupyterLab session" src="/assets/images/session_jupyter-efda41fd8efe340f8996963cd4c8a61b.png" width="1400" height="760" class="img_ev3q"></p>
+</div></div></details>
+<br>
+<details class="details_lb9f alert alert--info details_b_Ee panel screenshot" data-collapsed="true"><summary class="panel-title">VS Code Window</summary><div><div class="collapsibleContent_i85q">
+<!-- -->
+<p><img decoding="async" loading="lazy" alt="VS Code session" src="/assets/images/session_vs_code-db6f4052b3e5a033556f724e679bc77e.png" width="1400" height="760" class="img_ev3q"></p>
+</div></div></details>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="prerequisites">Prerequisites<a href="#prerequisites" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h2>
+<ul>
+<li class=""><code>clearml</code> installed and configured. See <a class="" href="/docs/clearml_sdk/clearml_sdk_setup">ClearML Setup</a> for details.</li>
+<li class="">At least one <code>clearml-agent</code> running on a remote host. See <a class="" href="/docs/clearml_agent/clearml_agent_deployment_bare_metal#installation">installation</a> for details.</li>
+<li class="">An SSH client installed on your machine. To verify, open your terminal and execute <code>ssh</code>. If you did not receive an
+error, you are good to go.</li>
+</ul>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="launching-clearml-session">Launching ClearML Session<a href="#launching-clearml-session" class="hash-link" aria-label="Direct link to Launching ClearML Session" title="Direct link to Launching ClearML Session" translate="no">​</a></h2>
+<ol>
+<li class="">
+<p>Install <code>clearml-session</code>:</p>
+<div class="language-commandline codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-commandline codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">pip install clearml-session</span><br></span></code></pre></div></div>
+</li>
+<li class="">
+<p>Run <code>clearml-session</code>:</p>
+<div class="language-commandline codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-commandline codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-session </span><br></span></code></pre></div></div>
+<p>You can add flags to set a container image, the remote SSH port, JupyterLab/VS Code versions, and more. See <a href="#command-line-options" class="">CLI options</a>
+for all configuration options.</p>
+<p><code>clearml-session</code> creates a new <a class="" href="/docs/fundamentals/task">Task</a> that is responsible for setting up the SSH and
+JupyterLab/VS Code environment according to your specifications on the host machine.</p>
+</li>
+<li class="">
+<p>Follow the <code>clearml-session</code> setup wizard:</p>
+<ol>
+<li class=""><code>Select the queue</code> - Choose the queue where the ClearML Session task will be enqueued. The agent assigned to this queue
+will set up and launch the remote server.</li>
+<li class=""><code>Launch interactive session?</code> - Click <code>y</code> to launch the interactive session.</li>
+</ol>
+</li>
+<li class="">
+<p>The session Task is enqueued in the selected queue, and a ClearML Agent pulls and executes it. The agent downloads the appropriate IDE(s) and
+launches it.</p>
+</li>
+<li class="">
+<p>Once the agent finishes the initial setup of the interactive Task, the local <code>clearml-session</code> connects to the host
+machine via SSH, and tunnels both SSH and IDE over the SSH connection. If a container is specified, the
+IDE environment runs inside of it.</p>
+</li>
+<li class="">
+<p>The CLI outputs access links to the remote JupyterLab and VS Code sessions:</p>
+<div class="language-console codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-console codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">Interactive session is running:</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">SSH: ssh root@localhost -p 8022 [password: &lt;password&gt;]</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Jupyter Lab URL: http://localhost:8878/?token=&lt;token&gt;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">VSCode server available at http://localhost:8898/</span><br></span></code></pre></div></div>
+<p>Notice the links are to <code>localhost</code> since all communication to the remote server itself is done over a secure SSH connection.
+Click on the Jupyter Lab or VScode links, or drop into SSH shell by typing <code>shell</code>.</p>
+</li>
+<li class="">
+<p>Now start working on the code as if you&#x27;re running on the target machine itself!</p>
+</li>
+</ol>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="re-launching-and-shutting-down-sessions">Re-launching and Shutting Down Sessions<a href="#re-launching-and-shutting-down-sessions" class="hash-link" aria-label="Direct link to Re-launching and Shutting Down Sessions" title="Direct link to Re-launching and Shutting Down Sessions" translate="no">​</a></h2>
+<p>If a <code>clearml-session</code> was launched locally and is still running on a remote machine, you can easily reconnect to it.
+To reconnect to a previous session, execute <code>clearml-session</code> with no additional flags, and the option of reconnecting
+to an existing session will show up:</p>
+<div class="language-console codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-console codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">Connect to active session id=c7302b564aa945408aaa40ac5c69399c [Y]/n?</span><br></span></code></pre></div></div>
+<p>If multiple sessions were launched from a local machine and are still active, choose the desired session:</p>
+<div class="language-console codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-console codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">Active sessions:</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">0*] 2021-05-09 12:24:11 id=ed48fb83ad76430686b1abdbaa6eb1dd</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">1] 2021-05-09 12:06:48 id=009eb34abde74182a8be82f62af032ea</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">Connect to session [0-1] or &#x27;N&#x27; to skip</span><br></span></code></pre></div></div>
+<p>To shut down a remote session, which frees the <code>clearml-agent</code> and closes the CLI, enter &quot;Shutdown&quot;. If a session
+is shut down, there is no option to reconnect to it.</p>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="connecting-to-an-existing-session">Connecting to an Existing Session<a href="#connecting-to-an-existing-session" class="hash-link" aria-label="Direct link to Connecting to an Existing Session" title="Direct link to Connecting to an Existing Session" translate="no">​</a></h2>
+<p>If a <code>clearml-session</code> is running remotely, you can continue working on the session from any machine.
+When <code>clearml-session</code> is launched, it initializes a task with a unique ID in the ClearML Server.</p>
+<p>To connect to an existing session:</p>
+<ol>
+<li class="">Go to the web UI, find the interactive session task (by default, it&#x27;s in project &quot;DevOps&quot;).</li>
+<li class="">Copy the unique ID by clicking the <code>ID</code> button in the task page&#x27;s header.</li>
+<li class="">Run the following command: <code>clearml-session --attach &lt;session_id&gt;</code>.</li>
+<li class="">Click on the JupyterLab / VS Code link that is outputted, or connect directly to the SSH session</li>
+</ol>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="features">Features<a href="#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="running-in-a-container">Running in a Container<a href="#running-in-a-container" class="hash-link" aria-label="Direct link to Running in a Container" title="Direct link to Running in a Container" translate="no">​</a></h3>
+<p>To run a session inside a container, use the <code>--docker</code> flag and enter the image to use in the interactive
+session.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="kubernetes-support">Kubernetes Support<a href="#kubernetes-support" class="hash-link" aria-label="Direct link to Kubernetes Support" title="Direct link to Kubernetes Support" translate="no">​</a></h3>
+<p>With ClearML k8s-glue you can enable launching ClearML sessions directly within Kubernetes pods. Set up the network and
+ingress settings for <code>clearml-session</code> in the <code>sessions</code> section of the <a href="https://github.com/clearml/clearml-helm-charts/blob/main/charts/clearml-agent/values.yaml" target="_blank" rel="noopener noreferrer" class=""><code>values.yaml</code></a>
+file.</p>
+<p>Make sure to set the following values:</p>
+<ul>
+<li class="">Set <code>portModeEnabled: true</code> to allow sessions to run directly from a pod</li>
+<li class=""><code>svcType</code> - Set the service type to either <code>NodePort</code> or <code>LoadBalancer</code>. Note that if set to <code>NodePort</code>, the
+<code>externalIP</code> must be set to the IP of one of the workers. If set to <code>LoadBalancer</code>, you need to have a LoadBalancer and
+external IP address set up in advance, before applying the chart</li>
+<li class=""><code>externalIP</code> - Define an external IP address that the client will connect to. Note that this external IP needs to be
+set up in advance.</li>
+<li class=""><code>maxServices</code> - The maximum number of sessions the agent will spawn</li>
+</ul>
+<p>For example:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain"># -- Sessions internal service configuration</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">sessions:</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  # -- Enable/Disable sessions portmode WARNING: only one Agent deployment can have this set to true</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  portModeEnabled: true</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  # -- specific annotations for session services</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  svcAnnotations: {}</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  # -- service type (&quot;NodePort&quot; or &quot;ClusterIP&quot; or &quot;LoadBalancer&quot;)</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  svcType: &quot;NodePort&quot;</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  # -- External IP sessions clients can connect to</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  externalIP: 0.0.0.0</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  # -- starting range of exposed NodePorts</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  startingPort: 30000</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  # -- maximum number of NodePorts exposed</span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  maxServices: 20</span><br></span></code></pre></div></div>
+<p>For more information, see <a class="" href="/docs/clearml_agent/clearml_agent_deployment_k8s">Kubernetes</a>.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="installing-requirements">Installing Requirements<a href="#installing-requirements" class="hash-link" aria-label="Direct link to Installing Requirements" title="Direct link to Installing Requirements" translate="no">​</a></h3>
+<p><code>clearml-session</code> can install required Python packages when setting up the remote environment.
+Specify requirements in one of the following ways:</p>
+<ul>
+<li class="">Attach a <code>requirement.txt</code> file to the command using <code>--requirements &lt;/file/location.txt&gt;</code>.</li>
+<li class="">Manually specify packages using <code>--packages &quot;&lt;package_name&gt;&quot;</code>
+(for example <code>--packages &quot;keras&quot; &quot;clearml&quot;</code>), and they&#x27;ll be automatically installed.</li>
+</ul>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="accessing-a-git-repository">Accessing a Git Repository<a href="#accessing-a-git-repository" class="hash-link" aria-label="Direct link to Accessing a Git Repository" title="Direct link to Accessing a Git Repository" translate="no">​</a></h3>
+<p>To access a git repository remotely, add a <code>--git-credentials</code> flag and set it to <code>true</code>, so the local <code>.git-credentials</code>
+file is sent to the interactive session. This is helpful if working on private git repositories, and it allows for seamless
+cloning and tracking of git references, including untracked changes.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="uploading-local-files-to-remote-session">Uploading Local Files to Remote Session<a href="#uploading-local-files-to-remote-session" class="hash-link" aria-label="Direct link to Uploading Local Files to Remote Session" title="Direct link to Uploading Local Files to Remote Session" translate="no">​</a></h3>
+<p>You can upload local files and directories from your local machine into the remote session by specifying their path with
+<code>--upload-files &lt;file_path&gt;</code>. The entire content of the directory or file will be copied into your remote
+<code>clearml-session</code> container under the <code>~/session-files/</code> directory.</p>
+<div class="language-commandline codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-commandline codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-session --upload-files /mnt/data/stuff</span><br></span></code></pre></div></div>
+<p>You can upload your files in conjunction with the <code>--store-workspace</code> option to easily move workloads between local
+development machines and remote machines with persistent workspace synchronization. See <a href="#storing-and-synchronizing-workspace" class="">Storing and Synchronizing Workspace</a>.</p>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="starting-a-debugging-session">Starting a Debugging Session<a href="#starting-a-debugging-session" class="hash-link" aria-label="Direct link to Starting a Debugging Session" title="Direct link to Starting a Debugging Session" translate="no">​</a></h3>
+<p>You can debug previously executed tasks registered in the ClearML system on a remote interactive session.
+Input into <code>clearml-session</code> the ID of a Task to debug, then <code>clearml-session</code> clones the task&#x27;s git repository and
+replicates the environment on a remote machine. Then the code can be interactively executed and debugged on JupyterLab / VS Code.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>The Task must be connected to a git repository, since currently single script debugging is not supported.</p></div></div>
+<ol>
+<li class="">In the <strong>ClearML web UI</strong>, find the task that needs debugging.</li>
+<li class="">Copy the unique ID by clicking the <code>ID</code> button in the task page&#x27;s header.</li>
+<li class="">Enter the following command: <code>clearml-session --debugging-session &lt;task_id&gt;</code></li>
+<li class="">Click on the JupyterLab / VS Code link, or connect directly to the SSH session.</li>
+<li class="">In JupyterLab / VS Code, access the task&#x27;s repository in the <code>environment/task_repository</code> folder.</li>
+</ol>
+<h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="storing-and-synchronizing-workspace">Storing and Synchronizing Workspace<a href="#storing-and-synchronizing-workspace" class="hash-link" aria-label="Direct link to Storing and Synchronizing Workspace" title="Direct link to Storing and Synchronizing Workspace" translate="no">​</a></h3>
+<p>You can store and sync your interactive session workspace with the <code>--store-workspace</code> option. <code>clearml-session</code>
+will automatically create a snapshot of your entire workspace when shutting it down, and later restore in a
+new session on any remote machine.</p>
+<p>Specify the remote workspace root-folder by adding <code>--store-workspace &lt;workspace_root_folder&gt;</code> to the command line. In
+the remote session container, put all your code and data under the <code>&lt;workspace_root_folder&gt;</code> directory. When your
+session is shut down, the workspace folder will be automatically packaged and stored on the ClearML file server.</p>
+<div class="language-commandline codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-commandline codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-session --store-workspace ~/workspace</span><br></span></code></pre></div></div>
+<p>In your next <code>clearml-session</code> execution, specify <code>--store-workspace &lt;workspace_root_folder&gt;</code> again and <code>clearml-session</code>
+will grab the previous workspace snapshot and restore it into the new remote container in <code>&lt;workspace_root_folder&gt;</code>.</p>
+<div class="language-commandline codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-commandline codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-session --store-workspace ~/workspace</span><br></span></code></pre></div></div>
+<p>To continue a specific session and restore its workspace, specify the session ID with <code>--continue-session &lt;session_id&gt;</code>:</p>
+<div class="language-commandline codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-commandline codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token plain">clearml-session --continue-session &lt;session_id&gt; --store-workspace ~/workspace </span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="command-line-options">Command Line Options<a href="#command-line-options" class="hash-link" aria-label="Direct link to Command Line Options" title="Direct link to Command Line Options" translate="no">​</a></h2>
+<div class="tbl-cmd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Command line options</th><th>Description</th><th>Default value</th></tr></thead><tbody><tr><td><code>--attach</code></td><td>Attach to running interactive session</td><td>Previous session</td></tr><tr><td><code>--base-task-id</code></td><td>Pass the ID of a task that will become the base task, so the session will use its configurations</td><td><code>none</code> or the previously entered base task</td></tr><tr><td><code>--config-file</code></td><td>Specify a path to another configuration file for <code>clearml-session</code> to store its previous state</td><td><code>.clearml_session.json</code> or previously entered configuration file</td></tr><tr><td><code>--continue-session</code></td><td>Pass the session of a previous session to continue, restoring your workspace (see <code>--store-workspace</code>)</td><td><code>none</code></td></tr><tr><td><code>--debugging-session</code></td><td>Pass existing Task ID, create a copy of the task on a remote machine, and launch Jupyter/SSH for interactive access. Example <code>--debugging-session &lt;task_id&gt;</code></td><td><code>none</code></td></tr><tr><td><code>--disable-fingerprint-check</code></td><td>If set, bypass the remote SSH server fingerprint verification process</td><td><code>none</code></td></tr><tr><td><code>--disable-session-cleanup</code></td><td>If <code>True</code>, previous interactive sessions are not deleted</td><td><code>false</code></td></tr><tr><td><code>--disable-store-defaults</code></td><td>If set, do not store current setup as new default configuration</td><td><code>none</code></td></tr><tr><td><code>--docker</code></td><td>Select the image to use in the interactive session</td><td><code>nvidia/cuda:11.6.2-runtime-ubuntu20.04</code> or previously used image</td></tr><tr><td><code>--docker-args</code></td><td>Add additional arguments for the docker image to use in the interactive session</td><td><code>none</code> or the previously used <code>docker-args</code></td></tr><tr><td><code>--force_dropbear</code></td><td>Force using <code>dropbear</code> instead of SSHd</td><td><code>none</code></td></tr><tr><td><code>--git-credentials</code></td><td>If <code>True</code>, local <code>.git-credentials</code> file is sent to the interactive session.</td><td><code>false</code></td></tr><tr><td><code>--init-script</code></td><td>Specify a BASH init script file to be executed when the interactive session is being set up</td><td><code>none</code> or previously entered BASH script</td></tr><tr><td><code>--jupyter-lab</code></td><td>Install a JupyterLab on interactive session</td><td><code>true</code></td></tr><tr><td><code>--keepalive</code></td><td>If set, enables transparent proxy that keep sockets alive to maintain the connection to the remote resource</td><td><code>false</code> - do not use transparent socket for mitigating connection drops</td></tr><tr><td><code>--packages</code></td><td>Additional packages to add. Supports version numbers. Example: <code>--packages torch==1.7 tqdm</code></td><td>Previously added packages.</td></tr><tr><td><code>--password</code></td><td>Set your own SSH password for the interactive session</td><td>A randomly generated password or a previously used one</td></tr><tr><td><code>--project</code></td><td>Set the project name to the interactive session task</td><td><code>DevOps</code></td></tr><tr><td><code>--public-ip</code></td><td>If <code>true</code>, register the public IP of the remote machine (if you are running the session on a public cloud)</td><td><code>false</code> - Session runs on the machine whose agent is executing the session</td></tr><tr><td><code>--queue</code></td><td>Select the queue to launch the interactive session on</td><td>Previously used queue</td></tr><tr><td><code>--queue-excluded-tag</code></td><td>The queue option list will exclude queues with specified tags. See the <code>tags</code> parameter in the <a class="" href="/docs/references/api/queues#post-queuescreate">queues.create</a> API call</td><td><code>none</code></td></tr><tr><td><code>--queue-include-tag</code></td><td>The queue option list will include only queues with specified tags. See the <code>tags</code> parameter in the <a class="" href="/docs/references/api/queues#post-queuescreate">queues.create</a> API call</td><td><code>none</code></td></tr><tr><td><code>--randomize</code></td><td>Generate a new random SSH password for the interactive session. Pass <code>--randomize</code> to create a random password for the current session. Pass <code>--randomize always</code> to generate a new random password for every session you start.</td><td><code>false</code></td></tr><tr><td><code>--remote-gateway</code></td><td>Specify a gateway IP to pass to the interactive session, if an external address needs to be accessed</td><td><code>none</code></td></tr><tr><td><code>--remote-ssh-port</code></td><td>Set the remote SSH server port, running on the agent&#x27;s machine</td><td>10022</td></tr><tr><td><code>--requirements</code></td><td>Specify <code>requirements.txt</code> file to install when setting the interactive session.</td><td><code>none</code> or previously used requirements (can be overridden by calling <code>--packages</code>)</td></tr><tr><td><code>--session-name</code></td><td>Set the name of the interactive session Task</td><td><code>none</code></td></tr><tr><td><code>--session-tags</code></td><td>Add tags to the interactive session for increased visibility</td><td><code>none</code></td></tr><tr><td><code>--shell</code></td><td>Open the SSH session directly. Notice, quitting the SSH session will not shut down the remote session</td><td><code>none</code></td></tr><tr><td><code>--shutdown</code>, <code>-S</code></td><td>Shut down an active session</td><td>Previous session</td></tr><tr><td><code>--skip-docker-network</code></td><td>Don&#x27;t pass the <code>--network host</code> flag to the Docker that is launching the remote session. See the <a href="https://docs.docker.com/engine/network/drivers/host/" target="_blank" rel="noopener noreferrer" class="">Docker documentation</a></td><td><code>false</code></td></tr><tr><td><code>--store-workspace</code></td><td>Upload/Restore remote workspace folder and extract it into the next session. Use with <code>--continue-session</code> to continue your previous work from your exact container state</td><td><code>none</code></td></tr><tr><td><code>--upload-files</code></td><td>Specify local files/folders to upload to the remote session</td><td><code>none</code></td></tr><tr><td><code>--user-folder</code></td><td>Specify the path for the session&#x27;s remote base folder for the session</td><td>Home folder(<code>~/</code>) or previously entered user folder path</td></tr><tr><td><code>--username</code></td><td>Set your own SSH username for the interactive session</td><td><code>root</code> or a previously used username</td></tr><tr><td><code>--verbose</code></td><td>Increase verbosity of logging</td><td><code>none</code></td></tr><tr><td><code>--version</code></td><td>Display the clearml-session utility version</td><td>N/A</td></tr><tr><td><code>--vscode-extensions</code></td><td>Install additional VSCode extensions and VSCode Python extensions (example: <code>ms-python.python,ms-python.black-formatter,ms-python.pylint,ms-python.flake8</code>)</td><td><code>none</code></td></tr><tr><td><code>--vscode-server</code></td><td>Install VSCode on interactive session</td><td><code>true</code></td></tr><tr><td><code>--vscode-version</code></td><td>Set VSCode server (code-server) version, as well as VSCode Python extension version <code>&lt;vscode:python-ext&gt;</code> (example: &quot;3.7.4:2020.10.332292344&quot;)</td><td><code>4.14.1:2023.12.0</code></td></tr><tr><td><code>--yes</code>, <code>-y</code></td><td>Automatic yes to prompts; assume &quot;yes&quot; as answer to all prompts and run non-interactively</td><td>N/A</td></tr></tbody></table>
+</div></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/clearml/clearml-docs/edit/main/docs/apps/clearml_session.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/webapp/applications/apps_llama_deployment"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Llama.cpp Model Deployment</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/getting_started/task_trigger_schedule"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Scheduling and Triggering Task Execution</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#prerequisites" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#launching-clearml-session" class="table-of-contents__link toc-highlight">Launching ClearML Session</a></li><li><a href="#re-launching-and-shutting-down-sessions" class="table-of-contents__link toc-highlight">Re-launching and Shutting Down Sessions</a></li><li><a href="#connecting-to-an-existing-session" class="table-of-contents__link toc-highlight">Connecting to an Existing Session</a></li><li><a href="#features" class="table-of-contents__link toc-highlight">Features</a><ul><li><a href="#running-in-a-container" class="table-of-contents__link toc-highlight">Running in a Container</a></li><li><a href="#kubernetes-support" class="table-of-contents__link toc-highlight">Kubernetes Support</a></li><li><a href="#installing-requirements" class="table-of-contents__link toc-highlight">Installing Requirements</a></li><li><a href="#accessing-a-git-repository" class="table-of-contents__link toc-highlight">Accessing a Git Repository</a></li><li><a href="#uploading-local-files-to-remote-session" class="table-of-contents__link toc-highlight">Uploading Local Files to Remote Session</a></li><li><a href="#starting-a-debugging-session" class="table-of-contents__link toc-highlight">Starting a Debugging Session</a></li><li><a href="#storing-and-synchronizing-workspace" class="table-of-contents__link toc-highlight">Storing and Synchronizing Workspace</a></li></ul></li><li><a href="#command-line-options" class="table-of-contents__link toc-highlight">Command Line Options</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://joinslack.clear.ml" target="_blank" rel="noopener noreferrer" class="footer__link-item">Slack<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.youtube.com/c/ClearML" target="_blank" rel="noopener noreferrer" class="footer__link-item">YouTube<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://twitter.com/clearmlapp" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/clearml" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/company/clearml" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://clear.ml/blog/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Blog</a></li><li class="footer__item"><a href="https://github.com/clearml/clearml" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 ClearML. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
