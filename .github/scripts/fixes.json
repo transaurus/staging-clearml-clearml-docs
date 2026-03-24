@@ -1,0 +1,13 @@
+{
+  "description": "Repository-specific fixes for clearml/clearml-docs",
+  "fixes": {
+    "docusaurus.config.js": [
+      {
+        "type": "replace",
+        "find": "    // ... Your other plugins.\n    [\n      require.resolve('docusaurus-gtm-plugin'),\n      {\n        id: 'none', // GTM Container ID\n      }\n    ],\n    require.resolve('plugin-image-zoom'),",
+        "replace": "    // ... Your other plugins.\n    require.resolve('plugin-image-zoom'),",
+        "comment": "docusaurus-gtm-plugin is referenced in config but not in package.json — remove to fix MODULE_NOT_FOUND error"
+      }
+    ]
+  }
+}
