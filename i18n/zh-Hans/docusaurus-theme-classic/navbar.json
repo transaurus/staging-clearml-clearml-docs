@@ -1,0 +1,58 @@
+{
+  "title": {
+    "message": " ",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "ClearML",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Overview": {
+    "message": "Overview",
+    "description": "Navbar item with label Overview"
+  },
+  "item.label.Setup": {
+    "message": "Setup",
+    "description": "Navbar item with label Setup"
+  },
+  "item.label.Using ClearML": {
+    "message": "Using ClearML",
+    "description": "Navbar item with label Using ClearML"
+  },
+  "item.label.Developer Center": {
+    "message": "Developer Center",
+    "description": "Navbar item with label Developer Center"
+  },
+  "item.label.Community": {
+    "message": "Community",
+    "description": "Navbar item with label Community"
+  },
+  "item.label.ClearML Basics": {
+    "message": "ClearML Basics",
+    "description": "Navbar item with label ClearML Basics"
+  },
+  "item.label.References": {
+    "message": "References",
+    "description": "Navbar item with label References"
+  },
+  "item.label.Best Practices": {
+    "message": "Best Practices",
+    "description": "Navbar item with label Best Practices"
+  },
+  "item.label.Tutorials": {
+    "message": "Tutorials",
+    "description": "Navbar item with label Tutorials"
+  },
+  "item.label.Code Integrations": {
+    "message": "Code Integrations",
+    "description": "Navbar item with label Code Integrations"
+  },
+  "item.label.FAQ": {
+    "message": "FAQ",
+    "description": "Navbar item with label FAQ"
+  },
+  "item.label.Release Notes": {
+    "message": "Release Notes",
+    "description": "Navbar item with label Release Notes"
+  }
+}

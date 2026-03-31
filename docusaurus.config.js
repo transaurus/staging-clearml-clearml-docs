@@ -18,6 +18,10 @@ const config = {
 };
 
 module.exports = {
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "zh-Hans"],
+  },
   markdown: {
     format: 'detect', // enable mdx syntax only in .mdx files, disable in .md files
     hooks:  {onBrokenMarkdownLinks: 'warn'}

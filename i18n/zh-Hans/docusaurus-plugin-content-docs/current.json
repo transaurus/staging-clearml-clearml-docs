@@ -1,0 +1,562 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.mainSidebar.category.Infrastructure Control Plane (GPUaaS)": {
+    "message": "Infrastructure Control Plane (GPUaaS)",
+    "description": "The label for category 'Infrastructure Control Plane (GPUaaS)' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.AI Development Center": {
+    "message": "AI Development Center",
+    "description": "The label for category 'AI Development Center' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.GenAI App Engine": {
+    "message": "GenAI App Engine",
+    "description": "The label for category 'GenAI App Engine' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.doc.ClearML at a Glance": {
+    "message": "ClearML at a Glance",
+    "description": "The label for the doc item 'ClearML at a Glance' in sidebar 'mainSidebar', linking to the doc overview"
+  },
+  "sidebar.usecaseSidebar.category.Deploying Model Endpoints": {
+    "message": "Deploying Model Endpoints",
+    "description": "The label for category 'Deploying Model Endpoints' in sidebar 'usecaseSidebar'"
+  },
+  "sidebar.usecaseSidebar.category.ClearML Serving": {
+    "message": "ClearML Serving",
+    "description": "The label for category 'ClearML Serving' in sidebar 'usecaseSidebar'"
+  },
+  "sidebar.usecaseSidebar.category.Model Launchers": {
+    "message": "Model Launchers",
+    "description": "The label for category 'Model Launchers' in sidebar 'usecaseSidebar'"
+  },
+  "sidebar.usecaseSidebar.category.Launching a Remote IDE": {
+    "message": "Launching a Remote IDE",
+    "description": "The label for category 'Launching a Remote IDE' in sidebar 'usecaseSidebar'"
+  },
+  "sidebar.usecaseSidebar.category.Building Interactive Model Demos": {
+    "message": "Building Interactive Model Demos",
+    "description": "The label for category 'Building Interactive Model Demos' in sidebar 'usecaseSidebar'"
+  },
+  "sidebar.usecaseSidebar.category.Video Tutorials": {
+    "message": "Video Tutorials",
+    "description": "The label for category 'Video Tutorials' in sidebar 'usecaseSidebar'"
+  },
+  "sidebar.usecaseSidebar.category.Hands-on MLOps Tutorials": {
+    "message": "Hands-on MLOps Tutorials",
+    "description": "The label for category 'Hands-on MLOps Tutorials' in sidebar 'usecaseSidebar'"
+  },
+  "sidebar.integrationsSidebar.category.Hugging Face": {
+    "message": "Hugging Face",
+    "description": "The label for category 'Hugging Face' in sidebar 'integrationsSidebar'"
+  },
+  "sidebar.integrationsSidebar.category.OpenMMLab": {
+    "message": "OpenMMLab",
+    "description": "The label for category 'OpenMMLab' in sidebar 'integrationsSidebar'"
+  },
+  "sidebar.integrationsSidebar.doc.Overview": {
+    "message": "Overview",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsSidebar', linking to the doc integrations/integrations"
+  },
+  "sidebar.guidesSidebar.category.Advanced": {
+    "message": "Advanced",
+    "description": "The label for category 'Advanced' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Automation": {
+    "message": "Automation",
+    "description": "The label for category 'Automation' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.ClearML Task": {
+    "message": "ClearML Task",
+    "description": "The label for category 'ClearML Task' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.ClearML Agent": {
+    "message": "ClearML Agent",
+    "description": "The label for category 'ClearML Agent' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Datasets": {
+    "message": "Datasets",
+    "description": "The label for category 'Datasets' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Distributed": {
+    "message": "Distributed",
+    "description": "The label for category 'Distributed' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Docker": {
+    "message": "Docker",
+    "description": "The label for category 'Docker' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Frameworks": {
+    "message": "Frameworks",
+    "description": "The label for category 'Frameworks' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Hugging Face": {
+    "message": "Hugging Face",
+    "description": "The label for category 'Hugging Face' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Keras": {
+    "message": "Keras",
+    "description": "The label for category 'Keras' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.PyTorch": {
+    "message": "PyTorch",
+    "description": "The label for category 'PyTorch' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.PyTorch Notebooks": {
+    "message": "PyTorch Notebooks",
+    "description": "The label for category 'PyTorch Notebooks' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Audio": {
+    "message": "Audio",
+    "description": "The label for category 'Audio' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Image": {
+    "message": "Image",
+    "description": "The label for category 'Image' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Table": {
+    "message": "Table",
+    "description": "The label for category 'Table' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Text": {
+    "message": "Text",
+    "description": "The label for category 'Text' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.PyTorch Ignite": {
+    "message": "PyTorch Ignite",
+    "description": "The label for category 'PyTorch Ignite' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Scikit-Learn": {
+    "message": "Scikit-Learn",
+    "description": "The label for category 'Scikit-Learn' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.TensorBoardX": {
+    "message": "TensorBoardX",
+    "description": "The label for category 'TensorBoardX' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.TensorFlow": {
+    "message": "TensorFlow",
+    "description": "The label for category 'TensorFlow' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.XGBoost": {
+    "message": "XGBoost",
+    "description": "The label for category 'XGBoost' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.IDEs": {
+    "message": "IDEs",
+    "description": "The label for category 'IDEs' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Offline Mode": {
+    "message": "Offline Mode",
+    "description": "The label for category 'Offline Mode' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Optimization": {
+    "message": "Optimization",
+    "description": "The label for category 'Optimization' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Pipelines": {
+    "message": "Pipelines",
+    "description": "The label for category 'Pipelines' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Reporting": {
+    "message": "Reporting",
+    "description": "The label for category 'Reporting' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Services": {
+    "message": "Services",
+    "description": "The label for category 'Services' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Storage": {
+    "message": "Storage",
+    "description": "The label for category 'Storage' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.category.Web UI": {
+    "message": "Web UI",
+    "description": "The label for category 'Web UI' in sidebar 'guidesSidebar'"
+  },
+  "sidebar.guidesSidebar.doc.Hyper-Datasets": {
+    "message": "Hyper-Datasets",
+    "description": "The label for the doc item 'Hyper-Datasets' in sidebar 'guidesSidebar', linking to the doc hyperdatasets/code_examples"
+  },
+  "sidebar.knowledgeSidebar.category.Fundamentals": {
+    "message": "Fundamentals",
+    "description": "The label for category 'Fundamentals' in sidebar 'knowledgeSidebar'"
+  },
+  "sidebar.knowledgeSidebar.category.ClearML SDK": {
+    "message": "ClearML SDK",
+    "description": "The label for category 'ClearML SDK' in sidebar 'knowledgeSidebar'"
+  },
+  "sidebar.knowledgeSidebar.category.ClearML Pipelines": {
+    "message": "ClearML Pipelines",
+    "description": "The label for category 'ClearML Pipelines' in sidebar 'knowledgeSidebar'"
+  },
+  "sidebar.knowledgeSidebar.category.ClearML Data": {
+    "message": "ClearML Data",
+    "description": "The label for category 'ClearML Data' in sidebar 'knowledgeSidebar'"
+  },
+  "sidebar.knowledgeSidebar.category.Workflows": {
+    "message": "Workflows",
+    "description": "The label for category 'Workflows' in sidebar 'knowledgeSidebar'"
+  },
+  "sidebar.knowledgeSidebar.category.ref-hpd-main": {
+    "message": "Hyper-Datasets",
+    "description": "The label for category 'Hyper-Datasets' in sidebar 'knowledgeSidebar'"
+  },
+  "sidebar.knowledgeSidebar.category.Frames": {
+    "message": "Frames",
+    "description": "The label for category 'Frames' in sidebar 'knowledgeSidebar'"
+  },
+  "sidebar.rnSidebar.category.Server": {
+    "message": "Server",
+    "description": "The label for category 'Server' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.rn-server-open-source": {
+    "message": "Open Source",
+    "description": "The label for category 'Open Source' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.rn-older-versions-1": {
+    "message": "Older Versions",
+    "description": "The label for category 'Older Versions' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.rn-server-enterprise": {
+    "message": "Enterprise",
+    "description": "The label for category 'Enterprise' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.rn-older-versions-2": {
+    "message": "Older Versions",
+    "description": "The label for category 'Older Versions' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.SDK": {
+    "message": "SDK",
+    "description": "The label for category 'SDK' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.rn-sdk-open-source": {
+    "message": "Open Source",
+    "description": "The label for category 'Open Source' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.rn-older-versions-3": {
+    "message": "Older Versions",
+    "description": "The label for category 'Older Versions' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.rn-sdk-enterprise": {
+    "message": "Enterprise",
+    "description": "The label for category 'Enterprise' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.rn-older-versions-4": {
+    "message": "Older Versions",
+    "description": "The label for category 'Older Versions' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.ClearML Agent": {
+    "message": "ClearML Agent",
+    "description": "The label for category 'ClearML Agent' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.rn-older-versions-5": {
+    "message": "Older Versions",
+    "description": "The label for category 'Older Versions' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.ClearML Serving": {
+    "message": "ClearML Serving",
+    "description": "The label for category 'ClearML Serving' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.rn-older-versions-6": {
+    "message": "Older Versions",
+    "description": "The label for category 'Older Versions' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.Applications": {
+    "message": "Applications",
+    "description": "The label for category 'Applications' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.General": {
+    "message": "General",
+    "description": "The label for category 'General' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.Deploy": {
+    "message": "Deploy",
+    "description": "The label for category 'Deploy' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.NVAIE": {
+    "message": "NVAIE",
+    "description": "The label for category 'NVAIE' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.AI Dev": {
+    "message": "AI Dev",
+    "description": "The label for category 'AI Dev' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.Databases": {
+    "message": "Databases",
+    "description": "The label for category 'Databases' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.Autoscalers": {
+    "message": "Autoscalers",
+    "description": "The label for category 'Autoscalers' in sidebar 'rnSidebar'"
+  },
+  "sidebar.rnSidebar.category.AI Application Gateway": {
+    "message": "AI Application Gateway",
+    "description": "The label for category 'AI Application Gateway' in sidebar 'rnSidebar'"
+  },
+  "sidebar.referenceSidebar.category.SDK": {
+    "message": "SDK",
+    "description": "The label for category 'SDK' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Model": {
+    "message": "Model",
+    "description": "The label for category 'Model' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Pipeline": {
+    "message": "Pipeline",
+    "description": "The label for category 'Pipeline' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.HyperParameter Optimization": {
+    "message": "HyperParameter Optimization",
+    "description": "The label for category 'HyperParameter Optimization' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.ref-hpd-sdk": {
+    "message": "Hyper-Datasets",
+    "description": "The label for category 'Hyper-Datasets' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.clearml ≥ 2.1": {
+    "message": "clearml ≥ 2.1",
+    "description": "The label for category 'clearml ≥ 2.1' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.allegroai (Legacy)": {
+    "message": "allegroai (Legacy)",
+    "description": "The label for category 'allegroai (Legacy)' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.CLI Tools": {
+    "message": "CLI Tools",
+    "description": "The label for category 'CLI Tools' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.ClearML Agent": {
+    "message": "ClearML Agent",
+    "description": "The label for category 'ClearML Agent' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Client Configuration": {
+    "message": "Client Configuration",
+    "description": "The label for category 'Client Configuration' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Server API": {
+    "message": "Server API",
+    "description": "The label for category 'Server API' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Open Source API": {
+    "message": "Open Source API",
+    "description": "The label for category 'Open Source API' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Enterprise API": {
+    "message": "Enterprise API",
+    "description": "The label for category 'Enterprise API' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.WebApp": {
+    "message": "WebApp",
+    "description": "The label for category 'WebApp' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.ClearML Applications": {
+    "message": "ClearML Applications",
+    "description": "The label for category 'ClearML Applications' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.General": {
+    "message": "General",
+    "description": "The label for category 'General' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.AI Dev": {
+    "message": "AI Dev",
+    "description": "The label for category 'AI Dev' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Databases": {
+    "message": "Databases",
+    "description": "The label for category 'Databases' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.UI Dev": {
+    "message": "UI Dev",
+    "description": "The label for category 'UI Dev' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Deploy": {
+    "message": "Deploy",
+    "description": "The label for category 'Deploy' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.NVAIE": {
+    "message": "NVAIE",
+    "description": "The label for category 'NVAIE' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Orchestration": {
+    "message": "Orchestration",
+    "description": "The label for category 'Orchestration' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Autoscalers": {
+    "message": "Autoscalers",
+    "description": "The label for category 'Autoscalers' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Datasets": {
+    "message": "Datasets",
+    "description": "The label for category 'Datasets' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Hyper-Datasets": {
+    "message": "Hyper-Datasets",
+    "description": "The label for category 'Hyper-Datasets' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Projects": {
+    "message": "Projects",
+    "description": "The label for category 'Projects' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Tasks": {
+    "message": "Tasks",
+    "description": "The label for category 'Tasks' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Models": {
+    "message": "Models",
+    "description": "The label for category 'Models' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Dataviews": {
+    "message": "Dataviews",
+    "description": "The label for category 'Dataviews' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Pipelines": {
+    "message": "Pipelines",
+    "description": "The label for category 'Pipelines' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.referenceSidebar.category.Settings": {
+    "message": "Settings",
+    "description": "The label for category 'Settings' in sidebar 'referenceSidebar'"
+  },
+  "sidebar.installationSidebar.category.ClearML Agent": {
+    "message": "ClearML Agent",
+    "description": "The label for category 'ClearML Agent' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.Deployment": {
+    "message": "Deployment",
+    "description": "The label for category 'Deployment' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.Slurm": {
+    "message": "Slurm",
+    "description": "The label for category 'Slurm' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.File Caching": {
+    "message": "File Caching",
+    "description": "The label for category 'File Caching' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.Pod Template Customization": {
+    "message": "Pod Template Customization",
+    "description": "The label for category 'Pod Template Customization' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.Fractional GPUs": {
+    "message": "Fractional GPUs",
+    "description": "The label for category 'Fractional GPUs' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.Open Source Server": {
+    "message": "Open Source Server",
+    "description": "The label for category 'Open Source Server' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.install-os-deploy-options": {
+    "message": "Deployment Options",
+    "description": "The label for category 'Deployment Options' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.Server Upgrade Procedures": {
+    "message": "Server Upgrade Procedures",
+    "description": "The label for category 'Server Upgrade Procedures' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.Enterprise Server": {
+    "message": "Enterprise Server",
+    "description": "The label for category 'Enterprise Server' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.install-ent-deploy-options": {
+    "message": "Deployment Options",
+    "description": "The label for category 'Deployment Options' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.Kubernetes": {
+    "message": "Kubernetes",
+    "description": "The label for category 'Kubernetes' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.Maintenance and Migration": {
+    "message": "Maintenance and Migration",
+    "description": "The label for category 'Maintenance and Migration' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.Monitoring": {
+    "message": "Monitoring",
+    "description": "The label for category 'Monitoring' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.Configuration and Access Controls": {
+    "message": "Configuration and Access Controls",
+    "description": "The label for category 'Configuration and Access Controls' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.ClearML Application Gateway": {
+    "message": "ClearML Application Gateway",
+    "description": "The label for category 'ClearML Application Gateway' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.UI Applications": {
+    "message": "UI Applications",
+    "description": "The label for category 'UI Applications' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.Identity Provider Integration": {
+    "message": "Identity Provider Integration",
+    "description": "The label for category 'Identity Provider Integration' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.OAuth": {
+    "message": "OAuth",
+    "description": "The label for category 'OAuth' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.category.SAML": {
+    "message": "SAML",
+    "description": "The label for category 'SAML' in sidebar 'installationSidebar'"
+  },
+  "sidebar.installationSidebar.doc.Native": {
+    "message": "Native",
+    "description": "The label for the doc item 'Native' in sidebar 'installationSidebar', linking to the doc clearml_agent/clearml_agent_deployment_slurm"
+  },
+  "sidebar.installationSidebar.doc.With Singularity": {
+    "message": "With Singularity",
+    "description": "The label for the doc item 'With Singularity' in sidebar 'installationSidebar', linking to the doc clearml_agent/clearml_agent_deployment_slurm_singularity"
+  },
+  "sidebar.installationSidebar.doc.With Pyxis": {
+    "message": "With Pyxis",
+    "description": "The label for the doc item 'With Pyxis' in sidebar 'installationSidebar', linking to the doc clearml_agent/clearml_agent_deployment_slurm_pyxis"
+  },
+  "sidebar.installationSidebar.doc.String Templates": {
+    "message": "String Templates",
+    "description": "The label for the doc item 'String Templates' in sidebar 'installationSidebar', linking to the doc clearml_agent/clearml_agent_string_template"
+  },
+  "sidebar.installationSidebar.doc.Conditional Templates": {
+    "message": "Conditional Templates",
+    "description": "The label for the doc item 'Conditional Templates' in sidebar 'installationSidebar', linking to the doc clearml_agent/clearml_agent_conditional_template"
+  },
+  "sidebar.installationSidebar.doc.Dynamic Templates": {
+    "message": "Dynamic Templates",
+    "description": "The label for the doc item 'Dynamic Templates' in sidebar 'installationSidebar', linking to the doc clearml_agent/dynamic_edit_task_pod_template"
+  },
+  "sidebar.installationSidebar.doc.ClearML Dynamic MIG Operator (CDMO)": {
+    "message": "ClearML Dynamic MIG Operator (CDMO)",
+    "description": "The label for the doc item 'ClearML Dynamic MIG Operator (CDMO)' in sidebar 'installationSidebar', linking to the doc clearml_agent/fractional_gpus/cdmo"
+  },
+  "sidebar.installationSidebar.doc.Configuring Client Storage Access": {
+    "message": "Configuring Client Storage Access",
+    "description": "The label for the doc item 'Configuring Client Storage Access' in sidebar 'installationSidebar', linking to the doc integrations/storage"
+  },
+  "sidebar.installationSidebar.doc.K8s": {
+    "message": "K8s",
+    "description": "The label for the doc item 'K8s' in sidebar 'installationSidebar', linking to the doc deploying_clearml/enterprise_deploy/extra_configs/monitoring_k8s"
+  },
+  "sidebar.installationSidebar.doc.VM / Docker": {
+    "message": "VM / Docker",
+    "description": "The label for the doc item 'VM / Docker' in sidebar 'installationSidebar', linking to the doc deploying_clearml/enterprise_deploy/extra_configs/monitoring_vm_docker"
+  },
+  "sidebar.installationSidebar.doc.ClearML Serving": {
+    "message": "ClearML Serving",
+    "description": "The label for the doc item 'ClearML Serving' in sidebar 'installationSidebar', linking to the doc clearml_serving/clearml_serving_setup"
+  },
+  "sidebar.bestPracticesSidebar.category.Best Practices": {
+    "message": "Best Practices",
+    "description": "The label for category 'Best Practices' in sidebar 'bestPracticesSidebar'"
+  },
+  "sidebar.bestPracticesSidebar.doc.Data Scientists": {
+    "message": "Data Scientists",
+    "description": "The label for the doc item 'Data Scientists' in sidebar 'bestPracticesSidebar', linking to the doc best_practices/data_scientist_best_practices"
+  },
+  "sidebar.bestPracticesSidebar.doc.MLOps and LLMOps": {
+    "message": "MLOps and LLMOps",
+    "description": "The label for the doc item 'MLOps and LLMOps' in sidebar 'bestPracticesSidebar', linking to the doc best_practices/mlops_best_practices"
+  },
+  "sidebar.bestPracticesSidebar.doc.Data Management": {
+    "message": "Data Management",
+    "description": "The label for the doc item 'Data Management' in sidebar 'bestPracticesSidebar', linking to the doc best_practices/data_best_practices"
+  }
+}
